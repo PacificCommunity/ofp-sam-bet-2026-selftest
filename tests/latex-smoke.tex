@@ -1,10 +1,22 @@
 \documentclass[a4paper,10pt]{article}
 \usepackage[margin=18mm]{geometry}
-\usepackage{booktabs,tabularx,array}
+\usepackage{graphicx}
 \begin{document}
-\input{results/tables/selftest-recent-recovery-diagnostic.tex}
+\begin{figure}[p]
+\centering
+\includegraphics[width=\linewidth,height=.78\textheight,keepaspectratio]{results/figures/selftest-key-recovery-diagnostic.pdf}
+\caption{Relative recovery error for assessment quantities and selected estimated parameters in the Diagnostic model.}
+\end{figure}
 \clearpage
-\input{results/tables/selftest-parameter-recovery-diagnostic.tex}
+\begin{figure}[p]
+\centering
+\includegraphics[width=\linewidth,height=.78\textheight,keepaspectratio]{results/figures/selftest-recovery-diagnostic.pdf}
+\caption{Self-test recovery of annual assessment quantities, including $\mathrm{SB}_{t}/\mathrm{SB}_{F=0,t}$.}
+\end{figure}
 \clearpage
-\input{results/tables/selftest-simulation-centering-diagnostic.tex}
+\begin{figure}[p]
+\centering
+\includegraphics[width=\linewidth,height=.78\textheight,keepaspectratio]{results/figures/selftest-simulation-diagnostic.pdf}
+\caption{Pseudo-data generation checks for the Diagnostic model.}
+\end{figure}
 \end{document}

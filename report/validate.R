@@ -65,11 +65,22 @@ if (check_outputs) {
   if (length(hit)) stop("Public HTML contains forbidden provenance text: ", paste(hit, collapse = ", "), call. = FALSE)
   if (!grepl("Diagnostic model", html, fixed = TRUE)) stop("Diagnostic model label missing.", call. = FALSE)
   if (!grepl("τ was fixed at 2", html, fixed = TRUE)) stop("Fixed-tau method text missing.", call. = FALSE)
-  if (!grepl("No-fishing spawning potential", html, fixed = TRUE)) {
+  if (!grepl("Copy references as BibTeX", html, fixed = TRUE) ||
+      !grepl("Download BibTeX (.bib)", html, fixed = TRUE) ||
+      !grepl("bet-2026-diagnostic-selftest-references.bib", html, fixed = TRUE)) {
+    stop("BibTeX copy/download controls are missing.", call. = FALSE)
+  }
+  if (!grepl("no-fishing spawning potential", html, ignore.case = TRUE)) {
     stop("Dynamic no-fishing spawning-potential panel is missing.", call. = FALSE)
   }
   if (grepl("Replicate convergence", html, fixed = TRUE) || grepl("Tag simulation contract", html, fixed = TRUE)) {
     stop("Internal ledger tables must not appear in the report.", call. = FALSE)
+  }
+  if (grepl("<table", html, fixed = TRUE)) {
+    stop("Figure-led report must not repeat recovery results in tables.", call. = FALSE)
+  }
+  if (grepl("retrospective", html, ignore.case = TRUE)) {
+    stop("Retrospective-analysis text does not belong in the self-test report.", call. = FALSE)
   }
 }
 

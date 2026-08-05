@@ -1356,24 +1356,21 @@ mfclshiny_selftest_contract_table <- function(runs) {
 
 mfclshiny_selftest_results_text <- function(data, scenario, years = NULL) {
   years <- mfclshiny_selftest_recent_years(data, scenario, years)
-  terminal_year <- max(years)
   runs <- data$runs[data$runs$scenario == scenario, , drop = FALSE]
   included <- runs[runs$included %in% TRUE, , drop = FALSE]
   recent <- mfclshiny_selftest_recovery_table(data, scenario, years)
   mgc <- abs(suppressWarnings(as.numeric(included$max_grad)))
   mgc <- mgc[is.finite(mgc)]
-  bias <- recent[["Median relative bias (%)"]]
-  names(bias) <- tolower(as.character(recent$Quantity))
+  bias <- suppressWarnings(as.numeric(recent[["Median relative bias (%)"]]))
+  bias <- bias[is.finite(bias)]
   simulation <- mfclshiny_selftest_simulation_table(data, scenario)
   simulation_sentence <- if (nrow(simulation)) {
+    simulation_error <- suppressWarnings(as.numeric(simulation[["Median error (%)"]]))
+    simulation_error <- simulation_error[is.finite(simulation_error)]
     paste0(
-      "Median whole-series pseudo-data error was ",
-      paste0(
-        tolower(simulation$Component), " ",
-        formatC(simulation[["Median error (%)"]], format = "f", digits = 2), "%",
-        collapse = "; "
-      ),
-      ". "
+      "Median whole-series pseudo-data errors ranged from ",
+      formatC(min(simulation_error), format = "f", digits = 2), "% to ",
+      formatC(max(simulation_error), format = "f", digits = 2), "%. "
     )
   } else ""
   envelope <- mfclshiny_selftest_recovery_envelope_summary(data, scenario)
@@ -1402,10 +1399,11 @@ mfclshiny_selftest_results_text <- function(data, scenario, years = NULL) {
     ) else "",
     simulation_sentence,
     envelope_sentence,
-    "For the recent management and assessment summaries ending in ", terminal_year,
-    ", median relative recovery bias was ",
-    paste0(names(bias), " ", formatC(bias, format = "f", digits = 1), "%", collapse = "; "),
-    ". ",
+    if (length(bias)) paste0(
+      "Median relative bias across recent and native assessment summaries ranged from ",
+      formatC(min(bias), format = "f", digits = 1), "% to ",
+      formatC(max(bias), format = "f", digits = 1), "%. "
+    ) else "",
     parameter_sentence,
     "These are empirical simulation-estimation diagnostics under the configured generator, not confidence intervals for the assessment."
   )
@@ -1421,7 +1419,7 @@ mfclshiny_selftest_figure_caption <- function(kind, model_name, included, total,
       "the dark-blue line is the median refit across ", included, " successful replicates, and the nested blue bands are the ",
       "central 50%, 80%, and 95% empirical ranges. ", included, " of ", total,
       " replicates are included; unsuccessful or non-converged replicates are excluded. Dynamic depletion is ",
-      "SB_t/SB_{F=0,t}, and the no-fishing spawning-potential panel shows its time-specific denominator."
+      "SB_t/SB_{F=0,t}, and the no-fishing spawning potential panel shows its time-specific denominator."
     ),
     recent = paste0(
       "Relative recovery error for recent management and assessment summaries ending in ", terminal_year,
@@ -1567,37 +1565,6 @@ mfclshiny_selftest_write_html <- function(file, data, images, table_dir, title, 
     included <- sum(runs$included %in% TRUE)
     total <- nrow(runs)
     years <- mfclshiny_selftest_recent_years(data, scenario, recent_years)
-    settings <- mfclshiny_selftest_recent_settings(data, scenario)
-    terminal_year <- max(years)
-    window_text <- paste0(
-      "SB_recent ", mfclshiny_selftest_year_label(years), "; ",
-      "SB_F=0 ", mfclshiny_selftest_year_label(seq.int(
-        terminal_year - settings$sbf0_years, terminal_year - 1L
-      )), "; annual-F diagnostic ", mfclshiny_selftest_year_label(seq.int(
-        terminal_year - settings$f_start_offset,
-        terminal_year - settings$f_end_offset
-      ))
-    )
-    run_table <- mfclshiny_selftest_run_table(runs)
-    recovery_table <- mfclshiny_selftest_recovery_table(data, scenario, years)
-    parameter_table <- mfclshiny_selftest_parameter_table(data, scenario)
-    simulation_table <- mfclshiny_selftest_simulation_table(data, scenario)
-    contract_table <- mfclshiny_selftest_contract_table(runs)
-    table_block <- function(name, heading, table, caption, column_widths = NULL) {
-      tex_file <- file.path(table_dir, paste0("selftest-", name, "-", slug, ".tex"))
-      latex <- if (file.exists(tex_file)) paste(readLines(tex_file, warn = FALSE), collapse = "\n") else ""
-      paste0(
-        '<div class="format-block"><h3>', heading, '</h3><div class="actions"><button onclick="copyTable(\'table-',
-        name, "-", slug, '\',this)">Copy table for Word</button><button onclick="copyText(\'latex-table-',
-        name, "-", slug, '\',this)">Copy LaTeX</button></div>',
-        mfclshiny_selftest_html_math(mfclshiny_jitter_html_table(
-          table, paste0("table-", name, "-", slug), caption,
-          column_widths = column_widths
-        )),
-        '<pre id="latex-table-', name, "-", slug, '" class="copy-source">',
-        mfclshiny_jitter_html_escape(latex), '</pre></div>'
-      )
-    }
     figure_html <- c(
       mfclshiny_selftest_html_section(
         "Key recovery", images[[scenario]]$key, paste0("key-", slug),
@@ -1627,25 +1594,6 @@ mfclshiny_selftest_write_html <- function(file, data, images, table_dir, title, 
       '<section id="tab-', slug, '" class="model-card tab-panel"><h2>',
       mfclshiny_jitter_html_escape(model_name), '</h2>',
       paste(figure_html, collapse = "\n"),
-      table_block(
-        "recent-recovery", "Assessment-quantity recovery", recovery_table,
-        paste0(
-          "Recovery of recent and native management and assessment summaries ending in ",
-          terminal_year, " across the ", included, " included self-test refits (",
-          window_text, ")."
-        ),
-        column_widths = c(24, 9, 10, 11, 16, 19, 11)
-      ),
-      table_block(
-        "parameter-recovery", "Selected estimated-parameter recovery", parameter_table,
-        paste0("Recovery of selected recruitment-scale, growth and stock-recruit parameters across the ", included, " included self-test refits."),
-        column_widths = c(29, 9, 11, 12, 17, 22)
-      ),
-      if (nrow(simulation_table)) table_block(
-        "simulation-centering", "Pseudo-data centering", simulation_table,
-        paste0("Whole-series pseudo-data errors across the ", included, " included self-test replicates."),
-        column_widths = c(30, 10, 17, 27, 16)
-      ) else "",
       '</section>'
     )
   }, character(1L))
@@ -1659,23 +1607,6 @@ mfclshiny_selftest_write_html <- function(file, data, images, table_dir, title, 
     paste(formatC(sort(unique(thresholds)), format = "e", digits = 1), collapse = " or ")
   } else "the recorded threshold"
   parameter_text <- paste(unique(as.character(data$parameters$parameter_label)), collapse = ", ")
-  has_native_management <- is.data.frame(data$management) && nrow(data$management) > 0L
-  has_aggregate_f <- is.data.frame(data$derived) &&
-    "relative_fishing_mortality" %in% unique(data$derived$metric)
-  native_management_text <- if (has_native_management) {
-    paste0(
-      "Native MSY, F_MSY and equilibrium spawning biomass at MSY are read directly from each truth and refit plot report. ",
-      "F_recent/F_MSY is the reciprocal of MFCL's native F multiplier at MSY. "
-    )
-  } else {
-    paste0(
-      "This archive does not retain a native yield result for every refit, so MSY, F_MSY, equilibrium spawning biomass at MSY and ",
-      "F_recent/F_MSY are omitted rather than approximated. "
-    )
-  }
-  aggregate_f_text <- if (has_aggregate_f) {
-    "Recent aggregate F/F_MSY is the mean of MFCL's reported quarterly aggregate F/F_MSY series over the same recent-F calendar window. "
-  } else ""
   window_specs <- vapply(scenarios, function(scenario) {
     settings <- mfclshiny_selftest_recent_settings(data, scenario)
     paste0(
@@ -1690,44 +1621,27 @@ mfclshiny_selftest_write_html <- function(file, data, images, table_dir, title, 
       "The fitted final parameter state of the Diagnostic model was treated as the generating truth for pseudo-data generation and recovery comparisons. ",
       "The negative-binomial tag overdispersion parameter τ was fixed at 2 in the generating model and in every refit."
     ),
-    `Pseudo-data generation` = paste0(
+    `Simulation and refitting` = paste0(
       replicate_text,
-      " independent pseudo-data sets were generated from the Diagnostic model with replicate-specific seeds. CPUE, length-composition, age-at-length and post-mixing tag observations were simulated from their fitted observation models; catch and empirical pre-mixing tag observations remained conditioned."
-    ),
-    `Purpose and scope` = paste0(
-      "This simulation-estimation check evaluates whether the implemented observation-error models and their corresponding likelihoods are internally consistent, and whether the assessment quantities are recovered without material bias when data are generated and fitted under the same assumptions. ",
-      "If a parameter appears estimable in the fitted assessment mainly because one or a few observations are influential, repeated pseudo-data refits may fail to recover it consistently and may show persistent bias, excessive dispersion, boundary estimates or unstable fits; these patterns indicate possible implementation or practical-estimability problems. ",
-      "The converse does not hold: because the fitted Diagnostic model is treated as the generating truth, successful recovery cannot determine whether an influential observation biased that fitted truth, prove global identifiability, or validate the assumed observation-error distributions. ",
-      "Occasional influential simulated observations can appear as skewed or heavy-tailed recovery distributions, but this design does not identify leverage of a specific observation in the fitted data. Catch and empirical pre-mixing tag observations were conditioned and therefore are outside this stochastic check. ",
-      "Point-specific influence and robustness to misspecified observation-error distributions require separate leave-one-out, residual and data-weighting sensitivity diagnostics."
-    ),
-    Refitting = paste0(
-      "Each pseudo-data set was refitted independently with the recorded MFCL doitall schedule. Recovery figures include only completed refits marked converged under the archived MGC criterion (",
+      " independent pseudo-data sets were generated with replicate-specific seeds. CPUE, length-composition, age-at-length and post-mixing tag observations were simulated; catch and empirical pre-mixing tag observations remained conditioned. Each data set was refitted with the recorded MFCL doitall schedule, and figures include refits meeting the archived MGC criterion (",
       threshold_text, ")."
     ),
-    `Assessment quantities` = paste0(
+    `Purpose and scope` = paste0(
+      "This model-consistent simulation-estimation test evaluates internal consistency and practical estimability under the configured observation models. ",
+      "It can reveal finite-sample recovery problems, including weak identification that may be masked by influential observations in the fitted data. ",
+      "Such recovery problems can be consistent with reliance on observations that are atypical under the assumed likelihood, but confirming a distributional mismatch requires comparison of observed residual or influence statistics with their pseudo-data distributions. ",
+      "The test does not determine whether the fitted generating values are unbiased estimates of the unknown population."
+    ),
+    `Recovery targets` = paste0(
       "Annual depletion (SB/SB(F=0)), spawning potential (SB), no-fishing spawning potential (SB_F=0), recruitment (R) and annual fishing mortality (F) are compared with their generating truth. ",
-      "Recent management summaries use the MFCL windows read from each model: ",
-      paste(unique(window_specs), collapse = "; "), ". ",
-      "SB_recent is the mean spawning potential including terminal year T; SB_F=0 is the mean no-fishing spawning potential ending at T-1; recent depletion is their ratio. ",
-      "Recent recruitment uses the SB_recent window. The annual-F series is the population-number-weighted harvest-rate diagnostic archived by the self-test and is averaged over the model's recent-F calendar window. ",
-      "It is not the native equilibrium-yield quantity F_recent/F_MSY. ",
-      aggregate_f_text,
-      native_management_text
+      "Recent summaries use the MFCL windows read from the model: ",
+      paste(unique(window_specs), collapse = "; "), ". Native MSY quantities are read directly from MFCL output. Parameter recovery is restricted to ", parameter_text,
+      "; fixed natural mortality and high-dimensional nuisance deviations are excluded."
     ),
-    `Estimated parameters` = paste0(
-      "Parameter recovery is restricted to ", parameter_text,
-      "; fixed natural mortality and high-dimensional nuisance deviations are excluded. ",
-      "MFCL totpop is the fitted log recruitment scale (ln R0), which sets the population or mean-recruitment magnitude; it is not an untransformed recruitment count. ",
-      "Mean length at the youngest age (L1) and mean length at the oldest age (L2) anchor the growth curve, while the von Bertalanffy growth rate (K) controls the transition between them. ",
-      "Mean standard deviation of length-at-age (s1) sets the typical spread around mean length, and its age trend (s2) controls how that spread changes with age."
+    `Recovery summaries` = paste0(
+      "For each replicate, period-average relative error is calculated against the corresponding operating-model quantity. ",
+      "Figures show the empirical distributions across successful refits; these are diagnostic distributions, not parameter confidence intervals."
     ),
-    `Error summaries` = paste0(
-      "For each replicate, the period-average relative error is calculated against the same operating-model quantity. ",
-      "Tables report the median error, the central 95% empirical range and the relative root-mean-square error across successful refits."
-    ),
-    `Tag treatment` = "Tag recaptures used the validated native conditional post-mixing likelihood contract. Empirical pre-mixing tag information remained conditioned in the dynamics and was not treated as a newly simulated likelihood contribution.",
-    Interpretation = "Empirical recovery bands describe repeated pseudo-data performance under this configured generator. They are diagnostic distributions and are not parameter confidence intervals.",
     `Reporting basis` = "The simulation-estimation design follows the self-test framework described by Deroba et al. (2015), while the interpretation of observation-error variance and practical estimability follows Kim et al. (2024). Reporting follows the WCPO bigeye assessment focus used by Day et al. (2023, WCPFC-SC19-SA-WP-05) and the stock-status quantities identified for the 2026 SC22 review."
   )
   method_html <- paste0(
@@ -1786,10 +1700,10 @@ mfclshiny_selftest_write_html <- function(file, data, images, table_dir, title, 
   reference_html <- paste0(
     '<h3 class="references-heading">References</h3><ol class="reference-list"><li>',
     'Deroba, J. J. et al. (2015). <em>Simulation testing the robustness of stock assessment models to error: some results from the ICES Strategic Initiative on Stock Assessment Methods</em>. ',
-    '<em>ICES Journal of Marine Science</em> 72: 19&ndash;30. ',
+    '<em>ICES Journal of Marine Science</em> 72(1): 19&ndash;30. ',
     '<a href="https://doi.org/10.1093/icesjms/fst237">doi:10.1093/icesjms/fst237</a>.</li><li>',
     'Kim, K., Sibanda, N., Arnold, R., and A&rsquo;mar, T. (2024). <em>Enhancing data-limited assessments with random effects: a case study on Korea chub mackerel (Scomber japonicus)</em>. ',
-    '<em>Canadian Journal of Fisheries and Aquatic Sciences</em> 81: 1433&ndash;1455. ',
+    '<em>Canadian Journal of Fisheries and Aquatic Sciences</em> 81(10): 1433&ndash;1455. ',
     '<a href="https://doi.org/10.1139/cjfas-2023-0358">doi:10.1139/cjfas-2023-0358</a>.</li><li>',
     'Day, J. et al. (2023). <em>Stock assessment of bigeye tuna in the western and central Pacific Ocean: 2023</em>. ',
     'WCPFC-SC19-SA-WP-05 (Rev. 2). ',
@@ -1851,7 +1765,7 @@ mfclshiny_selftest_write_html <- function(file, data, images, table_dir, title, 
     '<h2>Results</h2><div id="selftest-results" class="results-copy">', paste(results, collapse = ""),
     reference_html, '</div><pre id="latex-selftest-results" class="copy-source">', mfclshiny_jitter_html_escape(results_latex),
     '</pre><pre id="bibtex-selftest-reference" class="copy-source">', mfclshiny_jitter_html_escape(reference_bibtex),
-    '</pre><div class="actions"><button onclick="copySection(\'selftest-results\',this)">Copy results for Word</button><button onclick="copyText(\'latex-selftest-results\',this)">Copy results for LaTeX</button><button onclick="copyText(\'bibtex-selftest-reference\',this)">Copy reference as BibTeX</button></div></section>',
+    '</pre><div class="actions"><button onclick="copySection(\'selftest-results\',this)">Copy results for Word</button><button onclick="copyText(\'latex-selftest-results\',this)">Copy results for LaTeX</button><button onclick="copyText(\'bibtex-selftest-reference\',this)">Copy references as BibTeX</button><button onclick="saveText(\'bibtex-selftest-reference\',\'bet-2026-diagnostic-selftest-references.bib\',this)">Download BibTeX (.bib)</button></div></section>',
     paste(model_sections, collapse = "\n"),
     '</main><div id="action-status" class="action-status"></div><script>',
     'function feedback(b,m){const s=document.getElementById("action-status");if(b){if(!b.dataset.label)b.dataset.label=b.textContent;b.textContent=m;b.classList.add("done");setTimeout(()=>{b.textContent=b.dataset.label;b.classList.remove("done")},1600)}if(s){s.textContent=m;s.classList.add("show");setTimeout(()=>s.classList.remove("show"),1800)}}',
@@ -1859,6 +1773,7 @@ mfclshiny_selftest_write_html <- function(file, data, images, table_dir, title, 
     'async function copySection(id,b){const e=document.getElementById(id).cloneNode(true),h=`<div style="font-family:Cambria,Georgia,serif;font-size:10.5pt;line-height:1.4;max-width:6.2in">${e.innerHTML}</div>`,t=e.innerText||e.textContent;try{await navigator.clipboard.write([new ClipboardItem({"text/html":new Blob([h],{type:"text/html"}),"text/plain":new Blob([t],{type:"text/plain"})})])}catch(x){const d=document.createElement("div");d.innerHTML=h;d.style.position="fixed";d.style.left="-10000px";document.body.appendChild(d);const r=document.createRange();r.selectNode(d);const s=window.getSelection();s.removeAllRanges();s.addRange(r);document.execCommand("copy");s.removeAllRanges();d.remove()}feedback(b,"Copied for Word")}',
     'async function copyTable(id,b){const e=document.getElementById(id),c=e.cloneNode(true);c.querySelectorAll("[contenteditable]").forEach(n=>{n.removeAttribute("contenteditable");n.removeAttribute("spellcheck");n.removeAttribute("title");n.removeAttribute("class");n.removeAttribute("style")});c.removeAttribute("style");c.removeAttribute("width");c.setAttribute("width","100%");c.style.cssText="border-collapse:collapse;width:100%;max-width:6.2in;table-layout:fixed;font-family:Cambria,Georgia,serif;font-size:8.5pt;line-height:1.18";c.querySelectorAll("th,td").forEach(n=>{n.removeAttribute("width");n.style.cssText="padding:3pt 4pt;white-space:normal;overflow-wrap:break-word;word-wrap:break-word;vertical-align:top"});const h=`<div style="width:6.2in;max-width:100%;overflow:hidden">${c.outerHTML}</div>`,t=Array.from(c.rows).map(r=>Array.from(r.cells).map(x=>x.innerText).join("\\t")).join("\\n");try{await navigator.clipboard.write([new ClipboardItem({"text/html":new Blob([h],{type:"text/html"}),"text/plain":new Blob([t],{type:"text/plain"})})])}catch(x){const d=document.createElement("div");d.innerHTML=h;d.style.position="fixed";d.style.left="-10000px";document.body.appendChild(d);const r=document.createRange();r.selectNode(d);const s=window.getSelection();s.removeAllRanges();s.addRange(r);document.execCommand("copy");s.removeAllRanges();d.remove()}feedback(b,"Copied")}',
     'async function copyFigure(i,c,b){const e=document.getElementById(i),p=document.getElementById(c).cloneNode(true);p.querySelectorAll("[contenteditable]").forEach(n=>{n.removeAttribute("contenteditable");n.removeAttribute("spellcheck");n.removeAttribute("title");n.removeAttribute("class");n.removeAttribute("style")});const h=`<div style="font-family:Cambria,Georgia,serif"><img src="${e.src}" style="display:block;width:100%;height:auto"><p style="font-size:10.5pt;line-height:1.3;margin:8pt 0 0">${p.innerHTML}</p></div>`;try{await navigator.clipboard.write([new ClipboardItem({"text/html":new Blob([h],{type:"text/html"}),"text/plain":new Blob([p.innerText],{type:"text/plain"})})])}catch(x){const d=document.createElement("div");d.innerHTML=h;d.style.position="fixed";d.style.left="-10000px";document.body.appendChild(d);const r=document.createRange();r.selectNode(d);const s=window.getSelection();s.removeAllRanges();s.addRange(r);document.execCommand("copy");s.removeAllRanges();d.remove()}feedback(b,"Copied for Word")}',
+    'function saveText(id,name,b){const e=document.getElementById(id),t=e.innerText||e.textContent,u=URL.createObjectURL(new Blob([t+"\\n"],{type:"application/x-bibtex;charset=utf-8"})),a=document.createElement("a");a.href=u;a.download=name;document.body.appendChild(a);a.click();a.remove();URL.revokeObjectURL(u);feedback(b,"BibTeX downloaded")}',
     'function saveImage(id,name,b){const a=document.createElement("a");a.href=document.getElementById(id).src;a.download=name;document.body.appendChild(a);a.click();a.remove();feedback(b,"Download started")}',
     'function showTab(id,b){document.querySelectorAll(".tab-panel").forEach(x=>x.classList.remove("active"));document.querySelectorAll(".tab-button").forEach(x=>x.classList.remove("active"));document.getElementById(id).classList.add("active");b.classList.add("active")}',
     '</script></body></html>'
@@ -1869,9 +1784,8 @@ mfclshiny_selftest_write_html <- function(file, data, images, table_dir, title, 
 
 #' Build a portable report-ready MFCL self-test bundle
 #'
-#' Creates self-test pseudo-data, recovery, convergence and tag-contract
-#' diagnostics as publication figures, LaTeX tables and a self-contained HTML
-#' review in the same style as the jitter and retrospective reports.
+#' Creates self-test pseudo-data and recovery diagnostics as publication
+#' figures and a self-contained HTML review.
 #'
 #' @param model_dir Root containing expanded model and self-test job inputs.
 #' @param output_dir Output directory.
@@ -1884,7 +1798,7 @@ mfclshiny_selftest_write_html <- function(file, data, images, table_dir, title, 
 #' @param width,height Figure dimensions in inches.
 #' @param dpi PNG resolution.
 #' @param render_html Write a self-contained HTML report.
-#' @return Invisibly returns normalized data, plots, tables and output paths.
+#' @return Invisibly returns normalized data, plots and output paths.
 #' @export
 build_selftest_report <- function(model_dir = NULL,
                                   output_dir = "selftest",
@@ -1908,12 +1822,10 @@ build_selftest_report <- function(model_dir = NULL,
   if (!length(formats)) formats <- "png"
   dir.create(output_dir, recursive = TRUE, showWarnings = FALSE)
   figure_dir <- file.path(output_dir, "figures")
-  table_dir <- file.path(output_dir, "tables")
   dir.create(figure_dir, recursive = TRUE, showWarnings = FALSE)
-  dir.create(table_dir, recursive = TRUE, showWarnings = FALSE)
   scenarios <- unique(data$runs$scenario)
   plots <- images <- list()
-  figure_rows <- table_rows <- list()
+  figure_rows <- list()
   save_plot <- function(plot, stem, plot_width = width, plot_height = height) {
     paths <- character()
     for (format in formats) {
@@ -1945,17 +1857,6 @@ build_selftest_report <- function(model_dir = NULL,
   for (scenario in scenarios) {
     slug <- mfclshiny_jitter_slug(scenario)
     years <- mfclshiny_selftest_recent_years(data, scenario, recent_years)
-    settings <- mfclshiny_selftest_recent_settings(data, scenario)
-    terminal_year <- max(years)
-    window_text <- paste0(
-      "SB_recent ", mfclshiny_selftest_year_label(years), "; ",
-      "SB_F=0 ", mfclshiny_selftest_year_label(seq.int(
-        terminal_year - settings$sbf0_years, terminal_year - 1L
-      )), "; annual-F diagnostic ", mfclshiny_selftest_year_label(seq.int(
-        terminal_year - settings$f_start_offset,
-        terminal_year - settings$f_end_offset
-      ))
-    )
     recovery_plot <- plot_selftest_recovery(data, scenario)
     key_plot <- plot_selftest_key_recovery(data, scenario, years)
     simulation_plot <- if (nrow(data$simulation[data$simulation$scenario == scenario, , drop = FALSE])) {
@@ -1982,46 +1883,11 @@ build_selftest_report <- function(model_dir = NULL,
         save_plot(simulation_plot, paste0("selftest-simulation-", slug), plot_height = 10.0)
       } else NULL
     )
-    runs <- data$runs[data$runs$scenario == scenario, , drop = FALSE]
-    included <- sum(runs$included %in% TRUE)
-    tables <- list(
-      `recent-recovery` = list(
-        value = mfclshiny_selftest_recovery_table(data, scenario, years),
-        caption = paste0(
-          "Recovery of recent and native management and assessment summaries ending in ",
-          terminal_year, " across ", included, " included self-test refits (",
-          window_text, ")."
-        )
-      ),
-      `parameter-recovery` = list(
-        value = mfclshiny_selftest_parameter_table(data, scenario),
-        caption = paste0("Recovery of selected recruitment-scale, growth and stock-recruit parameters across ", included, " included self-test refits.")
-      ),
-      `simulation-centering` = list(
-        value = mfclshiny_selftest_simulation_table(data, scenario),
-        caption = paste0("Whole-series pseudo-data errors across ", included, " included self-test replicates.")
-      )
-    )
-    for (name in names(tables)) {
-      if (!nrow(tables[[name]]$value)) next
-      bundle <- mfclshiny_jitter_write_table_bundle(
-        tables[[name]]$value,
-        paste0("selftest-", name, "-", slug),
-        table_dir,
-        tables[[name]]$caption
-      )
-      tex_file <- as.character(bundle$file[[1L]])
-      if (file.exists(tex_file)) {
-        tex_lines <- readLines(tex_file, warn = FALSE)
-        writeLines(mfclshiny_selftest_latex_math(tex_lines), tex_file, useBytes = TRUE)
-      }
-      table_rows[[length(table_rows) + 1L]] <- bundle
-    }
   }
   html_file <- file.path(output_dir, "selftest-report.html")
   if (isTRUE(render_html)) {
     mfclshiny_selftest_write_html(
-      html_file, data, images, table_dir, title,
+      html_file, data, images, NULL, title,
       recent_years = recent_years
     )
   }
@@ -2029,7 +1895,7 @@ build_selftest_report <- function(model_dir = NULL,
     data = data,
     plots = plots,
     figures = mfclshiny_selftest_bind_rows(figure_rows),
-    tables = mfclshiny_selftest_bind_rows(table_rows),
+    tables = data.frame(),
     html = if (isTRUE(render_html)) normalizePath(html_file, winslash = "/", mustWork = FALSE) else "",
     html_image_dpi = as.integer(dpi),
     html_uses_publication_png = TRUE,
