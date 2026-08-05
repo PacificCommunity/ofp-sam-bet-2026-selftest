@@ -1,0 +1,19 @@
+% Requires \usepackage{booktabs,tabularx,array}
+\begin{table}[htbp]
+\centering
+\caption{Whole-series pseudo-data errors across 50 included self-test replicates.}
+\label{tab:selftest-simulation-centering-diagnostic}
+\small
+\setlength{\tabcolsep}{7pt}
+\renewcommand{\arraystretch}{1.08}
+\begin{tabularx}{\textwidth}{@{}>{\raggedright\arraybackslash}X>{\raggedleft\arraybackslash}X>{\raggedleft\arraybackslash}X>{\raggedleft\arraybackslash}X>{\raggedleft\arraybackslash}X@{}}
+\toprule
+\textbf{Component} & \textbf{Replicates} & \textbf{Median error (\%)} & \textbf{95\% empirical range (\%)} & \textbf{Relative RMSE (\%)} \\
+\midrule
+CPUE & 50 &     0.05 & -1.69 to 1.37 &     0.85 \\
+Mean observed length & 50 &     0.07 & -0.12 to 0.31 &     0.15 \\
+Mean age at length & 50 &    -0.02 & -2.66 to 1.81 &     1.19 \\
+Post-mixing tag recaptures & 50 &    -0.23 & -3.08 to 2.72 &     1.47 \\
+\bottomrule
+\end{tabularx}
+\end{table}

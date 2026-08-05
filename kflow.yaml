@@ -1,0 +1,30 @@
+name: bet-2026-diagnostic-selftest-report
+description: Build the public, self-contained BET 2026 Diagnostic model self-test report from 50 completed simulate-refit payloads; tau=2 is fixed in the generating model and every refit.
+branch: main
+command: bash run-report
+docker_image: ghcr.io/pacificcommunity/tuna-flow:v2.5@sha256:c87f1f6d9d4f62dc447844b58afe35f96af175bf933cb6cffbbbe39a59172360
+remote_host: kflow-local-kyuhank-nc240124
+remote_user: kyuhank
+remote_base_dir: /home/kyuhank/KflowOutput
+
+resources:
+  cpus: 2
+  memory: 8GB
+  disk: 10GB
+
+env:
+  KFLOW_RUNTIME_REQUIRE_PRIVATE_PACKAGES: "false"
+  KFLOW_RUNTIME_UPDATE: "off"
+  KFLOW_RUNTIME_PACKAGES: none
+  KFLOW_REPO_RUNTIME_PACKAGES: none
+
+output_patterns:
+  - results/**
+
+artifacts:
+  - path: results/selftest-report.html
+    label: Diagnostic model self-test report
+    render: true
+  - path: results/selftest-audit.csv
+    label: Self-test audit
+    render: true

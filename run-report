@@ -1,0 +1,7 @@
+#!/bin/sh
+set -eu
+
+sha256sum -c data/SHA256SUMS
+Rscript report/validate.R
+Rscript report/render.R
+Rscript report/validate.R --outputs
