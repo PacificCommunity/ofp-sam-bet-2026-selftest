@@ -73,6 +73,23 @@ if (check_outputs) {
   if (!grepl("no-fishing spawning potential", html, ignore.case = TRUE)) {
     stop("Dynamic no-fishing spawning-potential panel is missing.", call. = FALSE)
   }
+  if (!grepl("quarterly age classes", html, fixed = TRUE)) {
+    stop("Quarterly age-class units are missing from the simulation figure caption.", call. = FALSE)
+  }
+  if (!grepl("<i>SB</i><sub>MSY</sub>", html, fixed = TRUE) ||
+      grepl("<i>B</i><sup>S</sup><sub>MSY</sub>", html, fixed = TRUE)) {
+    stop("Spawning biomass at MSY is not using the report-standard SB_MSY notation.", call. = FALSE)
+  }
+  stale_caption_text <- c(
+    "unsuccessful or non-converged replicates are excluded",
+    "successful pseudo-data replicates",
+    "successful pseudo-data refits",
+    "Unavailable native quantities are omitted rather than approximated"
+  )
+  stale_hit <- stale_caption_text[vapply(stale_caption_text, grepl, logical(1), x = html, fixed = TRUE)]
+  if (length(stale_hit)) {
+    stop("Stale conditional caption text remains: ", paste(stale_hit, collapse = "; "), call. = FALSE)
+  }
   if (grepl("Replicate convergence", html, fixed = TRUE) || grepl("Tag simulation contract", html, fixed = TRUE)) {
     stop("Internal ledger tables must not appear in the report.", call. = FALSE)
   }

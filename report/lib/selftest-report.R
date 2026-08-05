@@ -110,7 +110,7 @@ mfclshiny_selftest_native_management_labels <- function() {
   c(
     msy = "Maximum sustainable yield (MSY)",
     fmsy = "Fishing mortality at MSY (F_MSY)",
-    sbmsy = "Equilibrium spawning biomass at MSY (B^S_MSY)",
+    sbmsy = "Equilibrium spawning biomass at MSY (SB_MSY)",
     frecent_fmsy = "Recent fishing mortality relative to MSY (F_recent/F_MSY)"
   )
 }
@@ -123,32 +123,45 @@ mfclshiny_selftest_report_quantities <- function() {
     "Recent recruitment (R_recent)",
     "Maximum sustainable yield (MSY)",
     "Fishing mortality at MSY (F_MSY)",
-    "Equilibrium spawning biomass at MSY (B^S_MSY)",
+    "Equilibrium spawning biomass at MSY (SB_MSY)",
     "Recent fishing mortality relative to MSY (F_recent/F_MSY)"
   )
 }
 
 mfclshiny_selftest_parameter_labels <- function() {
   c(
-    kappa = "von Bertalanffy growth rate (K)",
+    kappa = "von Bertalanffy growth coefficient (K)",
     L1 = "Mean length at youngest age (L1)",
     L2 = "Mean length at oldest age (L2)",
-    s1 = "Mean SD of length-at-age (s1)",
-    s2 = "Age trend in length-at-age SD (s2)",
-    totpop = "Log recruitment scale (ln R0)"
+    s1 = "Length-at-age SD scale (s1)",
+    s2 = "Age-related trend in length-at-age SD (s2)",
+    totpop = "Recruitment scale (ln R0)"
   )
 }
 
 mfclshiny_selftest_key_parameter_labels <- function() {
   c(
-    totpop = "Log recruitment scale (ln R0)",
-    `sv(21)` = "Stock-recruit density-dependence coefficient",
+    totpop = "Recruitment scale (ln R0)",
+    `sv(21)` = "Stock-recruitment density-dependence coefficient",
     `vb_coff(1)` = "Mean length at youngest age (L1)",
     `vb_coff(2)` = "Mean length at oldest age (L2)",
-    `vb_coff(3)` = "von Bertalanffy growth rate (K)",
-    `var_coff(1)` = "Mean SD of length-at-age (s1)",
-    `var_coff(2)` = "Age trend in length-at-age SD (s2)"
+    `vb_coff(3)` = "von Bertalanffy growth coefficient (K)",
+    `var_coff(1)` = "Length-at-age SD scale (s1)",
+    `var_coff(2)` = "Age-related trend in length-at-age SD (s2)"
   )
+}
+
+mfclshiny_selftest_normalize_parameter_labels <- function(x) {
+  if (!is.data.frame(x) || !nrow(x) ||
+      !all(c("parameter", "parameter_label") %in% names(x))) return(x)
+  labels <- c(
+    mfclshiny_selftest_key_parameter_labels(),
+    mfclshiny_selftest_parameter_labels()
+  )
+  matched <- match(as.character(x$parameter), names(labels))
+  replace <- is.finite(matched)
+  x$parameter_label[replace] <- unname(labels[matched[replace]])
+  x
 }
 
 mfclshiny_selftest_recent_years <- function(data, scenario, years = NULL, n_years = 4L) {
@@ -834,6 +847,12 @@ mfclshiny_selftest_management_records <- function(data, scenario, years = NULL) 
       drop = FALSE
     ]
   } else data.frame()
+  if (nrow(native) && "metric" %in% names(native) && "quantity" %in% names(native)) {
+    labels <- mfclshiny_selftest_native_management_labels()
+    matched <- match(as.character(native$metric), names(labels))
+    replace <- is.finite(matched)
+    native$quantity[replace] <- unname(labels[matched[replace]])
+  }
   mfclshiny_selftest_bind_rows(list(recent, native))
 }
 
@@ -864,7 +883,7 @@ plot_selftest_recent_bias <- function(data, scenario = NULL, years = NULL) {
     bquote("mean"~F/F[MSY]),
     "MSY",
     bquote(F[MSY]),
-    bquote(B[MSY]^S),
+    bquote(SB[MSY]),
     bquote(F[recent]/F[MSY])
   )
   names(quantity_labels) <- quantity_order
@@ -898,6 +917,7 @@ plot_selftest_parameter_recovery <- function(data, scenario = NULL) {
     ,
     drop = FALSE
   ]
+  x <- mfclshiny_selftest_normalize_parameter_labels(x)
   if (!nrow(x)) stop("No key-parameter recovery data were found.", call. = FALSE)
   order <- unique(c(
     unname(mfclshiny_selftest_key_parameter_labels()),
@@ -941,9 +961,11 @@ plot_selftest_key_recovery <- function(data, scenario = NULL, years = NULL) {
 
   parameters <- data$parameters[
     data$parameters$scenario == scenario & data$parameters$replicate %in% included,
-    c("replicate", "parameter_label", "relative_error"),
+    ,
     drop = FALSE
   ]
+  parameters <- mfclshiny_selftest_normalize_parameter_labels(parameters)
+  parameters <- parameters[, c("replicate", "parameter_label", "relative_error"), drop = FALSE]
   names(parameters)[names(parameters) == "parameter_label"] <- "label"
   parameters$group <- "Selected parameters"
 
@@ -971,15 +993,15 @@ plot_selftest_key_recovery <- function(data, scenario = NULL, years = NULL) {
     bquote("mean"~F/F[MSY]),
     "MSY",
     bquote(F[MSY]),
-    bquote(B[MSY]^S),
+    bquote(SB[MSY]),
     bquote(F[recent]/F[MSY]),
-    bquote(ln(R[0])),
-    "SR density dependence",
-    bquote(L[1]~"(youngest)"),
-    bquote(L[2]~"(oldest)"),
-    bquote(K~"(growth)"),
-    bquote(s[1]~"(mean SD)"),
-    bquote(s[2]~"(SD age trend)")
+    bquote("Recruitment scale,"~ln(R[0])),
+    "Stock-recruitment coefficient",
+    bquote("Youngest-age length,"~L[1]),
+    bquote("Oldest-age length,"~L[2]),
+    bquote("Growth coefficient,"~K),
+    bquote("Length-at-age SD scale,"~s[1]),
+    bquote("Age-related SD trend,"~s[2])
   )
   names(compact_labels) <- c(
     quantity_order,
@@ -1056,7 +1078,7 @@ plot_selftest_simulation <- function(data, scenario = NULL) {
   component_labels <- c(
     CPUE = "CPUE~index",
     `length mean` = "Mean~length~(cm)",
-    `age-length mean age` = "Mean~age~(years)",
+    `age-length mean age` = "Mean~age~(quarters)",
     `tag recaptures by region` = "Tag~recaptures~(count)"
   )
   time_plots <- lapply(seq_along(component_labels), function(index) {
@@ -1096,27 +1118,12 @@ plot_selftest_simulation <- function(data, scenario = NULL) {
   bias$component <- factor(
     bias$component,
     levels = names(component_labels),
-    labels = c("CPUE", "Mean length", "Mean age-at-length", "Post-mixing tags")
+    labels = c("CPUE", "Mean length", "Mean age (quarters)", "Post-mixing tags")
   )
-  medians <- stats::aggregate(bias ~ component, bias, stats::median)
-  medians$label <- paste0("Median ", sprintf("%+.2f%%", medians$bias))
-  label_height <- max(bias$bias, na.rm = TRUE)
-  medians$label_height <- label_height + max(0.25, diff(range(bias$bias, na.rm = TRUE)) * 0.08)
   bias_plot <- ggplot2::ggplot(bias, ggplot2::aes(x = component, y = bias)) +
     ggplot2::geom_hline(yintercept = 0, colour = "#c62828", linewidth = 0.38) +
     ggplot2::geom_boxplot(width = 0.48, outlier.shape = NA, fill = "#c7dfcf", colour = "#123b5d") +
     ggplot2::geom_jitter(width = 0.11, height = 0, size = 1.25, alpha = 0.52, colour = "#24784f") +
-    ggplot2::geom_label(
-      data = medians,
-      ggplot2::aes(x = component, y = label_height, label = label),
-      inherit.aes = FALSE,
-      family = "serif",
-      size = 3.0,
-      linewidth = 0.22,
-      label.padding = grid::unit(0.14, "lines"),
-      colour = "#123b5d",
-      fill = "white"
-    ) +
     ggplot2::labs(x = NULL, y = "Whole-series simulation bias (%)") +
     ggplot2::theme_bw(base_size = 12.2, base_family = "serif") +
     ggplot2::theme(
@@ -1156,7 +1163,7 @@ mfclshiny_selftest_simulation_table <- function(data, scenario) {
   labels <- c(
     CPUE = "CPUE",
     `length mean` = "Mean observed length",
-    `age-length mean age` = "Mean age at length",
+    `age-length mean age` = "Mean age at length (quarters)",
     `tag recaptures by region` = "Post-mixing tag recaptures"
   )
   groups <- split(seq_len(nrow(x)), x$component)
@@ -1278,6 +1285,7 @@ mfclshiny_selftest_parameter_table <- function(data, scenario) {
     ,
     drop = FALSE
   ]
+  x <- mfclshiny_selftest_normalize_parameter_labels(x)
   groups <- split(seq_len(nrow(x)), x$parameter_label)
   out <- mfclshiny_selftest_bind_rows(lapply(groups, function(index) {
     error <- x$relative_error[index]
@@ -1412,37 +1420,48 @@ mfclshiny_selftest_results_text <- function(data, scenario, years = NULL) {
 mfclshiny_selftest_figure_caption <- function(kind, model_name, included, total, years = NULL) {
   period_label <- mfclshiny_selftest_year_label(years)
   terminal_year <- if (length(years)) max(years) else "the terminal year"
+  model_reference <- if (grepl("^the\\s", model_name, ignore.case = TRUE)) {
+    model_name
+  } else {
+    paste("the", model_name)
+  }
+  replicate_phrase <- if (identical(as.integer(included), as.integer(total))) {
+    paste0("all ", total, " replicate refits")
+  } else {
+    paste0(included, " retained replicate refits")
+  }
+  exclusion_sentence <- if (included < total) {
+    paste0(" ", total - included, " replicate refit", if (total - included == 1L) " was" else "s were", " not retained.")
+  } else ""
   switch(
     kind,
     recovery = paste0(
-      "Self-test recovery of annual assessment quantities for ", model_name, ". The red line is the generating truth; ",
-      "the dark-blue line is the median refit across ", included, " successful replicates, and the nested blue bands are the ",
-      "central 50%, 80%, and 95% empirical ranges. ", included, " of ", total,
-      " replicates are included; unsuccessful or non-converged replicates are excluded. Dynamic depletion is ",
+      "Self-test recovery of annual assessment quantities for ", model_reference, ". The red line is the generating truth; ",
+      "the dark-blue line is the median across ", replicate_phrase, ", and the nested blue bands are the ",
+      "central 50%, 80%, and 95% empirical ranges.", exclusion_sentence, " Dynamic depletion is ",
       "SB_t/SB_{F=0,t}, and the no-fishing spawning potential panel shows its time-specific denominator."
     ),
     recent = paste0(
       "Relative recovery error for recent management and assessment summaries ending in ", terminal_year,
-      " in ", model_name,
-      ". Points are successful pseudo-data replicates, boxes show their empirical distribution, and the red line marks zero bias."
+      " in ", model_reference,
+      ". Points are pseudo-data refits, boxes show their empirical distribution, and the red line marks zero bias."
     ),
     parameters = paste0(
-      "Relative recovery error for key estimated parameters in ", model_name,
-      ". Points are successful pseudo-data refits; the red line marks exact recovery. Fixed natural mortality is not treated as an estimated recovery target."
+      "Relative recovery error for key estimated parameters in ", model_reference,
+      ". Points are pseudo-data refits; the red line marks exact recovery."
     ),
     key = paste0(
       "Relative recovery error for recent management and assessment quantities ending in ", terminal_year,
-      " and for selected estimated parameters in ", model_name,
+      " and for selected estimated parameters in ", model_reference,
       ". The left panel includes recent depletion, recent and no-fishing spawning potential, recent recruitment, ",
       "MSY, ", "fishing mortality and equilibrium spawning biomass at MSY, and recent fishing mortality relative to MSY. ",
-      "Points are successful pseudo-data refits, boxes show their empirical distributions, and the red line marks exact recovery. ",
-      "Grey dashed lines mark relative recovery errors of -5% and +5%. ",
-      "Unavailable native quantities are omitted rather than approximated; fixed natural mortality and high-dimensional nuisance deviations are not included."
+      "Points are pseudo-data refits, boxes show their empirical distributions, and the red line marks exact recovery. ",
+      "Grey dashed lines mark relative recovery errors of -5% and +5%."
     ),
     simulation = paste0(
-      "Pseudo-data generation checks for ", model_name,
-      ". The dark-blue line is the median across successful pseudo-data replicates, the blue band is the central 95% empirical range, ",
-      "and the dashed red line is the generating expectation. CPUE, mean length and mean age-at-length are sample-weighted across series; ",
+      "Pseudo-data generation checks for ", model_reference,
+      ". The dark-blue line is the median across all ", total, " pseudo-data replicates, the blue band is the central 95% empirical range, ",
+      "and the dashed red line is the generating expectation. CPUE, mean length and mean age-at-length (in quarterly age classes) are sample-weighted across series; ",
       "post-mixing tag recaptures are summed across regions. The lower panel shows whole-series relative error for each replicate."
     )
   )
@@ -1459,7 +1478,7 @@ mfclshiny_selftest_html_math <- function(x) {
     "Recent aggregate fishing mortality (mean F/FMSY)" = 'Recent aggregate fishing mortality (<span class="math-inline"><span style="text-decoration:overline"><i>F</i>/<i>F</i><sub>MSY</sub></span></span>)',
     "Maximum sustainable yield (MSY)" = 'Maximum sustainable yield (<span class="math-inline">MSY</span>)',
     "Fishing mortality at MSY (F_MSY)" = 'Fishing mortality at MSY (<span class="math-inline"><i>F</i><sub>MSY</sub></span>)',
-    "Equilibrium spawning biomass at MSY (B^S_MSY)" = 'Equilibrium spawning biomass at MSY (<span class="math-inline"><i>B</i><sup>S</sup><sub>MSY</sub></span>)',
+    "Equilibrium spawning biomass at MSY (SB_MSY)" = 'Equilibrium spawning biomass at MSY (<span class="math-inline"><i>SB</i><sub>MSY</sub></span>)',
     "Recent fishing mortality relative to MSY (F_recent/F_MSY)" = 'Recent fishing mortality relative to MSY (<span class="math-inline"><i>F</i><sub>recent</sub>/<i>F</i><sub>MSY</sub></span>)',
     "SB_recent/SB_F=0" = '<span class="math-inline"><i>SB</i><sub>recent</sub>/<i>SB</i><sub><i>F</i>=0</sub></span>',
     "SB_recent" = '<span class="math-inline"><i>SB</i><sub>recent</sub></span>',
@@ -1472,9 +1491,10 @@ mfclshiny_selftest_html_math <- function(x) {
     "Aggregate fishing mortality (F/FMSY)" = 'Aggregate fishing mortality (<span class="math-inline"><i>F</i>/<i>F</i><sub>MSY</sub></span>)',
     "SB/SB(F=0)" = '<span class="math-inline"><i>SB</i>/<i>SB</i><sub><i>F</i>=0</sub></span>',
     "F_recent/F_MSY" = '<span class="math-inline"><i>F</i><sub>recent</sub>/<i>F</i><sub>MSY</sub></span>',
-    "Log recruitment scale (ln R0)" = 'Log recruitment scale (ln <i>R</i><sub>0</sub>)',
-    "Mean SD of length-at-age (s1)" = 'Mean SD of length-at-age (<i>s</i><sub>1</sub>)',
-    "Age trend in length-at-age SD (s2)" = 'Age trend in length-at-age SD (<i>s</i><sub>2</sub>)',
+    "SB_MSY" = '<span class="math-inline"><i>SB</i><sub>MSY</sub></span>',
+    "Recruitment scale (ln R0)" = 'Recruitment scale (ln <i>R</i><sub>0</sub>)',
+    "Length-at-age SD scale (s1)" = 'Length-at-age SD scale (<i>s</i><sub>1</sub>)',
+    "Age-related trend in length-at-age SD (s2)" = 'Age-related trend in length-at-age SD (<i>s</i><sub>2</sub>)',
     "(L1)" = '(<i>L</i><sub>1</sub>)',
     "(L2)" = '(<i>L</i><sub>2</sub>)',
     "(K)" = '(<i>K</i>)',
@@ -1497,7 +1517,7 @@ mfclshiny_selftest_latex_math <- function(x) {
     "Recent aggregate fishing mortality (mean F/FMSY)" = "Recent aggregate fishing mortality ($\\overline{F/F_{\\mathrm{MSY}}}$)",
     "Maximum sustainable yield (MSY)" = "Maximum sustainable yield (MSY)",
     "Fishing mortality at MSY (F\\_MSY)" = "Fishing mortality at MSY ($F_{\\mathrm{MSY}}$)",
-    "Equilibrium spawning biomass at MSY (B^S\\_MSY)" = "Equilibrium spawning biomass at MSY ($B^{S}_{\\mathrm{MSY}}$)",
+    "Equilibrium spawning biomass at MSY (SB\\_MSY)" = "Equilibrium spawning biomass at MSY ($\\mathrm{SB}_{\\mathrm{MSY}}$)",
     "Recent fishing mortality relative to MSY (F\\_recent/F\\_MSY)" = "Recent fishing mortality relative to MSY ($F_{\\mathrm{recent}}/F_{\\mathrm{MSY}}$)",
     "SB\\_recent/SB\\_F=0" = "$\\mathrm{SB}_{\\mathrm{recent}}/\\allowbreak\\mathrm{SB}_{F=0}$",
     "SB\\_recent" = "$\\mathrm{SB}_{\\mathrm{recent}}$",
@@ -1510,9 +1530,10 @@ mfclshiny_selftest_latex_math <- function(x) {
     "Aggregate fishing mortality (F/FMSY)" = "Aggregate fishing mortality ($F/F_{\\mathrm{MSY}}$)",
     "SB/SB(F=0)" = "$\\mathrm{SB}/\\mathrm{SB}_{F=0}$",
     "F\\_recent/F\\_MSY" = "$F_{\\mathrm{recent}}/F_{\\mathrm{MSY}}$",
-    "Log recruitment scale (ln R0)" = "Log recruitment scale ($\\ln R_0$)",
-    "Mean SD of length-at-age (s1)" = "Mean SD of length-at-age ($s_1$)",
-    "Age trend in length-at-age SD (s2)" = "Age trend in length-at-age SD ($s_2$)",
+    "SB\\_MSY" = "$\\mathrm{SB}_{\\mathrm{MSY}}$",
+    "Recruitment scale (ln R0)" = "Recruitment scale ($\\ln R_0$)",
+    "Length-at-age SD scale (s1)" = "Length-at-age SD scale ($s_1$)",
+    "Age-related trend in length-at-age SD (s2)" = "Age-related trend in length-at-age SD ($s_2$)",
     "(L1)" = "($L_1$)",
     "(L2)" = "($L_2$)",
     "(K)" = "($K$)",
@@ -1600,13 +1621,25 @@ mfclshiny_selftest_write_html <- function(file, data, images, table_dir, title, 
   replicate_counts <- vapply(scenarios, function(scenario) {
     nrow(data$runs[data$runs$scenario == scenario, , drop = FALSE])
   }, integer(1L))
+  included_counts <- vapply(scenarios, function(scenario) {
+    length(mfclshiny_selftest_included_replicates(data, scenario))
+  }, integer(1L))
   replicate_text <- paste(sort(unique(replicate_counts)), collapse = " or ")
+  refit_result_text <- if (all(included_counts == replicate_counts)) {
+    paste0("All ", replicate_text, " refits met")
+  } else {
+    paste0(
+      paste(sort(unique(included_counts)), collapse = " or "), " of ", replicate_text,
+      " refits met"
+    )
+  }
   thresholds <- suppressWarnings(as.numeric(unique(data$runs$grad_reference)))
   thresholds <- thresholds[is.finite(thresholds) & thresholds > 0]
   threshold_text <- if (length(thresholds)) {
     paste(formatC(sort(unique(thresholds)), format = "e", digits = 1), collapse = " or ")
   } else "the recorded threshold"
-  parameter_text <- paste(unique(as.character(data$parameters$parameter_label)), collapse = ", ")
+  report_parameters <- mfclshiny_selftest_normalize_parameter_labels(data$parameters)
+  parameter_text <- paste(unique(as.character(report_parameters$parameter_label)), collapse = ", ")
   window_specs <- vapply(scenarios, function(scenario) {
     settings <- mfclshiny_selftest_recent_settings(data, scenario)
     paste0(
@@ -1624,7 +1657,7 @@ mfclshiny_selftest_write_html <- function(file, data, images, table_dir, title, 
     `Simulation and refitting` = paste0(
       replicate_text,
       " independent pseudo-data sets were generated with replicate-specific seeds. CPUE, length-composition, age-at-length and post-mixing tag observations were simulated; catch and empirical pre-mixing tag observations remained conditioned. Each data set was refitted with the recorded MFCL doitall schedule, and figures include refits meeting the archived MGC criterion (",
-      threshold_text, ")."
+      threshold_text, "). ", refit_result_text, " this criterion."
     ),
     `Purpose and scope` = paste0(
       "This model-consistent simulation-estimation test evaluates internal consistency and practical estimability under the configured observation models. ",
@@ -1635,12 +1668,11 @@ mfclshiny_selftest_write_html <- function(file, data, images, table_dir, title, 
     `Recovery targets` = paste0(
       "Annual depletion (SB/SB(F=0)), spawning potential (SB), no-fishing spawning potential (SB_F=0), recruitment (R) and annual fishing mortality (F) are compared with their generating truth. ",
       "Recent summaries use the MFCL windows read from the model: ",
-      paste(unique(window_specs), collapse = "; "), ". Native MSY quantities are read directly from MFCL output. Parameter recovery is restricted to ", parameter_text,
-      "; fixed natural mortality and high-dimensional nuisance deviations are excluded."
+      paste(unique(window_specs), collapse = "; "), ". Native MSY quantities are read directly from MFCL output, with equilibrium spawning biomass at MSY denoted SB_MSY. Parameter recovery is restricted to ", parameter_text, "."
     ),
     `Recovery summaries` = paste0(
       "For each replicate, period-average relative error is calculated against the corresponding operating-model quantity. ",
-      "Figures show the empirical distributions across successful refits; these are diagnostic distributions, not parameter confidence intervals."
+      "Figures show the empirical distributions across the refits; these are diagnostic distributions, not parameter confidence intervals."
     ),
     `Reporting basis` = "The simulation-estimation design follows the self-test framework described by Deroba et al. (2015), while the interpretation of observation-error variance and practical estimability follows Kim et al. (2024). Reporting follows the WCPO bigeye assessment focus used by Day et al. (2023, WCPFC-SC19-SA-WP-05) and the stock-status quantities identified for the 2026 SC22 review."
   )
@@ -1657,7 +1689,7 @@ mfclshiny_selftest_write_html <- function(file, data, images, table_dir, title, 
     '(<span style="text-decoration:overline"><i>X</i></span><sup>refit</sup><sub><i>r</i></sub> &minus; ',
     '<span style="text-decoration:overline"><i>X</i></span><sup>truth</sup>) / ',
     '|<span style="text-decoration:overline"><i>X</i></span><sup>truth</sup>|</span>',
-    '</div><p class="formula-note">Here, <i>r</i> indexes a successful self-test replicate, <i>X</i> is an assessment quantity or selected estimated parameter, and the overbar denotes the mean over the model-specific recent period when a period average is reported. Relative RMSE is <span class="math-inline">&radic;[mean<sub><i>r</i></sub>(<i>e</i><sub><i>r</i>,<i>X</i></sub><sup>2</sup>)]</span>.</p>'
+    '</div><p class="formula-note">Here, <i>r</i> indexes a self-test replicate, <i>X</i> is an assessment quantity or selected estimated parameter, and the overbar denotes the mean over the model-specific recent period when a period average is reported. Relative RMSE is <span class="math-inline">&radic;[mean<sub><i>r</i></sub>(<i>e</i><sub><i>r</i>,<i>X</i></sub><sup>2</sup>)]</span>.</p>'
   )
   method_latex_items <- paste0(
     "\\item \\textbf{", mfclshiny_jitter_latex_escape(names(method_items)), ".} ",
@@ -1672,7 +1704,7 @@ mfclshiny_selftest_write_html <- function(file, data, images, table_dir, title, 
     "\\qquad",
     "\\mathrm{RRMSE}_{X}=\\sqrt{\\frac{1}{n}\\sum_{r=1}^{n} e_{r,X}^{2}}.",
     "\\]",
-    "Here, $r$ indexes a successful self-test replicate, $X$ is an assessment quantity or selected estimated parameter, and the overbar denotes the mean over the model-specific recent period when a period average is reported.",
+    "Here, $r$ indexes a self-test replicate, $X$ is an assessment quantity or selected estimated parameter, and the overbar denotes the mean over the model-specific recent period when a period average is reported.",
     sep = "\n"
   )
   results <- vapply(scenarios, function(scenario) {
