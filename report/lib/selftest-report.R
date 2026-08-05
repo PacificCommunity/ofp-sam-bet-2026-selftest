@@ -1696,9 +1696,10 @@ mfclshiny_selftest_write_html <- function(file, data, images, table_dir, title, 
     ),
     `Purpose and scope` = paste0(
       "This simulation-estimation check evaluates whether the implemented observation-error models and their corresponding likelihoods are internally consistent, and whether the assessment quantities are recovered without material bias when data are generated and fitted under the same assumptions. ",
-      "Persistent bias, excessive dispersion, boundary estimates or unstable fits under this model-consistent design indicate possible implementation or practical-estimability problems, although successful recovery does not by itself prove global identifiability. ",
+      "If a parameter appears estimable in the fitted assessment mainly because one or a few observations are influential, repeated pseudo-data refits may fail to recover it consistently and may show persistent bias, excessive dispersion, boundary estimates or unstable fits; these patterns indicate possible implementation or practical-estimability problems. ",
+      "The converse does not hold: because the fitted Diagnostic model is treated as the generating truth, successful recovery cannot determine whether an influential observation biased that fitted truth, prove global identifiability, or validate the assumed observation-error distributions. ",
       "Occasional influential simulated observations can appear as skewed or heavy-tailed recovery distributions, but this design does not identify leverage of a specific observation in the fitted data. Catch and empirical pre-mixing tag observations were conditioned and therefore are outside this stochastic check. ",
-      "Robustness to misspecified observation-error distributions and point-specific influence require separate misspecification and leave-one-out or residual diagnostics."
+      "Point-specific influence and robustness to misspecified observation-error distributions require separate leave-one-out, residual and data-weighting sensitivity diagnostics."
     ),
     Refitting = paste0(
       "Each pseudo-data set was refitted independently with the recorded MFCL doitall schedule. Recovery figures include only completed refits marked converged under the archived MGC criterion (",
