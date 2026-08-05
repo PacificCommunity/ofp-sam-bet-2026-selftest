@@ -1692,7 +1692,13 @@ mfclshiny_selftest_write_html <- function(file, data, images, table_dir, title, 
     ),
     `Pseudo-data generation` = paste0(
       replicate_text,
-      " independent pseudo-data sets per model were generated with replicate-specific seeds. CPUE, length composition, age-at-length and post-mixing tag observations were simulated under the archived model settings; catch and empirical pre-mixing tag observations remained conditioned."
+      " independent pseudo-data sets were generated from the Diagnostic model with replicate-specific seeds. CPUE, length-composition, age-at-length and post-mixing tag observations were simulated from their fitted observation models; catch and empirical pre-mixing tag observations remained conditioned."
+    ),
+    `Purpose and scope` = paste0(
+      "This simulation-estimation check evaluates whether the implemented observation-error models and their corresponding likelihoods are internally consistent, and whether the assessment quantities are recovered without material bias when data are generated and fitted under the same assumptions. ",
+      "Persistent bias, excessive dispersion, boundary estimates or unstable fits under this model-consistent design indicate possible implementation or practical-estimability problems, although successful recovery does not by itself prove global identifiability. ",
+      "Occasional influential simulated observations can appear as skewed or heavy-tailed recovery distributions, but this design does not identify leverage of a specific observation in the fitted data. Catch and empirical pre-mixing tag observations were conditioned and therefore are outside this stochastic check. ",
+      "Robustness to misspecified observation-error distributions and point-specific influence require separate misspecification and leave-one-out or residual diagnostics."
     ),
     Refitting = paste0(
       "Each pseudo-data set was refitted independently with the recorded MFCL doitall schedule. Recovery figures include only completed refits marked converged under the archived MGC criterion (",
@@ -1721,7 +1727,7 @@ mfclshiny_selftest_write_html <- function(file, data, images, table_dir, title, 
     ),
     `Tag treatment` = "Tag recaptures used the validated native conditional post-mixing likelihood contract. Empirical pre-mixing tag information remained conditioned in the dynamics and was not treated as a newly simulated likelihood contribution.",
     Interpretation = "Empirical recovery bands describe repeated pseudo-data performance under this configured generator. They are diagnostic distributions and are not parameter confidence intervals.",
-    `Reporting basis` = "The diagnostic follows the native MFCL simulation-estimation runner, the WCPO bigeye assessment reporting focus used by Day et al. (2023, WCPFC-SC19-SA-WP-05), and the stock-status quantities identified for the 2026 SC22 review."
+    `Reporting basis` = "The simulation-estimation design follows the self-test framework described by Deroba et al. (2015), while the interpretation of observation-error variance and practical estimability follows Kim et al. (2024). Reporting follows the WCPO bigeye assessment focus used by Day et al. (2023, WCPFC-SC19-SA-WP-05) and the stock-status quantities identified for the 2026 SC22 review."
   )
   method_html <- paste0(
     '<ul class="method-list">',
@@ -1778,6 +1784,12 @@ mfclshiny_selftest_write_html <- function(file, data, images, table_dir, title, 
   }, character(1L)), collapse = "\n\n")
   reference_html <- paste0(
     '<h3 class="references-heading">References</h3><ol class="reference-list"><li>',
+    'Deroba, J. J. et al. (2015). <em>Simulation testing the robustness of stock assessment models to error: some results from the ICES Strategic Initiative on Stock Assessment Methods</em>. ',
+    '<em>ICES Journal of Marine Science</em> 72: 19&ndash;30. ',
+    '<a href="https://doi.org/10.1093/icesjms/fst237">doi:10.1093/icesjms/fst237</a>.</li><li>',
+    'Kim, K., Sibanda, N., Arnold, R., and A&rsquo;mar, T. (2024). <em>Enhancing data-limited assessments with random effects: a case study on Korea chub mackerel (Scomber japonicus)</em>. ',
+    '<em>Canadian Journal of Fisheries and Aquatic Sciences</em> 81: 1433&ndash;1455. ',
+    '<a href="https://doi.org/10.1139/cjfas-2023-0358">doi:10.1139/cjfas-2023-0358</a>.</li><li>',
     'Day, J. et al. (2023). <em>Stock assessment of bigeye tuna in the western and central Pacific Ocean: 2023</em>. ',
     'WCPFC-SC19-SA-WP-05 (Rev. 2). ',
     '<a href="https://meetings.wcpfc.int/node/19353">WCPFC document page</a>.</li>',
@@ -1785,6 +1797,28 @@ mfclshiny_selftest_write_html <- function(file, data, images, table_dir, title, 
     '<a href="https://meetings.wcpfc.int/taxonomy/term/2845">WCPFC SC22 document page</a>.</li></ol>'
   )
   reference_bibtex <- paste(
+    "@article{deroba2015simulation,",
+    "  author = {Deroba, Jonathan J. and others},",
+    "  title = {Simulation testing the robustness of stock assessment models to error: some results from the {ICES} Strategic Initiative on Stock Assessment Methods},",
+    "  journal = {ICES Journal of Marine Science},",
+    "  volume = {72},",
+    "  number = {1},",
+    "  pages = {19--30},",
+    "  year = {2015},",
+    "  doi = {10.1093/icesjms/fst237}",
+    "}",
+    "",
+    "@article{kim2024mackerel,",
+    "  author = {Kim, Kyuhan and Sibanda, Nokuthaba and Arnold, Richard and A'mar, Teresa},",
+    "  title = {Enhancing data-limited assessments with random effects: a case study on Korea chub mackerel ({Scomber japonicus})},",
+    "  journal = {Canadian Journal of Fisheries and Aquatic Sciences},",
+    "  volume = {81},",
+    "  number = {10},",
+    "  pages = {1433--1455},",
+    "  year = {2024},",
+    "  doi = {10.1139/cjfas-2023-0358}",
+    "}",
+    "",
     "@techreport{day2023bet,",
     "  author = {Day, J. and Magnusson, A. and Teears, T. and Hampton, J. and Davies, N. and Castillo-Jord{\\'a}n, C. and Peatman, T. and Scott, R. and Scutt Phillips, J. and McKechnie, S. and Scott, F. and Yao, N. and Natadra, R. and Pilling, G. and Williams, P. and Hamer, P.},",
     "  title = {Stock assessment of bigeye tuna in the western and central Pacific Ocean: 2023},",
@@ -1810,7 +1844,7 @@ mfclshiny_selftest_write_html <- function(file, data, images, table_dir, title, 
     mfclshiny_jitter_html_escape(title), '</p></header><main><nav class="tabs">',
     '<button class="tab-button active" onclick="showTab(\'tab-overview\',this)">Overview</button>',
     paste(tab_buttons, collapse = ""), '</nav>',
-    '<section id="tab-overview" class="overview tab-panel active"><h2>Self-test analysis</h2><div id="selftest-method">',
+    '<section id="tab-overview" class="overview tab-panel active"><h2>Self-test methods and interpretation</h2><div id="selftest-method">',
     method_html, '</div><pre id="latex-selftest-method" class="copy-source">', mfclshiny_jitter_html_escape(method_latex),
     '</pre><div class="actions"><button onclick="copySection(\'selftest-method\',this)">Copy analysis for Word</button><button onclick="copyText(\'latex-selftest-method\',this)">Copy analysis for LaTeX</button></div>',
     '<h2>Results</h2><div id="selftest-results" class="results-copy">', paste(results, collapse = ""),
