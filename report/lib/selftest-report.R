@@ -1554,7 +1554,7 @@ mfclshiny_selftest_html_section <- function(title, image_file, image_id, image_n
     '<div class="figure-block"><h3>', mfclshiny_jitter_html_escape(title), '</h3>',
     '<img id="', image_id, '" class="figure" src="', mfclshiny_jitter_image_data(image_file),
     '" alt="', mfclshiny_jitter_html_escape(title), '">',
-    '<figcaption id="caption-', image_id, '"><strong>Figure <span class="figure-number" contenteditable="true" spellcheck="false">XX</span>.</strong> ',
+    '<figcaption id="caption-', image_id, '"><strong>Figure.</strong> ',
     caption_html, '</figcaption>',
     '<pre id="', latex_id, '" class="copy-source">\\caption{',
     mfclshiny_jitter_html_escape(caption_latex),
@@ -1808,6 +1808,7 @@ mfclshiny_selftest_write_html <- function(file, data, images, table_dir, title, 
     'function saveText(id,name,b){const e=document.getElementById(id),t=e.innerText||e.textContent,u=URL.createObjectURL(new Blob([t+"\\n"],{type:"application/x-bibtex;charset=utf-8"})),a=document.createElement("a");a.href=u;a.download=name;document.body.appendChild(a);a.click();a.remove();URL.revokeObjectURL(u);feedback(b,"BibTeX downloaded")}',
     'function saveImage(id,name,b){const a=document.createElement("a");a.href=document.getElementById(id).src;a.download=name;document.body.appendChild(a);a.click();a.remove();feedback(b,"Download started")}',
     'function showTab(id,b){document.querySelectorAll(".tab-panel").forEach(x=>x.classList.remove("active"));document.querySelectorAll(".tab-button").forEach(x=>x.classList.remove("active"));document.getElementById(id).classList.add("active");b.classList.add("active")}',
+    'document.querySelectorAll("a[href^=\\"http\\"]").forEach(a=>{a.target="_blank";a.rel="noopener noreferrer"})',
     '</script></body></html>'
   )
   writeLines(html, file, useBytes = TRUE)
