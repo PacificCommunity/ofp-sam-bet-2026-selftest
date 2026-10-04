@@ -31,8 +31,8 @@
     {
       "path": "data/SHA256SUMS",
       "mode": "100644",
-      "git_blob": "e7ccddccdd8bbbf8fc9af2a683e316f5c881df13",
-      "sha256": "17b0c064fc86bfee28f8f6a3245761332e3613fbe10caa41e522dfe42c9db39f"
+      "git_blob": "e81a1d48a962b23fcf1e6c3f185ab82e0d3fbb3b",
+      "sha256": "224a3dd9c2d1a7f5b462396e34802e2c7b4e2b86d9cb8b6319bfa5a3a0d30602"
     },
     {
       "path": "data/diagnostic/selftest-report-payload.rds",
@@ -144,6 +144,13 @@
       "original_sha256": "01aad12807a78afb9a2cdf9eea565a7dcf1f280d4f73438211b9f14f77ea74f0",
       "original_git_blob": "71e5ac16566951f6e80d17215f2c694fa8c5fdf0",
       "expected_sha256": "5016532a9ec919a79ade3f77f5d28ced9610b30f59b9c29805a1f5406080b33a"
+    },
+    {
+      "path": "data/SHA256SUMS",
+      "reason": "Update only the concise README checksum. Every scientific payload, source and result checksum remains unchanged. The documentation checksum push skips CI to retain the existing published HTML.",
+      "original_sha256": "17b0c064fc86bfee28f8f6a3245761332e3613fbe10caa41e522dfe42c9db39f",
+      "original_git_blob": "e7ccddccdd8bbbf8fc9af2a683e316f5c881df13",
+      "expected_sha256": "224a3dd9c2d1a7f5b462396e34802e2c7b4e2b86d9cb8b6319bfa5a3a0d30602"
     }
   ]
 }
