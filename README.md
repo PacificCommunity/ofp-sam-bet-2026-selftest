@@ -12,14 +12,16 @@ recovery and pseudo-data centring checks.
 From the repository root:
 
 ```sh
-./run-report
+make verify
+make results
 ```
 
 The runner checks `data/SHA256SUMS` and writes the self-contained HTML report,
 PNG/PDF figures and copy-ready captions to `results/`. It rebuilds the report
 from the saved payload without running MFCL.
 
-The current payload provides report results, but the 50 native final PARs and
-matching simulated MFCL input sets are not yet included. Those exact files
-are required for zero-iteration native output regeneration or independent
-refits; cached recovery summaries alone do not provide that input closure.
+The 50 original native final PARs and matching simulated input sets were not recovered here,
+so a saved-PAR native rerun is unavailable. For new full simulation refits,
+see the [mfclkit guide](reproduce/mfclkit.md): `make refit-plan` shows the pinned
+recipe and `make refit` runs it in a fresh output folder with native files
+retained. `make help` lists the commands.

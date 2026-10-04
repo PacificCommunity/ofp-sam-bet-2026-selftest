@@ -19,20 +19,20 @@
     {
       "path": "Makefile",
       "mode": "100644",
-      "git_blob": "b33809edf54e243ae6dff17173f3c698f26eb420",
-      "sha256": "b80d4e03f7c8aa5d35989dabfe3fced1ad7dfd7c72f02ea4d815a92740316596"
+      "git_blob": "8cfb2a2f7fe2c32f1f47d79d5af80599c7c5edc5",
+      "sha256": "2c3d57fe25c669370604322623060675425e33f6214cbec7cb404cbdeae4df04"
     },
     {
       "path": "README.md",
       "mode": "100644",
-      "git_blob": "e18783d669c31e6931dd32648b2ca7ad6271353b",
-      "sha256": "bcaea9cfb522ad8674c816ed060e78f65365e52683dad7a4b9222a29cb9c3ae2"
+      "git_blob": "7a18d20914f70ed092cbf53cfe3c4ceaa3b7959e",
+      "sha256": "85db6336acd551385d4a07d85b1c86f1b9325073c8a64a2377260b53101ee130"
     },
     {
       "path": "data/SHA256SUMS",
       "mode": "100644",
-      "git_blob": "4c73edc1f3a7b24daf44ef91f11f5442215528c9",
-      "sha256": "266d0e00ddc35b6bdc2db885c9828a1948f18cf79b9284b63fcd0be0206e7457"
+      "git_blob": "e9dda0d75689f04ebe64d99add0f4796d2812374",
+      "sha256": "24365dd29f22caf6b21328bcac4523c425a8b62279281197023edba5f875a8e8"
     },
     {
       "path": "data/diagnostic/selftest-report-payload.rds",
