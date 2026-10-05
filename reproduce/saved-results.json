@@ -1,0 +1,2712 @@
+{
+  "schema_version": 1,
+  "family": "selftest",
+  "scope": "Exact original scientific RDS files; no fits or native-input reconstruction. Large generated native outputs and scheduler records omitted.",
+  "archive": {
+    "path": "saved-results.tar.gz",
+    "bytes": 3547380,
+    "sha256": "663bed93b10ad3244537c8d54743bc612ac0b44d9178b74ebb673de48fb199ba"
+  },
+  "files": [
+    {
+      "path": "rep_001/inputs/rep_001/data_simulation_summary.rds",
+      "bytes": 36524,
+      "sha256": "9d4d21fdce74c1853a1fea6d966699f184bb7166160697f0d9dc86a899dfb783",
+      "mode": 420
+    },
+    {
+      "path": "rep_001/inputs/rep_001/selftest_input_info.rds",
+      "bytes": 2508,
+      "sha256": "d7d857901ce6ee74974427b3dd51124b636eb9b7b083798be1a26337b1d001f0",
+      "mode": 420
+    },
+    {
+      "path": "rep_001/inputs/rep_001/strict_tag_info.rds",
+      "bytes": 5760,
+      "sha256": "e35614112eb1c60b0288c678e13c01c43b62f5c091ba59e78af4485e8d31ab1e",
+      "mode": 420
+    },
+    {
+      "path": "rep_001/inputs/rep_001/strict_tag_likelihood_summary.rds",
+      "bytes": 13544,
+      "sha256": "d3b43b1941b69850af9a5c46af14f90474faff2b7c7658a17240bd542b880be9",
+      "mode": 420
+    },
+    {
+      "path": "rep_001/refit/rep_001/model_info.rds",
+      "bytes": 1340,
+      "sha256": "8ac4800ecfd2934fa08c147ecd995d50fa13eefb20b9252516260b06de8bc101",
+      "mode": 420
+    },
+    {
+      "path": "rep_001/selftest_config.rds",
+      "bytes": 1040,
+      "sha256": "7b4e020b3b23d6bd0641a31958f12131a841fc585cba5143de6eb01b10bbca15",
+      "mode": 420
+    },
+    {
+      "path": "rep_001/selftest_runs.rds",
+      "bytes": 984,
+      "sha256": "aae12590ee572083956eede560de58aca22f83f8eed2ad554c778dd43c2a659e",
+      "mode": 420
+    },
+    {
+      "path": "rep_001/truth/model_info.rds",
+      "bytes": 6944,
+      "sha256": "5bbae36019acef8203950c72ed6f9e5d35da6ddf3a9469efe88f42a24a3f0fc0",
+      "mode": 420
+    },
+    {
+      "path": "rep_001/truth_eval/rep_001/model_info.rds",
+      "bytes": 2152,
+      "sha256": "413fef641dace09c06999db93602d48ef490de552e266a1281dcd6c39dde6af5",
+      "mode": 420
+    },
+    {
+      "path": "rep_002/inputs/rep_002/data_simulation_summary.rds",
+      "bytes": 36652,
+      "sha256": "78b7d5350d08ad0a9b8e8c3cef854a5a5d604da3e2139879f37846edd9a7dc1f",
+      "mode": 420
+    },
+    {
+      "path": "rep_002/inputs/rep_002/selftest_input_info.rds",
+      "bytes": 2512,
+      "sha256": "9c3e0ff20bf25069723b88dba3a48f6a08c152ca6109d13d411b591c5c51c1b2",
+      "mode": 420
+    },
+    {
+      "path": "rep_002/inputs/rep_002/strict_tag_info.rds",
+      "bytes": 5512,
+      "sha256": "b3ea26c1eb37d21077c97fb4f1684c46fa9a650451b18ec20bbd0b64dc06f066",
+      "mode": 420
+    },
+    {
+      "path": "rep_002/inputs/rep_002/strict_tag_likelihood_summary.rds",
+      "bytes": 13580,
+      "sha256": "b219b046e86d4718326feab0d0ec97350dcdedf11744e2df27b911a569adcdd5",
+      "mode": 420
+    },
+    {
+      "path": "rep_002/refit/rep_002/model_info.rds",
+      "bytes": 1336,
+      "sha256": "8419e3ce2c9be0b5ff8c73c05647008ccc9189861a53e691f7972ca2e4b21e41",
+      "mode": 420
+    },
+    {
+      "path": "rep_002/selftest_config.rds",
+      "bytes": 1040,
+      "sha256": "128719caf87444c983b5035d22a6df761b96fc43d3efd567ddd5ec83e36861bd",
+      "mode": 420
+    },
+    {
+      "path": "rep_002/selftest_runs.rds",
+      "bytes": 988,
+      "sha256": "92b716574b5aecf93674994c9d1c138ffc8f9f450f91ef477e55ecfff7631ed4",
+      "mode": 420
+    },
+    {
+      "path": "rep_002/truth/model_info.rds",
+      "bytes": 6912,
+      "sha256": "8c88c03cdfcf359e22b8b13ad531b968ec46b37a3442c07eca99da86d5c39a0d",
+      "mode": 420
+    },
+    {
+      "path": "rep_002/truth_eval/rep_002/model_info.rds",
+      "bytes": 2152,
+      "sha256": "bfff5e5f244f9c52ba89facc22bbad0afcf5450edead34a542b3169509e4fc19",
+      "mode": 420
+    },
+    {
+      "path": "rep_003/inputs/rep_003/data_simulation_summary.rds",
+      "bytes": 36572,
+      "sha256": "636e2f9a176838a359c513bc2c9e5236cdd77b81f20adac4e3318b42d7fbbcce",
+      "mode": 420
+    },
+    {
+      "path": "rep_003/inputs/rep_003/selftest_input_info.rds",
+      "bytes": 2508,
+      "sha256": "ccb45e8e735f3a9c8b98e94d1938d07fba594e604bee9a7384d7730f1d181192",
+      "mode": 420
+    },
+    {
+      "path": "rep_003/inputs/rep_003/strict_tag_info.rds",
+      "bytes": 5512,
+      "sha256": "cfebf9b9825585369abb698f99ef34aa82929caeb2701075cc8345c7f0ff210b",
+      "mode": 420
+    },
+    {
+      "path": "rep_003/inputs/rep_003/strict_tag_likelihood_summary.rds",
+      "bytes": 13528,
+      "sha256": "d1b5238c88947c3ef925c50f051e7d3d89acf46dbe8fb35d99e3804425d18a80",
+      "mode": 420
+    },
+    {
+      "path": "rep_003/refit/rep_003/model_info.rds",
+      "bytes": 1336,
+      "sha256": "d74b6cb44ae9e5ad86fdb141c6893a4ab25406159b8348669cc19c206dbd49c5",
+      "mode": 420
+    },
+    {
+      "path": "rep_003/selftest_config.rds",
+      "bytes": 1040,
+      "sha256": "52e9e8ff1c98a1742899071bbe4c1bb0427ec9b62a882c85b629aa958e14c8d0",
+      "mode": 420
+    },
+    {
+      "path": "rep_003/selftest_runs.rds",
+      "bytes": 988,
+      "sha256": "9834a982a6ba28d5adf3f9b14c9ef31823fe35a25eff15b971ba490e13378958",
+      "mode": 420
+    },
+    {
+      "path": "rep_003/truth/model_info.rds",
+      "bytes": 6944,
+      "sha256": "149849c77e4ddd1086d2700f408ea45063b4e43591256671ffac44bd76d9264b",
+      "mode": 420
+    },
+    {
+      "path": "rep_003/truth_eval/rep_003/model_info.rds",
+      "bytes": 2152,
+      "sha256": "9b3bf730d0026445918bc70bd16bc162c86316cd7de4af782fe50916a521adb5",
+      "mode": 420
+    },
+    {
+      "path": "rep_004/inputs/rep_004/data_simulation_summary.rds",
+      "bytes": 36532,
+      "sha256": "50bb095cdf070b4f7ca558659e349c117091f50013bf56b89b3003ae7e82d6b1",
+      "mode": 420
+    },
+    {
+      "path": "rep_004/inputs/rep_004/selftest_input_info.rds",
+      "bytes": 2508,
+      "sha256": "c13d227f254845319b07d67d7be4f976b5b48a938c2ec40ee57a5aafc44847e7",
+      "mode": 420
+    },
+    {
+      "path": "rep_004/inputs/rep_004/strict_tag_info.rds",
+      "bytes": 5764,
+      "sha256": "bda3711c0422e9c4f7fb7c8c93f2b23cd2821dd548373e78266fc3ab55120565",
+      "mode": 420
+    },
+    {
+      "path": "rep_004/inputs/rep_004/strict_tag_likelihood_summary.rds",
+      "bytes": 13560,
+      "sha256": "6f9a55b3d4b6c9dc8a254420dbddd104d19f886cb66fe9f4508d4a7743e51b0b",
+      "mode": 420
+    },
+    {
+      "path": "rep_004/refit/rep_004/model_info.rds",
+      "bytes": 1340,
+      "sha256": "70bf7b1658837c7c7a551dc9942ecd481b29b31955480da1201939658e1c9831",
+      "mode": 420
+    },
+    {
+      "path": "rep_004/selftest_config.rds",
+      "bytes": 1040,
+      "sha256": "204b43575750ea8bd6e03e4ded03b54552d46c9455c129589c2d729e169d43ca",
+      "mode": 420
+    },
+    {
+      "path": "rep_004/selftest_runs.rds",
+      "bytes": 988,
+      "sha256": "861c9ad0e623f48c81348ca68fd580779a6f9600c02fe1b4086e33a92b9f9a35",
+      "mode": 420
+    },
+    {
+      "path": "rep_004/truth/model_info.rds",
+      "bytes": 6924,
+      "sha256": "0e8be584144aaa13bf09bea4df9264bbd5a0d5eab7c1edec37d503ea3c60caa3",
+      "mode": 420
+    },
+    {
+      "path": "rep_004/truth_eval/rep_004/model_info.rds",
+      "bytes": 2152,
+      "sha256": "dc9afa67f8eae615b15f0a91fc48077af8595fdd365d99fb7d9c07d60a6e0411",
+      "mode": 420
+    },
+    {
+      "path": "rep_005/inputs/rep_005/data_simulation_summary.rds",
+      "bytes": 36724,
+      "sha256": "78d973fd5d4d7b92b9ce1f7d36c808607bb0b8a32eda56ec0ea76dc05e99d755",
+      "mode": 420
+    },
+    {
+      "path": "rep_005/inputs/rep_005/selftest_input_info.rds",
+      "bytes": 2508,
+      "sha256": "757a45670990ff5a535333d03521b0103be01fc321f05c2dc76d44df5acaa32c",
+      "mode": 420
+    },
+    {
+      "path": "rep_005/inputs/rep_005/strict_tag_info.rds",
+      "bytes": 5748,
+      "sha256": "72e6abbc30b3d235ffd8d6277aa4dc23df96d26e0a766131555a99767e40a3a1",
+      "mode": 420
+    },
+    {
+      "path": "rep_005/inputs/rep_005/strict_tag_likelihood_summary.rds",
+      "bytes": 13576,
+      "sha256": "2e58c09141a32a2919dc6420967553197f2d916e6903ed76baa613ecafcafeb5",
+      "mode": 420
+    },
+    {
+      "path": "rep_005/refit/rep_005/model_info.rds",
+      "bytes": 1340,
+      "sha256": "7dfacc83f3155f64a5b416ac3f1278c48cdc382d553d8e032ddde54d05ae5789",
+      "mode": 420
+    },
+    {
+      "path": "rep_005/selftest_config.rds",
+      "bytes": 1040,
+      "sha256": "594168bec00a31baf62a5884a778889ccfe65cbeb7d8a4d7682ac34871672946",
+      "mode": 420
+    },
+    {
+      "path": "rep_005/selftest_runs.rds",
+      "bytes": 988,
+      "sha256": "d0ccfcca6318bc06c1da88350c4e41eda8c8e0644e5f7393d7423695ac6cd44d",
+      "mode": 420
+    },
+    {
+      "path": "rep_005/truth/model_info.rds",
+      "bytes": 6924,
+      "sha256": "5f7ccc03bfbe1c48f9e15e4797013462aab7f13668fc675907c9af9fd425817b",
+      "mode": 420
+    },
+    {
+      "path": "rep_005/truth_eval/rep_005/model_info.rds",
+      "bytes": 2152,
+      "sha256": "64c3a20145a2ffa4dbd2a220cf7cb118a5a541aeb7742dc0954449281f26330e",
+      "mode": 420
+    },
+    {
+      "path": "rep_006/inputs/rep_006/data_simulation_summary.rds",
+      "bytes": 36608,
+      "sha256": "4d5367955c4f9e79c7e4b9a6153486f40249b197dc2a1e8e93947171fbb253f8",
+      "mode": 420
+    },
+    {
+      "path": "rep_006/inputs/rep_006/selftest_input_info.rds",
+      "bytes": 2508,
+      "sha256": "aca964502b567780a78192b0c217a91eb7f6b0074c8c14567d1ee18cd961e43c",
+      "mode": 420
+    },
+    {
+      "path": "rep_006/inputs/rep_006/strict_tag_info.rds",
+      "bytes": 5764,
+      "sha256": "78da20bfbe75955ec81b28f5334ed6a61a93dce4493674f92c530da6e9c78fbb",
+      "mode": 420
+    },
+    {
+      "path": "rep_006/inputs/rep_006/strict_tag_likelihood_summary.rds",
+      "bytes": 13536,
+      "sha256": "465c7346db54762ae336df16f94b1b0097275cf3c58d48688b184ed73121e8c0",
+      "mode": 420
+    },
+    {
+      "path": "rep_006/refit/rep_006/model_info.rds",
+      "bytes": 1336,
+      "sha256": "2a88b6bd6128835d236a93f0297fd3b4c044fcdb41373656394dc06f4741d41c",
+      "mode": 420
+    },
+    {
+      "path": "rep_006/selftest_config.rds",
+      "bytes": 1040,
+      "sha256": "c6f4b33e5aed6ad9702c70e182ab38f281ea6ba765226f78cb6430ddc8e981af",
+      "mode": 420
+    },
+    {
+      "path": "rep_006/selftest_runs.rds",
+      "bytes": 988,
+      "sha256": "5f79e83fd054594cdbd3a6bf5623048dbbffb449d586e57aab67d00da51dda33",
+      "mode": 420
+    },
+    {
+      "path": "rep_006/truth/model_info.rds",
+      "bytes": 6940,
+      "sha256": "edf09d1e393ddba0b0d3ed0789a0837f2e4f513e0c63052718e862a547036405",
+      "mode": 420
+    },
+    {
+      "path": "rep_006/truth_eval/rep_006/model_info.rds",
+      "bytes": 2148,
+      "sha256": "35fdc46f810ad3aece53b2e660fdfca926a2d5961d2d0b8e4d5d51b0889ea891",
+      "mode": 420
+    },
+    {
+      "path": "rep_007/inputs/rep_007/data_simulation_summary.rds",
+      "bytes": 36580,
+      "sha256": "90b968e08dade846d3fdd99ccd83a240722647266532f0895a2d4fdfeb09977c",
+      "mode": 420
+    },
+    {
+      "path": "rep_007/inputs/rep_007/selftest_input_info.rds",
+      "bytes": 2508,
+      "sha256": "ecf52d0e9d68aa79274f4507d9c399988ad2acde4b971c2b39ad4f986102b7a6",
+      "mode": 420
+    },
+    {
+      "path": "rep_007/inputs/rep_007/strict_tag_info.rds",
+      "bytes": 5768,
+      "sha256": "6f0eb08ae9f45b1069689fa8fd19ca189e2e63c5357ffbbb3edf304f2ea7a3fa",
+      "mode": 420
+    },
+    {
+      "path": "rep_007/inputs/rep_007/strict_tag_likelihood_summary.rds",
+      "bytes": 13528,
+      "sha256": "d21942eb62b6c9b62a9335af531fa8d486efcc771a094a99ebb38db24539053a",
+      "mode": 420
+    },
+    {
+      "path": "rep_007/refit/rep_007/model_info.rds",
+      "bytes": 1340,
+      "sha256": "842bf106fe768359711019312174f442e08334a440d923de95ffbdd85ec93403",
+      "mode": 420
+    },
+    {
+      "path": "rep_007/selftest_config.rds",
+      "bytes": 1040,
+      "sha256": "c261a9a9548f1b749d81414c7f8ad497e7103930ff9aa14f9e0e94a158baf1a0",
+      "mode": 420
+    },
+    {
+      "path": "rep_007/selftest_runs.rds",
+      "bytes": 988,
+      "sha256": "089f30e2278ee17760deaecb63e048f75cfe8a0f3e358be1cad0e2236e42cee7",
+      "mode": 420
+    },
+    {
+      "path": "rep_007/truth/model_info.rds",
+      "bytes": 6916,
+      "sha256": "cb37a67a537ea7b69050822e5d7943b2644d12a51af222f3e4d56a79b294d528",
+      "mode": 420
+    },
+    {
+      "path": "rep_007/truth_eval/rep_007/model_info.rds",
+      "bytes": 2152,
+      "sha256": "9ab6bfa3ec5ed63091f47e48c75ef96e7107d7ac259af2aac2c3c82f96a1136c",
+      "mode": 420
+    },
+    {
+      "path": "rep_008/inputs/rep_008/data_simulation_summary.rds",
+      "bytes": 36608,
+      "sha256": "33265ecdc24ee32280c26a96b758b97b9c74d60a8b8aa8030c63c27ded99a563",
+      "mode": 420
+    },
+    {
+      "path": "rep_008/inputs/rep_008/selftest_input_info.rds",
+      "bytes": 2508,
+      "sha256": "213c5e695e6d4c80d3547886f2fbbb93f08caade009a187c4aa08f60276ae1ba",
+      "mode": 420
+    },
+    {
+      "path": "rep_008/inputs/rep_008/strict_tag_info.rds",
+      "bytes": 5772,
+      "sha256": "f754383b77f4c402bec43986aa622f5d7de1a259c0dd821dfc0c787b944ff0b7",
+      "mode": 420
+    },
+    {
+      "path": "rep_008/inputs/rep_008/strict_tag_likelihood_summary.rds",
+      "bytes": 13476,
+      "sha256": "265ffd4bbac2c8d90a324103244b6a4d1d5b7ace4cf032ea7195c0d197fd1baa",
+      "mode": 420
+    },
+    {
+      "path": "rep_008/refit/rep_008/model_info.rds",
+      "bytes": 1336,
+      "sha256": "678a31656ccdfc1ffebfe4efce4f23b007b84c97d634afe1608f7c1392e724a3",
+      "mode": 420
+    },
+    {
+      "path": "rep_008/selftest_config.rds",
+      "bytes": 1040,
+      "sha256": "f043accd92435d698e33c26f94b927bc7ce77b4a443f26509b46978e66bf4596",
+      "mode": 420
+    },
+    {
+      "path": "rep_008/selftest_runs.rds",
+      "bytes": 988,
+      "sha256": "2adf36be9a68e20d2e47b77582d18bcf3656c1340004dcc8e85e769dd7dc3485",
+      "mode": 420
+    },
+    {
+      "path": "rep_008/truth/model_info.rds",
+      "bytes": 6928,
+      "sha256": "b0a9659e93f7446d6942dfd88e6d51497466805a0390eb237cb93b277a5e0d87",
+      "mode": 420
+    },
+    {
+      "path": "rep_008/truth_eval/rep_008/model_info.rds",
+      "bytes": 2152,
+      "sha256": "66b569ade490a3f8cd6c4d42b4428d800dd9cf7bd16089a4c5bb6e5894fbd146",
+      "mode": 420
+    },
+    {
+      "path": "rep_009/inputs/rep_009/data_simulation_summary.rds",
+      "bytes": 36636,
+      "sha256": "f9eb39e09c8d3f4193947e09730868faf12a773793362c9a8a8a7f0f0af01ba3",
+      "mode": 420
+    },
+    {
+      "path": "rep_009/inputs/rep_009/selftest_input_info.rds",
+      "bytes": 2508,
+      "sha256": "ce47086066454bf1cce76f9c7fb9c6786ca94e4073374d2a4ecf021156d4cfd9",
+      "mode": 420
+    },
+    {
+      "path": "rep_009/inputs/rep_009/strict_tag_info.rds",
+      "bytes": 5736,
+      "sha256": "d09af55191abee25526497961f74297a1ee0bb93c03ec3fb027fd5dac42ae142",
+      "mode": 420
+    },
+    {
+      "path": "rep_009/inputs/rep_009/strict_tag_likelihood_summary.rds",
+      "bytes": 13500,
+      "sha256": "c0eb635437109f6a72eaaae7cc83021e3bb561e0de025f2a96bc1367b621be82",
+      "mode": 420
+    },
+    {
+      "path": "rep_009/refit/rep_009/model_info.rds",
+      "bytes": 1336,
+      "sha256": "f0e1eb282b59d95b2bcdc610ccb8496ea59326316ff358b2997a1f552679d0cb",
+      "mode": 420
+    },
+    {
+      "path": "rep_009/selftest_config.rds",
+      "bytes": 1040,
+      "sha256": "b0a64259736f732c1c391311d9cc5c99c5e038ab655b70c253af26c1f49e562f",
+      "mode": 420
+    },
+    {
+      "path": "rep_009/selftest_runs.rds",
+      "bytes": 988,
+      "sha256": "734a7d7d2a06d11f730d87dae4a0ab4263e8b0a8a98ba13a5472b02d59924564",
+      "mode": 420
+    },
+    {
+      "path": "rep_009/truth/model_info.rds",
+      "bytes": 6952,
+      "sha256": "965e961063ae90631cb28168e0b5c1656e5b3990fec924998f1f7823ff472e79",
+      "mode": 420
+    },
+    {
+      "path": "rep_009/truth_eval/rep_009/model_info.rds",
+      "bytes": 2152,
+      "sha256": "4e205eeb5f49e3b897aa07bf82f5e53963d7f9b81a7bbe12fd5dd130828a1ee4",
+      "mode": 420
+    },
+    {
+      "path": "rep_010/inputs/rep_010/data_simulation_summary.rds",
+      "bytes": 36556,
+      "sha256": "3a32f7b87ebe2e31a2653a24c1024f744b1e32ede7c3838af9376eb4ae5e815d",
+      "mode": 420
+    },
+    {
+      "path": "rep_010/inputs/rep_010/selftest_input_info.rds",
+      "bytes": 2508,
+      "sha256": "0781c659981f7e76156f863aab24bc219a1816e7a0de6e54fe83b51dce4fae70",
+      "mode": 420
+    },
+    {
+      "path": "rep_010/inputs/rep_010/strict_tag_info.rds",
+      "bytes": 5756,
+      "sha256": "087196d9b0c15b745ba9635a049fa452f08092fbe5cf71441d056cd56de29b9a",
+      "mode": 420
+    },
+    {
+      "path": "rep_010/inputs/rep_010/strict_tag_likelihood_summary.rds",
+      "bytes": 13540,
+      "sha256": "503dc1ede0ccd7769a672a67b42e4a397d961a0877b6d111097d5be2cdbd2e0b",
+      "mode": 420
+    },
+    {
+      "path": "rep_010/refit/rep_010/model_info.rds",
+      "bytes": 1340,
+      "sha256": "1d670293ab0c920c530a7d38bc924f53c586a67aade11ff881cf592bd6671b22",
+      "mode": 420
+    },
+    {
+      "path": "rep_010/selftest_config.rds",
+      "bytes": 1040,
+      "sha256": "8853296822b8b9e3daa2ece12a123c8b98ba6635ac70a0dad0818dbcf7e9e007",
+      "mode": 420
+    },
+    {
+      "path": "rep_010/selftest_runs.rds",
+      "bytes": 988,
+      "sha256": "f27eb1daa253bec2c2cb675934da669931214b6ca10cb139768858965814e408",
+      "mode": 420
+    },
+    {
+      "path": "rep_010/truth/model_info.rds",
+      "bytes": 6968,
+      "sha256": "ce1fec6dce125ed8ed0915506b1c6e2cad6412fd8f207d34764d3a527b2844ea",
+      "mode": 420
+    },
+    {
+      "path": "rep_010/truth_eval/rep_010/model_info.rds",
+      "bytes": 2152,
+      "sha256": "ec2132df05b0f119736dc5e065043a4b1b985adb28f4be111f9dadcfb89e1d39",
+      "mode": 420
+    },
+    {
+      "path": "rep_011/inputs/rep_011/data_simulation_summary.rds",
+      "bytes": 36660,
+      "sha256": "c76def9931c35fe7803f4a814e98effc48e67983406103e62ddffe6062af5179",
+      "mode": 420
+    },
+    {
+      "path": "rep_011/inputs/rep_011/selftest_input_info.rds",
+      "bytes": 2508,
+      "sha256": "a77ca8de1550b0b0c13c2f8940177f2e4e0c84e6152eb5ddcf2775b3add4cce4",
+      "mode": 420
+    },
+    {
+      "path": "rep_011/inputs/rep_011/strict_tag_info.rds",
+      "bytes": 5776,
+      "sha256": "59bd1363251b49ff25676e2cef62c70e60d6c88cd8615aee77b7d88de3745639",
+      "mode": 420
+    },
+    {
+      "path": "rep_011/inputs/rep_011/strict_tag_likelihood_summary.rds",
+      "bytes": 13580,
+      "sha256": "b26d683d8c3a196c0b35dc3b5067702ac065d9bed78f9da3125e0dbaade6fa69",
+      "mode": 420
+    },
+    {
+      "path": "rep_011/refit/rep_011/model_info.rds",
+      "bytes": 1340,
+      "sha256": "6f965d68b8a6342da06b797aed28b6151444493037700f7440504f1a8650826c",
+      "mode": 420
+    },
+    {
+      "path": "rep_011/selftest_config.rds",
+      "bytes": 1040,
+      "sha256": "a503b1015eab439617002a8a3107a417e46351f1cd2a00570fe3ac4466d7b61c",
+      "mode": 420
+    },
+    {
+      "path": "rep_011/selftest_runs.rds",
+      "bytes": 988,
+      "sha256": "d024a8b9292562eaabc3c066fd9be888ef4cd14562eff71911debe84cd353cfd",
+      "mode": 420
+    },
+    {
+      "path": "rep_011/truth/model_info.rds",
+      "bytes": 6916,
+      "sha256": "c43007005f0f1d8543376f8af035f8d33ba0c0b8845fdd0a208bbc31ff078f94",
+      "mode": 420
+    },
+    {
+      "path": "rep_011/truth_eval/rep_011/model_info.rds",
+      "bytes": 2152,
+      "sha256": "8c7c6af9a406b3c2c7cc03dbd4c6bfb18136833bd0725affb4493bc82e94e753",
+      "mode": 420
+    },
+    {
+      "path": "rep_012/inputs/rep_012/data_simulation_summary.rds",
+      "bytes": 36652,
+      "sha256": "f0d9a26eafdc717d3fd561743c536aa1bdf8662abe86ff5ad90dd46c5ae22d77",
+      "mode": 420
+    },
+    {
+      "path": "rep_012/inputs/rep_012/selftest_input_info.rds",
+      "bytes": 2504,
+      "sha256": "719a39ce497d135cd8781bd6387d22943a4a0cb70a67782a3765017ff889bf18",
+      "mode": 420
+    },
+    {
+      "path": "rep_012/inputs/rep_012/strict_tag_info.rds",
+      "bytes": 5752,
+      "sha256": "c0227d7601289a71a3bff4ebd942e95ceea02d54098d12a682b4c543566e93e4",
+      "mode": 420
+    },
+    {
+      "path": "rep_012/inputs/rep_012/strict_tag_likelihood_summary.rds",
+      "bytes": 13556,
+      "sha256": "0ec3401671053e613a60707b3b229f6b064dc37913a57875fe8e4413d62b5384",
+      "mode": 420
+    },
+    {
+      "path": "rep_012/refit/rep_012/model_info.rds",
+      "bytes": 1336,
+      "sha256": "cf86ac1b5c2e811a4508c8057613789f344eeabaca681fa69fd3f398264cb1ab",
+      "mode": 420
+    },
+    {
+      "path": "rep_012/selftest_config.rds",
+      "bytes": 1040,
+      "sha256": "5eff3eb6dbf9f8cd463a8c08f80292f1a067329b4ad4befedf445aeacd04c9d7",
+      "mode": 420
+    },
+    {
+      "path": "rep_012/selftest_runs.rds",
+      "bytes": 984,
+      "sha256": "f807ef8e1ffba0966fbacbe0980b95475d78835c578013a2aca6e740be9ae74e",
+      "mode": 420
+    },
+    {
+      "path": "rep_012/truth/model_info.rds",
+      "bytes": 6824,
+      "sha256": "ae2c1ab284a6bb6fc65ad9e02761cd8375ff90fc90df6f6e2eb5f072ff47b9da",
+      "mode": 420
+    },
+    {
+      "path": "rep_012/truth_eval/rep_012/model_info.rds",
+      "bytes": 2148,
+      "sha256": "cc698161ab54659360e0d970d74970b7e4dbad9a8a68fcf96ed226defa004bf0",
+      "mode": 420
+    },
+    {
+      "path": "rep_013/inputs/rep_013/data_simulation_summary.rds",
+      "bytes": 36668,
+      "sha256": "702ecfe36e1f9f28f8de84a52b5da271ad59789a68aee6c8d06db6ce0b330eda",
+      "mode": 420
+    },
+    {
+      "path": "rep_013/inputs/rep_013/selftest_input_info.rds",
+      "bytes": 2504,
+      "sha256": "08a035c0b817fe8636c7db2b113cf3960ee5709e91a0b0e1c6aa72d87c490051",
+      "mode": 420
+    },
+    {
+      "path": "rep_013/inputs/rep_013/strict_tag_info.rds",
+      "bytes": 5768,
+      "sha256": "e757dd2484553dfc8f1c216fbbc143004ccb56ea09fc1af69ab3b1e7972fc832",
+      "mode": 420
+    },
+    {
+      "path": "rep_013/inputs/rep_013/strict_tag_likelihood_summary.rds",
+      "bytes": 13568,
+      "sha256": "abcbdc6502dc38024f468d0de66eb460b436d367ac8846b427b05070d9d4f2fc",
+      "mode": 420
+    },
+    {
+      "path": "rep_013/refit/rep_013/model_info.rds",
+      "bytes": 1336,
+      "sha256": "f2d7e7e2dea8868dbf91b6a3cd41cbadbc207f82f23d103d69de6172d0e38fb6",
+      "mode": 420
+    },
+    {
+      "path": "rep_013/selftest_config.rds",
+      "bytes": 1040,
+      "sha256": "69a5896c2bfef5f213006bf89dde51e3736786d7197e4a7b58cf95f0a33db4da",
+      "mode": 420
+    },
+    {
+      "path": "rep_013/selftest_runs.rds",
+      "bytes": 984,
+      "sha256": "3895dc3951970700a640454b8292904df8fb238bead53c8fe8b3cbdcf5183906",
+      "mode": 420
+    },
+    {
+      "path": "rep_013/truth/model_info.rds",
+      "bytes": 6924,
+      "sha256": "8f0760435e87b203502ce1f89db15901ca226f0db33be158cf8890536586f8a1",
+      "mode": 420
+    },
+    {
+      "path": "rep_013/truth_eval/rep_013/model_info.rds",
+      "bytes": 2152,
+      "sha256": "91f1d1e8b001fa98673f59083f98d85c36b044dc857bf3e0b1ce03f4cd2290ed",
+      "mode": 420
+    },
+    {
+      "path": "rep_014/inputs/rep_014/data_simulation_summary.rds",
+      "bytes": 36480,
+      "sha256": "af45a2ba6f80a95b29c1bb77aec51f4125fca68af92487f30e14cc2264cec6be",
+      "mode": 420
+    },
+    {
+      "path": "rep_014/inputs/rep_014/selftest_input_info.rds",
+      "bytes": 2508,
+      "sha256": "9920a319e6da9147a32e2d5f39e5a74d14476bc3f03a9a02b97ee08a2a9bc369",
+      "mode": 420
+    },
+    {
+      "path": "rep_014/inputs/rep_014/strict_tag_info.rds",
+      "bytes": 5780,
+      "sha256": "9ac9e62a011ba797aff86b93835b811c330496a58f43ad3ce67b2c29be4f4ca8",
+      "mode": 420
+    },
+    {
+      "path": "rep_014/inputs/rep_014/strict_tag_likelihood_summary.rds",
+      "bytes": 13532,
+      "sha256": "65465f53770319db61c28058bcfd7d57dff87fee06a9271710b3b276e58ff85a",
+      "mode": 420
+    },
+    {
+      "path": "rep_014/refit/rep_014/model_info.rds",
+      "bytes": 1336,
+      "sha256": "53e13f9f9e951396b52d135672abdb228673b35d8b9ed6f75c61f761e7a1d4d6",
+      "mode": 420
+    },
+    {
+      "path": "rep_014/selftest_config.rds",
+      "bytes": 1040,
+      "sha256": "00391adc8ef8ca4d45beb09056fc8a44d96bdddef308c85e543fa130d2bc3950",
+      "mode": 420
+    },
+    {
+      "path": "rep_014/selftest_runs.rds",
+      "bytes": 984,
+      "sha256": "cd508761ff10053ede593d61305329b8fb23dcb4ea151ddf926e9b859ec2ddc9",
+      "mode": 420
+    },
+    {
+      "path": "rep_014/truth/model_info.rds",
+      "bytes": 6916,
+      "sha256": "a2bdde1972d3430f424f3d1b2d8f4337656e9935857ff38a8681540c9592dc96",
+      "mode": 420
+    },
+    {
+      "path": "rep_014/truth_eval/rep_014/model_info.rds",
+      "bytes": 2152,
+      "sha256": "efa321776b2be02b860a525b81afdfb12cdfaa8179226ff8508fd3f49ff51a08",
+      "mode": 420
+    },
+    {
+      "path": "rep_015/inputs/rep_015/data_simulation_summary.rds",
+      "bytes": 36468,
+      "sha256": "806ba6fa1ed5e1c747001122d296f266b927f7b3e30faf7d3699b3050d5ba937",
+      "mode": 420
+    },
+    {
+      "path": "rep_015/inputs/rep_015/selftest_input_info.rds",
+      "bytes": 2504,
+      "sha256": "35d6e7626a15297706337330c77cd78ffe4eda7d54161f6518bdc105a90a6491",
+      "mode": 420
+    },
+    {
+      "path": "rep_015/inputs/rep_015/strict_tag_info.rds",
+      "bytes": 5752,
+      "sha256": "3faf00e9590808053a6155c6e76ec4962c64839dd03ed57d610c59ebc3109015",
+      "mode": 420
+    },
+    {
+      "path": "rep_015/inputs/rep_015/strict_tag_likelihood_summary.rds",
+      "bytes": 13552,
+      "sha256": "ae82e5b09e144d1e4c722189ed3f15eb7a40b55d2c8dc5ee7ec7270e12e5afa0",
+      "mode": 420
+    },
+    {
+      "path": "rep_015/refit/rep_015/model_info.rds",
+      "bytes": 1336,
+      "sha256": "1bae498e545714b0dc35bbc6e5bdcad5ed92c168d8dbd045e0e5358654cf5538",
+      "mode": 420
+    },
+    {
+      "path": "rep_015/selftest_config.rds",
+      "bytes": 1040,
+      "sha256": "f1dbdff87196fa74c4163106b609b23ea3a878655dcb2930a6440439f8ff6d4d",
+      "mode": 420
+    },
+    {
+      "path": "rep_015/selftest_runs.rds",
+      "bytes": 984,
+      "sha256": "14f82ed82f5c7eee8487225283ad96a3be0eb4c681a15bbc37f134960ee1e1c6",
+      "mode": 420
+    },
+    {
+      "path": "rep_015/truth/model_info.rds",
+      "bytes": 6756,
+      "sha256": "4004f995fe88c464f3d89920be8c167051756caff36e4a03a5e5d3184e17af2d",
+      "mode": 420
+    },
+    {
+      "path": "rep_015/truth_eval/rep_015/model_info.rds",
+      "bytes": 2152,
+      "sha256": "9abef300d3e8bea6a3c3b0b87ef650cf8a7d7d68f884acf9fa42aaff1f634e8e",
+      "mode": 420
+    },
+    {
+      "path": "rep_016/inputs/rep_016/data_simulation_summary.rds",
+      "bytes": 36536,
+      "sha256": "2038a48992c68e2ed54e4e87894e938b05de06a49596a3784ba84fd263e09c1c",
+      "mode": 420
+    },
+    {
+      "path": "rep_016/inputs/rep_016/selftest_input_info.rds",
+      "bytes": 2508,
+      "sha256": "76cdd4d6ea5b869b9cf4a3871f07fffcc4fc190b78f6b0432aa4fbffa1b05400",
+      "mode": 420
+    },
+    {
+      "path": "rep_016/inputs/rep_016/strict_tag_info.rds",
+      "bytes": 5768,
+      "sha256": "7d87a21e8f8d1b817d51f5cb22d74c6921ebe99f5efc131c580aa7d12d6109de",
+      "mode": 420
+    },
+    {
+      "path": "rep_016/inputs/rep_016/strict_tag_likelihood_summary.rds",
+      "bytes": 13520,
+      "sha256": "e315c56cf63926c0eaaea7390984e5e0c4798c0fdf08357a05b102b8d5068b93",
+      "mode": 420
+    },
+    {
+      "path": "rep_016/refit/rep_016/model_info.rds",
+      "bytes": 1340,
+      "sha256": "38f7afbd23591aab56c321cceb26e0273aac04ce955208197211524fd2929635",
+      "mode": 420
+    },
+    {
+      "path": "rep_016/selftest_config.rds",
+      "bytes": 1040,
+      "sha256": "8eb541a358a680402d5b92f9818deb47423afb67718701fa42a631f3cecd932f",
+      "mode": 420
+    },
+    {
+      "path": "rep_016/selftest_runs.rds",
+      "bytes": 988,
+      "sha256": "7d6255eb5d50311e57c7d3604ed9726f1607330c9e82fb690e272b18273344e5",
+      "mode": 420
+    },
+    {
+      "path": "rep_016/truth/model_info.rds",
+      "bytes": 6776,
+      "sha256": "38f965cbcf103283e62c902bf83ba5e8854d83f299bd2301450a4d8f85279f44",
+      "mode": 420
+    },
+    {
+      "path": "rep_016/truth_eval/rep_016/model_info.rds",
+      "bytes": 2152,
+      "sha256": "fd477d5a77b344a030d4e3a1b67a4a03394bc69be2b2ab141742b2925eeeace3",
+      "mode": 420
+    },
+    {
+      "path": "rep_017/inputs/rep_017/data_simulation_summary.rds",
+      "bytes": 36648,
+      "sha256": "21d9d16411c90bfa223ba482480266f2b81159d36b643c126a37ea5266c2c3df",
+      "mode": 420
+    },
+    {
+      "path": "rep_017/inputs/rep_017/selftest_input_info.rds",
+      "bytes": 2508,
+      "sha256": "e1884f55efce2099bd199c32ed44ceb41344cab6ab8fcdfddce19286aa3cbcb9",
+      "mode": 420
+    },
+    {
+      "path": "rep_017/inputs/rep_017/strict_tag_info.rds",
+      "bytes": 5780,
+      "sha256": "b1147415c81dafdee476bc9a90f68f9e8ec85ea095899321a168ba5392ba3b8f",
+      "mode": 420
+    },
+    {
+      "path": "rep_017/inputs/rep_017/strict_tag_likelihood_summary.rds",
+      "bytes": 13544,
+      "sha256": "9874d0136440cf35768fbec57ce230d57eb79a5fa3e776c5227ca6884d58b12d",
+      "mode": 420
+    },
+    {
+      "path": "rep_017/refit/rep_017/model_info.rds",
+      "bytes": 1340,
+      "sha256": "ca4b62213925d76116fad6ac3155dafbf2d95a3622ccb30be6f715abd3cea067",
+      "mode": 420
+    },
+    {
+      "path": "rep_017/selftest_config.rds",
+      "bytes": 1040,
+      "sha256": "c4334307cb7b590be0b1b27b0657190f347e8bfa1782c5a1118eaaf194230643",
+      "mode": 420
+    },
+    {
+      "path": "rep_017/selftest_runs.rds",
+      "bytes": 988,
+      "sha256": "56c7795f14b26d84608ed67cea3f48f8083b98a0efb64737b9f956cb67ad3ef8",
+      "mode": 420
+    },
+    {
+      "path": "rep_017/truth/model_info.rds",
+      "bytes": 6920,
+      "sha256": "a662a3063956ea4c1e9276c35a8593c4a427efe335d974c502fdd317c28b100e",
+      "mode": 420
+    },
+    {
+      "path": "rep_017/truth_eval/rep_017/model_info.rds",
+      "bytes": 2152,
+      "sha256": "cbf25ede8165b8d74164a77a355c27fd03fd9aab24e855a43abe4016a340e787",
+      "mode": 420
+    },
+    {
+      "path": "rep_018/inputs/rep_018/data_simulation_summary.rds",
+      "bytes": 36432,
+      "sha256": "57917cbfdfd9754a73333928ad08cff743c8f8826633973c337295e3943859be",
+      "mode": 420
+    },
+    {
+      "path": "rep_018/inputs/rep_018/selftest_input_info.rds",
+      "bytes": 2508,
+      "sha256": "619118aae5f749d6311e6a868300844398cfc207658b5afb446e0c525186cf03",
+      "mode": 420
+    },
+    {
+      "path": "rep_018/inputs/rep_018/strict_tag_info.rds",
+      "bytes": 5776,
+      "sha256": "6478e593405e07911868a37e87b73e7b41fbbafa8d40b93d80501f4ed9023f27",
+      "mode": 420
+    },
+    {
+      "path": "rep_018/inputs/rep_018/strict_tag_likelihood_summary.rds",
+      "bytes": 13540,
+      "sha256": "b636b651bd3c6a497856193169010a801f2dd05abc28ca1c14f41483d21104dc",
+      "mode": 420
+    },
+    {
+      "path": "rep_018/refit/rep_018/model_info.rds",
+      "bytes": 1340,
+      "sha256": "33ee3924178a53d7de9f9d75248406f350578dab8f097edf9e1de25ac32f324b",
+      "mode": 420
+    },
+    {
+      "path": "rep_018/selftest_config.rds",
+      "bytes": 1040,
+      "sha256": "c49c6fb2ce681900bf6c29f1011b5b22ee84a53d90c864f3b46ad0ca47e0ed91",
+      "mode": 420
+    },
+    {
+      "path": "rep_018/selftest_runs.rds",
+      "bytes": 988,
+      "sha256": "1dddc6ff7f64cc6bd6eeeb68386c27e470ba5dcf5599915c88aba145584d5d46",
+      "mode": 420
+    },
+    {
+      "path": "rep_018/truth/model_info.rds",
+      "bytes": 6944,
+      "sha256": "0da7a1e54af05f33cb48bb03585f7dee9a4b2c62fd0e2d8bcec50c71047b092b",
+      "mode": 420
+    },
+    {
+      "path": "rep_018/truth_eval/rep_018/model_info.rds",
+      "bytes": 2152,
+      "sha256": "25a51e1494bf6fd0330a828438a75a2807cc74d7ab2ec411e97d0e84a73e3a47",
+      "mode": 420
+    },
+    {
+      "path": "rep_019/inputs/rep_019/data_simulation_summary.rds",
+      "bytes": 36668,
+      "sha256": "2c37de0f2d12596025f7515857b9a8e20838fcdb9c3caacd568b262b9a418a6a",
+      "mode": 420
+    },
+    {
+      "path": "rep_019/inputs/rep_019/selftest_input_info.rds",
+      "bytes": 2508,
+      "sha256": "160cbe23d1323d9981e07d4afc03effa65cc302848cfa78d9cfeb6e2d9509908",
+      "mode": 420
+    },
+    {
+      "path": "rep_019/inputs/rep_019/strict_tag_info.rds",
+      "bytes": 5756,
+      "sha256": "736d388a16a48c013a3c0cc580a1bd768d5c0c8870f5ac6f02e7f7261dce1d02",
+      "mode": 420
+    },
+    {
+      "path": "rep_019/inputs/rep_019/strict_tag_likelihood_summary.rds",
+      "bytes": 13560,
+      "sha256": "2e6fc3cbe2f07c12c39f78dab971424151fddb910193dcb50d3ba0b08705565d",
+      "mode": 420
+    },
+    {
+      "path": "rep_019/refit/rep_019/model_info.rds",
+      "bytes": 1340,
+      "sha256": "d0df9bf828c035ac53f384776a6c08c2d1a364e016bc59aeff55165a9c70a202",
+      "mode": 420
+    },
+    {
+      "path": "rep_019/selftest_config.rds",
+      "bytes": 1040,
+      "sha256": "06e53754769681ba9dd926157e04fc7f6e84bf2768d11be22c75692682324415",
+      "mode": 420
+    },
+    {
+      "path": "rep_019/selftest_runs.rds",
+      "bytes": 988,
+      "sha256": "559416abdc08469fc7b1c270dfb1cdb855846d0f67cbc1ca787ef895081796b3",
+      "mode": 420
+    },
+    {
+      "path": "rep_019/truth/model_info.rds",
+      "bytes": 6932,
+      "sha256": "bc78a08d59a0753ad4af2f39bf193c12021051d38e25d33211cb9fd86f2d957c",
+      "mode": 420
+    },
+    {
+      "path": "rep_019/truth_eval/rep_019/model_info.rds",
+      "bytes": 2152,
+      "sha256": "750b308eb1968635fd4c1ff550808ad8a2b9cdc851196ee1d4033a320652a6e2",
+      "mode": 420
+    },
+    {
+      "path": "rep_020/inputs/rep_020/data_simulation_summary.rds",
+      "bytes": 36592,
+      "sha256": "2d778395e498d8a0e1deb296dc518ade712afb5e1c13fbfe81c18b751a8febe2",
+      "mode": 420
+    },
+    {
+      "path": "rep_020/inputs/rep_020/selftest_input_info.rds",
+      "bytes": 2508,
+      "sha256": "af042da57dbea833ee7185e027c6db2a96accabce25bfd07d5fa17ebdaed9fda",
+      "mode": 420
+    },
+    {
+      "path": "rep_020/inputs/rep_020/strict_tag_info.rds",
+      "bytes": 5756,
+      "sha256": "c93ad6c68c50024447433f4f00c803bf246eeea998c00f058b71a31e1428ca45",
+      "mode": 420
+    },
+    {
+      "path": "rep_020/inputs/rep_020/strict_tag_likelihood_summary.rds",
+      "bytes": 13556,
+      "sha256": "7ffd43dcb3776e04a3884b180cfcb87a90080079a029b83e55941c57eb942dd8",
+      "mode": 420
+    },
+    {
+      "path": "rep_020/refit/rep_020/model_info.rds",
+      "bytes": 1336,
+      "sha256": "9f3792a553652203703252df7bd1c1d21448b0cfd9571a97f76a0204a636392f",
+      "mode": 420
+    },
+    {
+      "path": "rep_020/selftest_config.rds",
+      "bytes": 1040,
+      "sha256": "e7d61e44765e08e64822f2bd08258f8f650a4b644a3696be1fa1e3c9e0a90334",
+      "mode": 420
+    },
+    {
+      "path": "rep_020/selftest_runs.rds",
+      "bytes": 988,
+      "sha256": "2b466615f41fda498c457ddc1142f210215b4df38a3a43cfc62d84da6d1a1eab",
+      "mode": 420
+    },
+    {
+      "path": "rep_020/truth/model_info.rds",
+      "bytes": 6912,
+      "sha256": "79371098de822b9601a79ef99961fdebd91ce729bb58bc2c60bb63c7e47b7935",
+      "mode": 420
+    },
+    {
+      "path": "rep_020/truth_eval/rep_020/model_info.rds",
+      "bytes": 2152,
+      "sha256": "ae87e7c0d2fcbf4575d873f67d4bcd1ddcc08b6790a6c818a1280119fbfef077",
+      "mode": 420
+    },
+    {
+      "path": "rep_021/inputs/rep_021/data_simulation_summary.rds",
+      "bytes": 36792,
+      "sha256": "f33299d31008e28e8ffc51f3bd59a2c0cb43de842d35b959fd86ac75d8eb4944",
+      "mode": 420
+    },
+    {
+      "path": "rep_021/inputs/rep_021/selftest_input_info.rds",
+      "bytes": 2508,
+      "sha256": "0f165c6df71612b62f32af916954aa888741ee268dc47e1f1bd9430c977a04fb",
+      "mode": 420
+    },
+    {
+      "path": "rep_021/inputs/rep_021/strict_tag_info.rds",
+      "bytes": 5764,
+      "sha256": "c4d7b5d631a02b6cbb2a94d1dfba47150c5a077e6918cbf0a01545d64d5d59c6",
+      "mode": 420
+    },
+    {
+      "path": "rep_021/inputs/rep_021/strict_tag_likelihood_summary.rds",
+      "bytes": 13552,
+      "sha256": "6752312d6b060846b8493116aa83ec887b07228eec5e47301e468bfb53bb79b8",
+      "mode": 420
+    },
+    {
+      "path": "rep_021/refit/rep_021/model_info.rds",
+      "bytes": 1340,
+      "sha256": "8feace321f5242524a4615b31e27737c79e4de4f1236719bd16138543e362d0e",
+      "mode": 420
+    },
+    {
+      "path": "rep_021/selftest_config.rds",
+      "bytes": 1040,
+      "sha256": "53f378683e8e8e7648e67f1d2a1df064721b1f33232ccd5f04f5f705fdfe6a5f",
+      "mode": 420
+    },
+    {
+      "path": "rep_021/selftest_runs.rds",
+      "bytes": 988,
+      "sha256": "e97bb3778321bf15397ff12bdd847ae6f733c40f779248eb068a70cfd9d581ff",
+      "mode": 420
+    },
+    {
+      "path": "rep_021/truth/model_info.rds",
+      "bytes": 6760,
+      "sha256": "22e71d5ba9015c8ac85ac729b2f45af08d6343620beb3023a635a1e8c43bdada",
+      "mode": 420
+    },
+    {
+      "path": "rep_021/truth_eval/rep_021/model_info.rds",
+      "bytes": 2152,
+      "sha256": "c5d86f2ce1aeb2b0b6ef2582f5b121400424ae565c88adbe9285ae68c04bce8f",
+      "mode": 420
+    },
+    {
+      "path": "rep_022/inputs/rep_022/data_simulation_summary.rds",
+      "bytes": 36744,
+      "sha256": "dbed9ab74c528bf8df93bbdf7673e868a22bfb87c77bce12f0061683082f47f6",
+      "mode": 420
+    },
+    {
+      "path": "rep_022/inputs/rep_022/selftest_input_info.rds",
+      "bytes": 2508,
+      "sha256": "e1f0fcf1d2e32f1437fa57dda411cce38a234ddae53fdf1c5e4f2d1bfcce1d9a",
+      "mode": 420
+    },
+    {
+      "path": "rep_022/inputs/rep_022/strict_tag_info.rds",
+      "bytes": 5776,
+      "sha256": "4e4419fa1fd4c19e9ee33c08d23e834b479b4bbae1479e79629aa28aaa1904d9",
+      "mode": 420
+    },
+    {
+      "path": "rep_022/inputs/rep_022/strict_tag_likelihood_summary.rds",
+      "bytes": 13536,
+      "sha256": "ace0f9162a86ed8531690dab4ebac6918c3ca1b7e4df166e00fd33c1bca8337e",
+      "mode": 420
+    },
+    {
+      "path": "rep_022/refit/rep_022/model_info.rds",
+      "bytes": 1336,
+      "sha256": "1dfa443bcb46fe231e75d5bb81cf090e84ea073cdd7245c99cc3966709d56421",
+      "mode": 420
+    },
+    {
+      "path": "rep_022/selftest_config.rds",
+      "bytes": 1040,
+      "sha256": "5935db561e686034c451af0ae12801aeb3f2dcca2c6a5b4b83673d5afa501e42",
+      "mode": 420
+    },
+    {
+      "path": "rep_022/selftest_runs.rds",
+      "bytes": 988,
+      "sha256": "39682f9f67ad6398a9f628bc94e4588c70a40885d2e3606bf91364ac4f21caac",
+      "mode": 420
+    },
+    {
+      "path": "rep_022/truth/model_info.rds",
+      "bytes": 6928,
+      "sha256": "a07cefd269abbf34ff74f998c0835c55f73f399846f3b939b1da2fa98b5a9b66",
+      "mode": 420
+    },
+    {
+      "path": "rep_022/truth_eval/rep_022/model_info.rds",
+      "bytes": 2152,
+      "sha256": "e9c33da0142436a8101aede1dfa6f19688336f9b4675c5614246207acbd2e015",
+      "mode": 420
+    },
+    {
+      "path": "rep_023/inputs/rep_023/data_simulation_summary.rds",
+      "bytes": 36624,
+      "sha256": "4b36245e2b45448b54195898f5009a3ca725b1d6d6ae4b9abc00af37f238ff58",
+      "mode": 420
+    },
+    {
+      "path": "rep_023/inputs/rep_023/selftest_input_info.rds",
+      "bytes": 2508,
+      "sha256": "e655b6a010a9802a37e946cefc5b04772094644060c1b5a17510071ebc498d87",
+      "mode": 420
+    },
+    {
+      "path": "rep_023/inputs/rep_023/strict_tag_info.rds",
+      "bytes": 5512,
+      "sha256": "60a247a42aeb01cbad6a30b80f5e792f8dd4da7679e9a2b9b7f50eaff7ea915c",
+      "mode": 420
+    },
+    {
+      "path": "rep_023/inputs/rep_023/strict_tag_likelihood_summary.rds",
+      "bytes": 13504,
+      "sha256": "2791ac6495fc7b98aadf0ba1116cb1f021f2b863309a145ee0883d5d4d5e8a2b",
+      "mode": 420
+    },
+    {
+      "path": "rep_023/refit/rep_023/model_info.rds",
+      "bytes": 1336,
+      "sha256": "4af74768cc2f750d841c69fad8b0ecb7ccd0d542122bd1c0e73dd51652b656de",
+      "mode": 420
+    },
+    {
+      "path": "rep_023/selftest_config.rds",
+      "bytes": 1040,
+      "sha256": "57cb547183d970ca2ceb7c1b751353e24a2844d91e9e1d5532377ce91ccdfefd",
+      "mode": 420
+    },
+    {
+      "path": "rep_023/selftest_runs.rds",
+      "bytes": 988,
+      "sha256": "9ca14c77181a08fb52e28d91a4dade3c92db06b2bf357ee21f5636da224c10fd",
+      "mode": 420
+    },
+    {
+      "path": "rep_023/truth/model_info.rds",
+      "bytes": 6952,
+      "sha256": "855146ecffa9e4f68bf63bc8c56b871270e9d0972eba6a05efd695970abb1c62",
+      "mode": 420
+    },
+    {
+      "path": "rep_023/truth_eval/rep_023/model_info.rds",
+      "bytes": 2152,
+      "sha256": "41026908294ff774a0bf2b317067a16959016efb7ee860fa1e70cfc55cddbf95",
+      "mode": 420
+    },
+    {
+      "path": "rep_024/inputs/rep_024/data_simulation_summary.rds",
+      "bytes": 36592,
+      "sha256": "5e25b9243f8f22bdfe7b4b197b0617ce566bcff43dd0bc21e64bcce1237fe26d",
+      "mode": 420
+    },
+    {
+      "path": "rep_024/inputs/rep_024/selftest_input_info.rds",
+      "bytes": 2508,
+      "sha256": "cc7da899543bc286b981234102832b730d286404e726888ed11fd6815d73b62e",
+      "mode": 420
+    },
+    {
+      "path": "rep_024/inputs/rep_024/strict_tag_info.rds",
+      "bytes": 5740,
+      "sha256": "c2852e11cbc35e506a77e1e2cff44194c5ab218c316413d6aa7d20f6f4e01435",
+      "mode": 420
+    },
+    {
+      "path": "rep_024/inputs/rep_024/strict_tag_likelihood_summary.rds",
+      "bytes": 13544,
+      "sha256": "66c149db67fe763f7a842b7aa22eb72cab3b939329e74cd3ef0e8136ab1f63ce",
+      "mode": 420
+    },
+    {
+      "path": "rep_024/refit/rep_024/model_info.rds",
+      "bytes": 1340,
+      "sha256": "743e186f6198ea02c50cfca7eef529291bf3e4220c536cb5d9b6afdcf4c9dacc",
+      "mode": 420
+    },
+    {
+      "path": "rep_024/selftest_config.rds",
+      "bytes": 1040,
+      "sha256": "a3d885bc439a5c690e6d66e12a4ca2fcc6b6f69738dae3b193f1d080348fb1a3",
+      "mode": 420
+    },
+    {
+      "path": "rep_024/selftest_runs.rds",
+      "bytes": 988,
+      "sha256": "9ee70844471383b838eec161c82e702a31a98a4e9d357642fbf1bcf3e0a6d055",
+      "mode": 420
+    },
+    {
+      "path": "rep_024/truth/model_info.rds",
+      "bytes": 6940,
+      "sha256": "eb0ce1d30de8f33fc6f43deb59afbbde264913d92c05ef8d90a24b9511fc2a98",
+      "mode": 420
+    },
+    {
+      "path": "rep_024/truth_eval/rep_024/model_info.rds",
+      "bytes": 2152,
+      "sha256": "0233e630a0edce650d49ca85419cc11e580d18ed307dbd9287ac1016e53647bd",
+      "mode": 420
+    },
+    {
+      "path": "rep_025/inputs/rep_025/data_simulation_summary.rds",
+      "bytes": 36532,
+      "sha256": "8cb372ace62e4d5a043e146db6e24defbb62ab09d56a91f2595911ea7c6073fd",
+      "mode": 420
+    },
+    {
+      "path": "rep_025/inputs/rep_025/selftest_input_info.rds",
+      "bytes": 2508,
+      "sha256": "208b59cf100ea8f0ddf51e74f3a650dbf7fc831f026aa233ac5491bea5f50400",
+      "mode": 420
+    },
+    {
+      "path": "rep_025/inputs/rep_025/strict_tag_info.rds",
+      "bytes": 5764,
+      "sha256": "3baae251a69d7fd5b58a132b84dab5c7b98c07031c66110fee3371d546269687",
+      "mode": 420
+    },
+    {
+      "path": "rep_025/inputs/rep_025/strict_tag_likelihood_summary.rds",
+      "bytes": 13500,
+      "sha256": "cd77d8bfa2a6a7b872fb03cc814d633362d90baafbb0410370fb778004ccd0ec",
+      "mode": 420
+    },
+    {
+      "path": "rep_025/refit/rep_025/model_info.rds",
+      "bytes": 1336,
+      "sha256": "64054e386f38c154ef03cae43ab4bd3dc3abbf66371522f89bf3c63f3ed5edf9",
+      "mode": 420
+    },
+    {
+      "path": "rep_025/selftest_config.rds",
+      "bytes": 1040,
+      "sha256": "1828b3f9eda38f687cea2941975ea5c4059f84d7a7ed2a3181b9f49f10c8f6d2",
+      "mode": 420
+    },
+    {
+      "path": "rep_025/selftest_runs.rds",
+      "bytes": 988,
+      "sha256": "eccea05e7510f2fe5c788d8c9fa038623767a2f44f31a69c01544b9f09de97d6",
+      "mode": 420
+    },
+    {
+      "path": "rep_025/truth/model_info.rds",
+      "bytes": 6748,
+      "sha256": "dbe304bea4ae30de2fab863b7534cc5263fdfa0598b4f93fef233129fb5c1847",
+      "mode": 420
+    },
+    {
+      "path": "rep_025/truth_eval/rep_025/model_info.rds",
+      "bytes": 2152,
+      "sha256": "444df26e0d58137601e3c1998b70351150bd2729aa947f73fce5c6148e9a8783",
+      "mode": 420
+    },
+    {
+      "path": "rep_026/inputs/rep_026/data_simulation_summary.rds",
+      "bytes": 36544,
+      "sha256": "ec407b4611c25f6354e8eaeaa39a7f14f97185aa7aa932ab62cb7f510e8b5e1f",
+      "mode": 420
+    },
+    {
+      "path": "rep_026/inputs/rep_026/selftest_input_info.rds",
+      "bytes": 2508,
+      "sha256": "1089ec434f5fd04a638dabc7c09859e1a3896845023e48cd9029bbc3316b3de6",
+      "mode": 420
+    },
+    {
+      "path": "rep_026/inputs/rep_026/strict_tag_info.rds",
+      "bytes": 5752,
+      "sha256": "dc737f99b48b54f25ea3487eab770458d18c888176204aaa058449972a7ed0bf",
+      "mode": 420
+    },
+    {
+      "path": "rep_026/inputs/rep_026/strict_tag_likelihood_summary.rds",
+      "bytes": 13524,
+      "sha256": "4d84bba7b190fd4c6d5c0f346f0844437145a868ad8cf55f69eceacd343897b9",
+      "mode": 420
+    },
+    {
+      "path": "rep_026/refit/rep_026/model_info.rds",
+      "bytes": 1336,
+      "sha256": "0dadd7592e1d0ea1e6dcf56064dfb364f4d0cab17e210d24adc6b8f247e162fa",
+      "mode": 420
+    },
+    {
+      "path": "rep_026/selftest_config.rds",
+      "bytes": 1040,
+      "sha256": "3259a83147fbeb6ac593954df2649e07075fa484c2908869869555054a7d0858",
+      "mode": 420
+    },
+    {
+      "path": "rep_026/selftest_runs.rds",
+      "bytes": 988,
+      "sha256": "4d06e9e710329159afedb07925a8c291e11a7cdcb5d34b0f3505e49861bb1f11",
+      "mode": 420
+    },
+    {
+      "path": "rep_026/truth/model_info.rds",
+      "bytes": 6948,
+      "sha256": "63a9596f607a1b59f4ff4fe8070a5e801d2bbb30eb27a7b554a680630bd53e91",
+      "mode": 420
+    },
+    {
+      "path": "rep_026/truth_eval/rep_026/model_info.rds",
+      "bytes": 2152,
+      "sha256": "f6d51f10e670b93d2c09a453df418d6456b07a74cbb02151b4683d161ac2dd32",
+      "mode": 420
+    },
+    {
+      "path": "rep_027/inputs/rep_027/data_simulation_summary.rds",
+      "bytes": 36656,
+      "sha256": "01ec9f76193fc1504f3f6b6c455747bce2da63674b5a29a3ddafb6b941c12dda",
+      "mode": 420
+    },
+    {
+      "path": "rep_027/inputs/rep_027/selftest_input_info.rds",
+      "bytes": 2508,
+      "sha256": "c3bfb88e8d06e412a48b963eacb6562bfd28c77e8b7d83e6bd4d2b614574e028",
+      "mode": 420
+    },
+    {
+      "path": "rep_027/inputs/rep_027/strict_tag_info.rds",
+      "bytes": 5760,
+      "sha256": "b72e3c9756286743129ac0921cdd9b38179765eb215a495881251ee470cb9a27",
+      "mode": 420
+    },
+    {
+      "path": "rep_027/inputs/rep_027/strict_tag_likelihood_summary.rds",
+      "bytes": 13528,
+      "sha256": "39d48af04a41bc2ef64dd7c529d9dd23d2a7451e7e305e71674cf00e03712bb8",
+      "mode": 420
+    },
+    {
+      "path": "rep_027/refit/rep_027/model_info.rds",
+      "bytes": 1336,
+      "sha256": "b54efcbae1a7496ecf85e1638f57be47644cdfbfdb3b0b0b198e496bb4bd6318",
+      "mode": 420
+    },
+    {
+      "path": "rep_027/selftest_config.rds",
+      "bytes": 1040,
+      "sha256": "c59f6e7e88a13e3876061f82aa95c0e8ecc21a5d35afcb7f3619dc36e961d9b4",
+      "mode": 420
+    },
+    {
+      "path": "rep_027/selftest_runs.rds",
+      "bytes": 984,
+      "sha256": "21b796ff6d41156581da41aab044ac865bfc97033033c4a829221368b579c7e1",
+      "mode": 420
+    },
+    {
+      "path": "rep_027/truth/model_info.rds",
+      "bytes": 6752,
+      "sha256": "fe8b9d2f57e1545a600a6d219f7dfb9ad16593a013dcf39ff43f7ef96b05ce5f",
+      "mode": 420
+    },
+    {
+      "path": "rep_027/truth_eval/rep_027/model_info.rds",
+      "bytes": 2152,
+      "sha256": "bf8e2b7aa407be7ec0ce313a96683a948e7eadb41df2045b36204d399f9516d8",
+      "mode": 420
+    },
+    {
+      "path": "rep_028/inputs/rep_028/data_simulation_summary.rds",
+      "bytes": 36588,
+      "sha256": "430d104633e9c157465f9fc629f7f7c1ffc7ac44c5315802d17a7dae5988b605",
+      "mode": 420
+    },
+    {
+      "path": "rep_028/inputs/rep_028/selftest_input_info.rds",
+      "bytes": 2508,
+      "sha256": "c7f2fcbf3b0b498df9c09a525c21f60036e27f8d2347d74e74aae4b526c61766",
+      "mode": 420
+    },
+    {
+      "path": "rep_028/inputs/rep_028/strict_tag_info.rds",
+      "bytes": 5748,
+      "sha256": "36ed2b9b57dfe9408a4d34c3c62e9d67123ae0baad730b7df5e97c5385b1c203",
+      "mode": 420
+    },
+    {
+      "path": "rep_028/inputs/rep_028/strict_tag_likelihood_summary.rds",
+      "bytes": 13564,
+      "sha256": "bd2d9cd34ba2519ee6dbd2b0db15f2ac5cf39d21ef19b01629b70ae397a7fc7f",
+      "mode": 420
+    },
+    {
+      "path": "rep_028/refit/rep_028/model_info.rds",
+      "bytes": 1336,
+      "sha256": "9b05c7777111ea1f94ea098a270887a8e8e99bfe5891eb0a458bd0bdcea732d5",
+      "mode": 420
+    },
+    {
+      "path": "rep_028/selftest_config.rds",
+      "bytes": 1040,
+      "sha256": "e3fdd053876ffc18aace8b024ceef4d2cb666a879bb95f96c89876995c26f2ab",
+      "mode": 420
+    },
+    {
+      "path": "rep_028/selftest_runs.rds",
+      "bytes": 988,
+      "sha256": "47ff5e58289358e0ad93a5ce3e5e47fa81b4ee1fb415f49e5c2d6813fdea4ce3",
+      "mode": 420
+    },
+    {
+      "path": "rep_028/truth/model_info.rds",
+      "bytes": 6936,
+      "sha256": "9058e165d99bef1551f7e896b708485e6dcd66c4ea03945b5da20b277a6f8670",
+      "mode": 420
+    },
+    {
+      "path": "rep_028/truth_eval/rep_028/model_info.rds",
+      "bytes": 2152,
+      "sha256": "4672ae419dd53c9ff788048694632dd54c4421fdb403f431dc2e52cb3528f292",
+      "mode": 420
+    },
+    {
+      "path": "rep_029/inputs/rep_029/data_simulation_summary.rds",
+      "bytes": 36600,
+      "sha256": "b45b3503594828650e4895c09cb8bb0697f790ede910c40640c21f5e39f0a692",
+      "mode": 420
+    },
+    {
+      "path": "rep_029/inputs/rep_029/selftest_input_info.rds",
+      "bytes": 2508,
+      "sha256": "0b80bec8d3b5a3469e45d775da303513fe5bb56973511ac9fb58ca44dc836f5e",
+      "mode": 420
+    },
+    {
+      "path": "rep_029/inputs/rep_029/strict_tag_info.rds",
+      "bytes": 5768,
+      "sha256": "88e7c7e7c79a9e1601bbd67e90b97f66888b8fce381bbca615c36000afd70193",
+      "mode": 420
+    },
+    {
+      "path": "rep_029/inputs/rep_029/strict_tag_likelihood_summary.rds",
+      "bytes": 13528,
+      "sha256": "89d8c8f7bbe37c630ecc7de6961aa6002e39ba8d110a7ebd6f0080e960bac5e8",
+      "mode": 420
+    },
+    {
+      "path": "rep_029/refit/rep_029/model_info.rds",
+      "bytes": 1340,
+      "sha256": "1c8445bea099fd31a7b8b45fa35be07a97169a865f5dd33b9dba49c227e72d9d",
+      "mode": 420
+    },
+    {
+      "path": "rep_029/selftest_config.rds",
+      "bytes": 1040,
+      "sha256": "3f95dffa3c9ae0841e1d3241d6279b415832f179c603e00e3bfd5b121024f27b",
+      "mode": 420
+    },
+    {
+      "path": "rep_029/selftest_runs.rds",
+      "bytes": 988,
+      "sha256": "da8f253cf1d59193c5ceac61df1a72fdbb4d733bff19a807dc93b539c2773256",
+      "mode": 420
+    },
+    {
+      "path": "rep_029/truth/model_info.rds",
+      "bytes": 6940,
+      "sha256": "9ad0f714225e9e3cec5dff10b8dc2cdb181f3e540f748452e09a264dd16be6b5",
+      "mode": 420
+    },
+    {
+      "path": "rep_029/truth_eval/rep_029/model_info.rds",
+      "bytes": 2152,
+      "sha256": "a7b412fdca80876a66a5abe61e9d18e329bee95497a24886276dc479bfb7de5d",
+      "mode": 420
+    },
+    {
+      "path": "rep_030/inputs/rep_030/data_simulation_summary.rds",
+      "bytes": 36652,
+      "sha256": "203d9afc2a2499ada40dd21035f3950c552a77a65bb603581cb9c8cadbfb7aa5",
+      "mode": 420
+    },
+    {
+      "path": "rep_030/inputs/rep_030/selftest_input_info.rds",
+      "bytes": 2508,
+      "sha256": "b25293e52fb57034fef84df7e3eb48914531c7bd137b69309d18a3cda9005704",
+      "mode": 420
+    },
+    {
+      "path": "rep_030/inputs/rep_030/strict_tag_info.rds",
+      "bytes": 5796,
+      "sha256": "a52a9c461e98b45d4f31fc68cd2f703368fb81326a1bacd1ebd080a2bcd26fe5",
+      "mode": 420
+    },
+    {
+      "path": "rep_030/inputs/rep_030/strict_tag_likelihood_summary.rds",
+      "bytes": 13552,
+      "sha256": "c6a0180c92c37596bc8bb28f9a644a7f74bedc959de81109bce72309bfb83460",
+      "mode": 420
+    },
+    {
+      "path": "rep_030/refit/rep_030/model_info.rds",
+      "bytes": 1336,
+      "sha256": "afbe5fe2cf431b27310538b22ae4de1968f414d8d26ff5d6e4dbfa8b3d9d45f0",
+      "mode": 420
+    },
+    {
+      "path": "rep_030/selftest_config.rds",
+      "bytes": 1040,
+      "sha256": "284110a40bd5d7eec72f2f3d21b4ca0a6286aa7a7ec4bffd3bd4b594be965fef",
+      "mode": 420
+    },
+    {
+      "path": "rep_030/selftest_runs.rds",
+      "bytes": 992,
+      "sha256": "4095f0727dbabc76890bde90f10687175864755c91a6ad8cd2548977d6ac81de",
+      "mode": 420
+    },
+    {
+      "path": "rep_030/truth/model_info.rds",
+      "bytes": 6944,
+      "sha256": "8f3aab75b7e344259376ed200f6061f6bf06d7cb75416cba7fd1fb7095d2de22",
+      "mode": 420
+    },
+    {
+      "path": "rep_030/truth_eval/rep_030/model_info.rds",
+      "bytes": 2152,
+      "sha256": "18915779877e0b3bcadbbca0a16b0bdf15dec63208e8902d77e749f5ece1bf99",
+      "mode": 420
+    },
+    {
+      "path": "rep_031/inputs/rep_031/data_simulation_summary.rds",
+      "bytes": 36512,
+      "sha256": "af1c1f80c509381aa7bb65efd3884d7d0ab1cd2fe9cf72328d6cd67119eca531",
+      "mode": 420
+    },
+    {
+      "path": "rep_031/inputs/rep_031/selftest_input_info.rds",
+      "bytes": 2508,
+      "sha256": "9c577cf23ef5671ed05fafc21acb93d95863e0f626becbc79e5a606495e41779",
+      "mode": 420
+    },
+    {
+      "path": "rep_031/inputs/rep_031/strict_tag_info.rds",
+      "bytes": 5716,
+      "sha256": "1ff44f846590d675544b95015bfe98b2b1f956ab6dfbe58228e401fe285d282b",
+      "mode": 420
+    },
+    {
+      "path": "rep_031/inputs/rep_031/strict_tag_likelihood_summary.rds",
+      "bytes": 13560,
+      "sha256": "16f5be9ced61055a0004f52e27596eb497e486352dc82bb74b1bac802710c654",
+      "mode": 420
+    },
+    {
+      "path": "rep_031/refit/rep_031/model_info.rds",
+      "bytes": 1340,
+      "sha256": "3d37814f550a97c864341f1f1e37831639f3d62f067fd063fb061d219ee1f247",
+      "mode": 420
+    },
+    {
+      "path": "rep_031/selftest_config.rds",
+      "bytes": 1040,
+      "sha256": "aa53adef86517892c4b4fbbdbccad1918c78a6401da71091c3a77a8ae59102e3",
+      "mode": 420
+    },
+    {
+      "path": "rep_031/selftest_runs.rds",
+      "bytes": 988,
+      "sha256": "d810cec208c4552e7090d8b8a61b11e29d85c25a3df330768735d6f3b12a9f2d",
+      "mode": 420
+    },
+    {
+      "path": "rep_031/truth/model_info.rds",
+      "bytes": 6944,
+      "sha256": "f523256e407159fd7e0d66f924bd9887289a245c854ceee31be04cfc8fe3b0af",
+      "mode": 420
+    },
+    {
+      "path": "rep_031/truth_eval/rep_031/model_info.rds",
+      "bytes": 2152,
+      "sha256": "20e33d05193c9600bd1813c17db122d19a5d79cf0786d1fa825e034be78f3412",
+      "mode": 420
+    },
+    {
+      "path": "rep_032/inputs/rep_032/data_simulation_summary.rds",
+      "bytes": 36408,
+      "sha256": "ee9a384cf7e3601dfd42d8a56dfb86158f9c420eed626fd95296e3ff239fa2c2",
+      "mode": 420
+    },
+    {
+      "path": "rep_032/inputs/rep_032/selftest_input_info.rds",
+      "bytes": 2508,
+      "sha256": "7653ada9e1658abb71d65391d6a0334fbc20383f86e50c8827e4675b5d34db9a",
+      "mode": 420
+    },
+    {
+      "path": "rep_032/inputs/rep_032/strict_tag_info.rds",
+      "bytes": 5752,
+      "sha256": "4c6bd35d06e06d9f6ad875bed8b5c38e5977542359dd965f111302d44f810329",
+      "mode": 420
+    },
+    {
+      "path": "rep_032/inputs/rep_032/strict_tag_likelihood_summary.rds",
+      "bytes": 13540,
+      "sha256": "973b6834c136aab28f5ca67b8a2556ce158776274eb3aef57c5e2458174d5d83",
+      "mode": 420
+    },
+    {
+      "path": "rep_032/refit/rep_032/model_info.rds",
+      "bytes": 1336,
+      "sha256": "35ab15193be99f14335bd5c018f8fb66a119577381e6466ddbf817403179290d",
+      "mode": 420
+    },
+    {
+      "path": "rep_032/selftest_config.rds",
+      "bytes": 1040,
+      "sha256": "34cb74948aeff80cf0692df3e59444111c2f4bbe090c9a198dc568b635011d09",
+      "mode": 420
+    },
+    {
+      "path": "rep_032/selftest_runs.rds",
+      "bytes": 988,
+      "sha256": "170d494911a732c42235068fd372bd17d6fbe61ba3f024c7e48953cc3cde9943",
+      "mode": 420
+    },
+    {
+      "path": "rep_032/truth/model_info.rds",
+      "bytes": 6944,
+      "sha256": "0c6d9dc954bbbc8868e4e61efbffaed405b5032e95809222596e5c1226cfebdf",
+      "mode": 420
+    },
+    {
+      "path": "rep_032/truth_eval/rep_032/model_info.rds",
+      "bytes": 2152,
+      "sha256": "208dc1766888dabdcbe51c6f7e3fda20fe742770e73770fa2c34b8ac6d0a325e",
+      "mode": 420
+    },
+    {
+      "path": "rep_033/inputs/rep_033/data_simulation_summary.rds",
+      "bytes": 36700,
+      "sha256": "a3670320ff1e7f5eadc9684b5b500cbe23c767544184723cffcb000748bdb37a",
+      "mode": 420
+    },
+    {
+      "path": "rep_033/inputs/rep_033/selftest_input_info.rds",
+      "bytes": 2504,
+      "sha256": "db972018bd8217359f44eaa480d953f48cdb3c313f8678b18ff52ed9c3cdd646",
+      "mode": 420
+    },
+    {
+      "path": "rep_033/inputs/rep_033/strict_tag_info.rds",
+      "bytes": 5780,
+      "sha256": "75a6bcc75c3ac41e7bfc5ba59d30b1ab6ca7b0fabfcb269affb3191b08feb3f0",
+      "mode": 420
+    },
+    {
+      "path": "rep_033/inputs/rep_033/strict_tag_likelihood_summary.rds",
+      "bytes": 13552,
+      "sha256": "9051e71f9cc2eeef9cf4b9395718d928c50a71dcc978dad608335a56a7f5978f",
+      "mode": 420
+    },
+    {
+      "path": "rep_033/refit/rep_033/model_info.rds",
+      "bytes": 1340,
+      "sha256": "c39e29f3028ddcd81848e1a81ddbd0b8954563225dfadad16d0f2bdde6e0a338",
+      "mode": 420
+    },
+    {
+      "path": "rep_033/selftest_config.rds",
+      "bytes": 1040,
+      "sha256": "32b2ed8f141e70315d1cc0ca0a58cab412e465c80b9bdec0f35635f440801b6f",
+      "mode": 420
+    },
+    {
+      "path": "rep_033/selftest_runs.rds",
+      "bytes": 988,
+      "sha256": "7e5d0e48f78b3646d100102ef13ec37d4cbd7abc328d2c3fbe39d02d395211fd",
+      "mode": 420
+    },
+    {
+      "path": "rep_033/truth/model_info.rds",
+      "bytes": 6920,
+      "sha256": "7a048fdaf27e8c3a6c6208638519a62175c37924e02637eebd2e6c1feeaa22ad",
+      "mode": 420
+    },
+    {
+      "path": "rep_033/truth_eval/rep_033/model_info.rds",
+      "bytes": 2152,
+      "sha256": "c72e3212b2633487bd52c7c5fbb7ff50d395dec9e7a7b3295449d4308522bf5a",
+      "mode": 420
+    },
+    {
+      "path": "rep_034/inputs/rep_034/data_simulation_summary.rds",
+      "bytes": 36704,
+      "sha256": "d784fff954eb5014bbf0362b88764dc18fa24b03ce0296bca3879789ecafd1f9",
+      "mode": 420
+    },
+    {
+      "path": "rep_034/inputs/rep_034/selftest_input_info.rds",
+      "bytes": 2508,
+      "sha256": "70b875fe0e69f254612832865ee79f71aaa6e164e6f97a4927e1cdfc74da3549",
+      "mode": 420
+    },
+    {
+      "path": "rep_034/inputs/rep_034/strict_tag_info.rds",
+      "bytes": 5780,
+      "sha256": "bba2b12447a4e2ab3b3583916a04780c79174714bb586c3a4e67b7daad736027",
+      "mode": 420
+    },
+    {
+      "path": "rep_034/inputs/rep_034/strict_tag_likelihood_summary.rds",
+      "bytes": 13584,
+      "sha256": "45c9530389dd449869a63652b8b8b96c54fcbd17963d7b83dcb2b12fd1023b02",
+      "mode": 420
+    },
+    {
+      "path": "rep_034/refit/rep_034/model_info.rds",
+      "bytes": 1340,
+      "sha256": "b4f60758e05f6cb7b2fea1a18eda04c860859e27de960d40df9b0dba3e8b460a",
+      "mode": 420
+    },
+    {
+      "path": "rep_034/selftest_config.rds",
+      "bytes": 1040,
+      "sha256": "ae42dbc0beb33682a7c7c7160387205a8c0c0bbea6f457ed11cbded193917ed4",
+      "mode": 420
+    },
+    {
+      "path": "rep_034/selftest_runs.rds",
+      "bytes": 988,
+      "sha256": "71ab9201a5f7c7128011201d2dcd422581838f674391f3c18d0699ae41918c89",
+      "mode": 420
+    },
+    {
+      "path": "rep_034/truth/model_info.rds",
+      "bytes": 6740,
+      "sha256": "5ff746978b4bf312dee67506984f5651392b63a4e97a6406c51526938a310503",
+      "mode": 420
+    },
+    {
+      "path": "rep_034/truth_eval/rep_034/model_info.rds",
+      "bytes": 2152,
+      "sha256": "d556c6757d2877f2d97488a2c0db40d6140cd76a5ef2cb91549a1a51c9292fd4",
+      "mode": 420
+    },
+    {
+      "path": "rep_035/inputs/rep_035/data_simulation_summary.rds",
+      "bytes": 36612,
+      "sha256": "e56dce7021b638a390c1a08df1691e4fc9f41cf60277026c3e05f74894487478",
+      "mode": 420
+    },
+    {
+      "path": "rep_035/inputs/rep_035/selftest_input_info.rds",
+      "bytes": 2508,
+      "sha256": "827e729e907d9751b88261edc1dbbeceb9c2aec60150fc783ff98e95b6007b35",
+      "mode": 420
+    },
+    {
+      "path": "rep_035/inputs/rep_035/strict_tag_info.rds",
+      "bytes": 5764,
+      "sha256": "9133f9c1b0fd0452df7384361cbafe691e77dc677ea388b502492c87628f8536",
+      "mode": 420
+    },
+    {
+      "path": "rep_035/inputs/rep_035/strict_tag_likelihood_summary.rds",
+      "bytes": 13540,
+      "sha256": "6f6ba561677f8bfeb7528fc3df2968b14517c68dcbe30d3e0c5eb1b27f1dad9f",
+      "mode": 420
+    },
+    {
+      "path": "rep_035/refit/rep_035/model_info.rds",
+      "bytes": 1344,
+      "sha256": "640496d8f04ae1aab268a63ea034f788d87179fc27a718e0b368267c2e769504",
+      "mode": 420
+    },
+    {
+      "path": "rep_035/selftest_config.rds",
+      "bytes": 1040,
+      "sha256": "74d092723cf97f4bf51a729fc9911322a580aa7e65ef96a24859afeadb6efc54",
+      "mode": 420
+    },
+    {
+      "path": "rep_035/selftest_runs.rds",
+      "bytes": 988,
+      "sha256": "3383c2ccef913fdc5e0c78a9d01853a1978c594d7aa2ea4a8c763b936788dac7",
+      "mode": 420
+    },
+    {
+      "path": "rep_035/truth/model_info.rds",
+      "bytes": 6944,
+      "sha256": "3e005b81b334cd77e3c4977dd2e84b715ce9e32e29e950933d4bf324636f5c09",
+      "mode": 420
+    },
+    {
+      "path": "rep_035/truth_eval/rep_035/model_info.rds",
+      "bytes": 2156,
+      "sha256": "fa6d2ea05b998091c0c59026944d57bb1682abd2037fb1496cc9b395f755c198",
+      "mode": 420
+    },
+    {
+      "path": "rep_036/inputs/rep_036/data_simulation_summary.rds",
+      "bytes": 36576,
+      "sha256": "5e356b51143c7ed024d8206e820bb3d1b4a731f717fdf43e73926bcc57101ea3",
+      "mode": 420
+    },
+    {
+      "path": "rep_036/inputs/rep_036/selftest_input_info.rds",
+      "bytes": 2508,
+      "sha256": "0e53736a7d8090055d50826716b50828bffc7b23e854fccef83a3914b6b0a5f7",
+      "mode": 420
+    },
+    {
+      "path": "rep_036/inputs/rep_036/strict_tag_info.rds",
+      "bytes": 5776,
+      "sha256": "6d781bebf861e20dbe491592c050af19f74204c6055a8516edeadfad09c529bf",
+      "mode": 420
+    },
+    {
+      "path": "rep_036/inputs/rep_036/strict_tag_likelihood_summary.rds",
+      "bytes": 13552,
+      "sha256": "6a6b04bd057e951bceadd7a17c8ad60b1b35fe0caeac4ca7c344c923203c7db1",
+      "mode": 420
+    },
+    {
+      "path": "rep_036/refit/rep_036/model_info.rds",
+      "bytes": 1336,
+      "sha256": "9df668c7b3b67f4c6f1a2d376bae8143f875d2f126af176a4dc005ea082fa405",
+      "mode": 420
+    },
+    {
+      "path": "rep_036/selftest_config.rds",
+      "bytes": 1040,
+      "sha256": "04fd7dceb661a75850410f385823230f47567faacf6b121f2d696595b60a2678",
+      "mode": 420
+    },
+    {
+      "path": "rep_036/selftest_runs.rds",
+      "bytes": 988,
+      "sha256": "0d2371e8a993ae5610cd3ccf61eb87a02a2d9965d03c590a9bd8a96463d3ba8d",
+      "mode": 420
+    },
+    {
+      "path": "rep_036/truth/model_info.rds",
+      "bytes": 6924,
+      "sha256": "a6538786829a68bc02e1c2e4317c6982e0273dccea6f1b72ce1da4a6d76dee14",
+      "mode": 420
+    },
+    {
+      "path": "rep_036/truth_eval/rep_036/model_info.rds",
+      "bytes": 2152,
+      "sha256": "3c5f9886ae6fbab6a40eee0b4093d81c0f1bb9242201174c722ebab8d592fff0",
+      "mode": 420
+    },
+    {
+      "path": "rep_037/inputs/rep_037/data_simulation_summary.rds",
+      "bytes": 36572,
+      "sha256": "395e36b4364c3b1516689ecbce3b70cdd2e38b54b1c70659f3afda6a900f8bb4",
+      "mode": 420
+    },
+    {
+      "path": "rep_037/inputs/rep_037/selftest_input_info.rds",
+      "bytes": 2508,
+      "sha256": "9fad6420e9dddc55186fe70f64b133a3626f84fee4739757e7662bbbc153b808",
+      "mode": 420
+    },
+    {
+      "path": "rep_037/inputs/rep_037/strict_tag_info.rds",
+      "bytes": 5780,
+      "sha256": "8b968acaa233c26626c9915a4716626a47f2d2fd6a51ed66fe3de8ab3ffb2a25",
+      "mode": 420
+    },
+    {
+      "path": "rep_037/inputs/rep_037/strict_tag_likelihood_summary.rds",
+      "bytes": 13552,
+      "sha256": "79f73ba92f454922014ab119e5357ea6828012f772bfae5dca081814faed4e1c",
+      "mode": 420
+    },
+    {
+      "path": "rep_037/refit/rep_037/model_info.rds",
+      "bytes": 1340,
+      "sha256": "23f7649e0f7d8d373f29db0ad00a4a466fc504741110abcab589af85fdec588d",
+      "mode": 420
+    },
+    {
+      "path": "rep_037/selftest_config.rds",
+      "bytes": 1040,
+      "sha256": "5651c1c1d2bbbb17ab34ad6f0d2e1e62611b322d1b4d198b037158ac22e145b9",
+      "mode": 420
+    },
+    {
+      "path": "rep_037/selftest_runs.rds",
+      "bytes": 988,
+      "sha256": "6452d07bfb43061537d2d24e051d9f3834217ec32f389618f95d8fe9a3a54e6f",
+      "mode": 420
+    },
+    {
+      "path": "rep_037/truth/model_info.rds",
+      "bytes": 6776,
+      "sha256": "7a2e4868b0fdeaec9aa498d01098329845761d688ec0175dde810ddc6a11f700",
+      "mode": 420
+    },
+    {
+      "path": "rep_037/truth_eval/rep_037/model_info.rds",
+      "bytes": 2152,
+      "sha256": "27022e147ef8513047e9d389fa53bf96df5ff3c4ac36feabe38530d270345de6",
+      "mode": 420
+    },
+    {
+      "path": "rep_038/inputs/rep_038/data_simulation_summary.rds",
+      "bytes": 36560,
+      "sha256": "6946bf63507099b8eb4042087540ed11c5eaad292dadc7fdc9106b122b6e7481",
+      "mode": 420
+    },
+    {
+      "path": "rep_038/inputs/rep_038/selftest_input_info.rds",
+      "bytes": 2508,
+      "sha256": "06bbd709ee6aba09e023066df67d8f1b6f45fe400de34bb97d755704b3ce0027",
+      "mode": 420
+    },
+    {
+      "path": "rep_038/inputs/rep_038/strict_tag_info.rds",
+      "bytes": 5768,
+      "sha256": "db040e4eab23bc6f695f47372b512c268cb1a685fdc60c9e75be72e00d7ed39f",
+      "mode": 420
+    },
+    {
+      "path": "rep_038/inputs/rep_038/strict_tag_likelihood_summary.rds",
+      "bytes": 13544,
+      "sha256": "a9667fd9a4c6d5d021347c5ec31a0bd92891fde84d9a7009bbc12c2c642127f0",
+      "mode": 420
+    },
+    {
+      "path": "rep_038/refit/rep_038/model_info.rds",
+      "bytes": 1332,
+      "sha256": "23854c218836e2a9eb9290ee833517c5d7666e7207e35a9ebc0357e55e80cc88",
+      "mode": 420
+    },
+    {
+      "path": "rep_038/selftest_config.rds",
+      "bytes": 1040,
+      "sha256": "886c6780284feca7c09467655c248f95d0b95306ea1d342b743630b70da9b28c",
+      "mode": 420
+    },
+    {
+      "path": "rep_038/selftest_runs.rds",
+      "bytes": 988,
+      "sha256": "c769a9bafdf9d9cdc6cd8b6a168e00a666c6b9ad035f9def5b87664ada1c5706",
+      "mode": 420
+    },
+    {
+      "path": "rep_038/truth/model_info.rds",
+      "bytes": 6924,
+      "sha256": "e0cc23847f5bee089c20c6b012cadc4e391822adcfbad2d3804f463ae1a85ed5",
+      "mode": 420
+    },
+    {
+      "path": "rep_038/truth_eval/rep_038/model_info.rds",
+      "bytes": 2152,
+      "sha256": "9ae89181f18815c3400f5c51e84dd34f8284b87248159ffa5fd1b24c244f5b79",
+      "mode": 420
+    },
+    {
+      "path": "rep_039/inputs/rep_039/data_simulation_summary.rds",
+      "bytes": 36532,
+      "sha256": "fbef93890a54b1d67f70012b666b6de287c119d5b47f92942d99701fa7dc9d13",
+      "mode": 420
+    },
+    {
+      "path": "rep_039/inputs/rep_039/selftest_input_info.rds",
+      "bytes": 2508,
+      "sha256": "fbe7a0b31909bb33d9c3f15f69018a1b316b71469566529fb1cbc30cd2bef0df",
+      "mode": 420
+    },
+    {
+      "path": "rep_039/inputs/rep_039/strict_tag_info.rds",
+      "bytes": 5756,
+      "sha256": "d48e558e96ed7cb58558b47538e97912f67eda7b6f52fb3f672613f37479f47d",
+      "mode": 420
+    },
+    {
+      "path": "rep_039/inputs/rep_039/strict_tag_likelihood_summary.rds",
+      "bytes": 13492,
+      "sha256": "31d3e76a02bcf9814dba4e672a12e15933a14f69911656d91a9c40dd7a765d12",
+      "mode": 420
+    },
+    {
+      "path": "rep_039/refit/rep_039/model_info.rds",
+      "bytes": 1336,
+      "sha256": "0c55db22f0fa487e654f8379e9fd253d1d17611495146ff1ddbaba6d2bbb97e3",
+      "mode": 420
+    },
+    {
+      "path": "rep_039/selftest_config.rds",
+      "bytes": 1040,
+      "sha256": "bac44a061bbfd230a4be2130a08f6e53e17ea8203cfa3ca4e2ed433882253cd1",
+      "mode": 420
+    },
+    {
+      "path": "rep_039/selftest_runs.rds",
+      "bytes": 988,
+      "sha256": "5cc55e874659e40d45f399b36d4b66fa23c212217d6f25fe28f9014518c4a722",
+      "mode": 420
+    },
+    {
+      "path": "rep_039/truth/model_info.rds",
+      "bytes": 6768,
+      "sha256": "3849ca490f427fc2a41c06b21836257c577a4c8b4dcfdf72120a303c92b63e28",
+      "mode": 420
+    },
+    {
+      "path": "rep_039/truth_eval/rep_039/model_info.rds",
+      "bytes": 2148,
+      "sha256": "65e0a6a38028ddbc5d259d14d4200934e382f1d9259aa1aa3616d91e99224c83",
+      "mode": 420
+    },
+    {
+      "path": "rep_040/inputs/rep_040/data_simulation_summary.rds",
+      "bytes": 36612,
+      "sha256": "b7a2cf1b947e5bf1e3f04a01c95d6d6807bc834805f9c23d9535e75e5b23357a",
+      "mode": 420
+    },
+    {
+      "path": "rep_040/inputs/rep_040/selftest_input_info.rds",
+      "bytes": 2508,
+      "sha256": "995633d07abc0a8461e5b608d326d793c05a4b7e6a4ee744cbcceadeb94a8fc1",
+      "mode": 420
+    },
+    {
+      "path": "rep_040/inputs/rep_040/strict_tag_info.rds",
+      "bytes": 5508,
+      "sha256": "efe5360002a4690fdaf3611d8da44d37e5a36dab36bac62c27a38882ebc3db4c",
+      "mode": 420
+    },
+    {
+      "path": "rep_040/inputs/rep_040/strict_tag_likelihood_summary.rds",
+      "bytes": 13572,
+      "sha256": "7494eaaf6689819e1aade6335e4c395fd0ed8204ee4f36b8bb64eb9583045ec3",
+      "mode": 420
+    },
+    {
+      "path": "rep_040/refit/rep_040/model_info.rds",
+      "bytes": 1340,
+      "sha256": "b73e56b8c87bef43a681cb1608a1877fde77400c5a115faa2a06754a795e31a0",
+      "mode": 420
+    },
+    {
+      "path": "rep_040/selftest_config.rds",
+      "bytes": 1040,
+      "sha256": "32bdd30df684a17a2913ba21bc891f7e97bcb2ca461414a737b291e6bd91d694",
+      "mode": 420
+    },
+    {
+      "path": "rep_040/selftest_runs.rds",
+      "bytes": 988,
+      "sha256": "359eb185d8a901e05d17a44b557a9915bf3e6a0b6b9a7e2993699b25288d3c36",
+      "mode": 420
+    },
+    {
+      "path": "rep_040/truth/model_info.rds",
+      "bytes": 6928,
+      "sha256": "9f389e0c6ae7979160a404c087be75a1ee950b800a803d346a3352f8cd7e3f27",
+      "mode": 420
+    },
+    {
+      "path": "rep_040/truth_eval/rep_040/model_info.rds",
+      "bytes": 2152,
+      "sha256": "91311d70dbf2ee9bcdf42722135077b8b94c898a07f77cb3b04901a30b4d7466",
+      "mode": 420
+    },
+    {
+      "path": "rep_041/inputs/rep_041/data_simulation_summary.rds",
+      "bytes": 36528,
+      "sha256": "b3de5103812625ab433e9713f6d93ff31422647de353f273bdc59a4374a06f64",
+      "mode": 420
+    },
+    {
+      "path": "rep_041/inputs/rep_041/selftest_input_info.rds",
+      "bytes": 2504,
+      "sha256": "36058971befceaadfc61f7328f15ff4b9a1723e03b5cc8a9285fac9089a97efd",
+      "mode": 420
+    },
+    {
+      "path": "rep_041/inputs/rep_041/strict_tag_info.rds",
+      "bytes": 5760,
+      "sha256": "ef9648b2f28f19d3062663f5f2fd66e56ecd34d7d290db70f0a5538e069996b3",
+      "mode": 420
+    },
+    {
+      "path": "rep_041/inputs/rep_041/strict_tag_likelihood_summary.rds",
+      "bytes": 13540,
+      "sha256": "084fc1ef98012c65e310156162e78e246def89f652abce54b8e16b2193a602a6",
+      "mode": 420
+    },
+    {
+      "path": "rep_041/refit/rep_041/model_info.rds",
+      "bytes": 1336,
+      "sha256": "f35de634cbfef1684780e7713d1a56996700ec5cb46f808ca7f1af1b72c4c336",
+      "mode": 420
+    },
+    {
+      "path": "rep_041/selftest_config.rds",
+      "bytes": 1040,
+      "sha256": "2580d05a4fe59c9f2ffa7e318b0e4fca220c3da33577e9e1d76ab43dce91a762",
+      "mode": 420
+    },
+    {
+      "path": "rep_041/selftest_runs.rds",
+      "bytes": 984,
+      "sha256": "66d184995aae0e56063899427be05a05bfaa36c516218525f15efd15d699dcd7",
+      "mode": 420
+    },
+    {
+      "path": "rep_041/truth/model_info.rds",
+      "bytes": 6832,
+      "sha256": "01a7c7dc8b89b66ac2a20cccbf25b920b5690e60bf3a12362b1b98df38246a76",
+      "mode": 420
+    },
+    {
+      "path": "rep_041/truth_eval/rep_041/model_info.rds",
+      "bytes": 2152,
+      "sha256": "b3caf764902a61377c044c143532552d73cc5f1bbc2175f1301fd8a236595f9f",
+      "mode": 420
+    },
+    {
+      "path": "rep_042/inputs/rep_042/data_simulation_summary.rds",
+      "bytes": 36636,
+      "sha256": "3c2c4b58b9010a0b413c97ec3d34400d46500b93398ae6a5059b2e64f3d12a67",
+      "mode": 420
+    },
+    {
+      "path": "rep_042/inputs/rep_042/selftest_input_info.rds",
+      "bytes": 2508,
+      "sha256": "c81fd1704eeeaa4a07b027cf1aa372dc79353618d4e515b7d690084624d35584",
+      "mode": 420
+    },
+    {
+      "path": "rep_042/inputs/rep_042/strict_tag_info.rds",
+      "bytes": 5768,
+      "sha256": "262f8d8b57d78ae6496ccece3b7b1c7282fd60965e8ccfd799a5625a9ee219c8",
+      "mode": 420
+    },
+    {
+      "path": "rep_042/inputs/rep_042/strict_tag_likelihood_summary.rds",
+      "bytes": 13552,
+      "sha256": "4b2d0e8282094173cebd9dcfbb087cda953aae93210af6be7ab6a0b86665c361",
+      "mode": 420
+    },
+    {
+      "path": "rep_042/refit/rep_042/model_info.rds",
+      "bytes": 1336,
+      "sha256": "02a5c8057ff9f991ef6fdde317bab8773de09ff15e6ad9646b708863da1a098c",
+      "mode": 420
+    },
+    {
+      "path": "rep_042/selftest_config.rds",
+      "bytes": 1040,
+      "sha256": "933220172e42009edab31dd173140681cb404cc4541b5eaff72d7afe79e2ce4f",
+      "mode": 420
+    },
+    {
+      "path": "rep_042/selftest_runs.rds",
+      "bytes": 988,
+      "sha256": "ca4d128d5dd709e02eb5a7bfb7092ac71154f1b8aceb54f3197c597904461d13",
+      "mode": 420
+    },
+    {
+      "path": "rep_042/truth/model_info.rds",
+      "bytes": 6912,
+      "sha256": "d3f245c2ac5fa1d4ef37036e66ee391abd9458e8d8db54647c2f2b9460b01214",
+      "mode": 420
+    },
+    {
+      "path": "rep_042/truth_eval/rep_042/model_info.rds",
+      "bytes": 2152,
+      "sha256": "26a84d1af80c409ea9d2f356a5c69aad9698029d06af2d528be6bdf6c8b8ef62",
+      "mode": 420
+    },
+    {
+      "path": "rep_043/inputs/rep_043/data_simulation_summary.rds",
+      "bytes": 36464,
+      "sha256": "fbfe202d9d74753041dcea416fd993a0e29b88c9915454861847106034f8d1b9",
+      "mode": 420
+    },
+    {
+      "path": "rep_043/inputs/rep_043/selftest_input_info.rds",
+      "bytes": 2512,
+      "sha256": "7a66c0e9db7cf278fe8d819bba0125cecebf1e1bbbdef06dd6395b63ef3655a0",
+      "mode": 420
+    },
+    {
+      "path": "rep_043/inputs/rep_043/strict_tag_info.rds",
+      "bytes": 5756,
+      "sha256": "6a80f337fe15235b1ae6c26f69d9ab65934b5f25a71a5ed88f5ffa5fd8c1ad7d",
+      "mode": 420
+    },
+    {
+      "path": "rep_043/inputs/rep_043/strict_tag_likelihood_summary.rds",
+      "bytes": 13556,
+      "sha256": "53d79bc1459d0d9fb2c5c5cbba89955dafd4ceece06e1ad2fdb5b2278f6e99ed",
+      "mode": 420
+    },
+    {
+      "path": "rep_043/refit/rep_043/model_info.rds",
+      "bytes": 1340,
+      "sha256": "c41ca3b2c61bc18a364f0b4b0104944e80d8e84e97f4236223a3391aa10867a6",
+      "mode": 420
+    },
+    {
+      "path": "rep_043/selftest_config.rds",
+      "bytes": 1040,
+      "sha256": "89b9f651f0fa6bed7c79bbdd203cacd658f0a179fc8d91e910611a0e38ddc4be",
+      "mode": 420
+    },
+    {
+      "path": "rep_043/selftest_runs.rds",
+      "bytes": 988,
+      "sha256": "f676768b19f68fbe5f0b59bdbb17091ee2845d256de743e4f4904e1b4657ece3",
+      "mode": 420
+    },
+    {
+      "path": "rep_043/truth/model_info.rds",
+      "bytes": 6916,
+      "sha256": "51da973e1052474eaa67d84bb574f1f8e606750e82b3da808075d2202a648edc",
+      "mode": 420
+    },
+    {
+      "path": "rep_043/truth_eval/rep_043/model_info.rds",
+      "bytes": 2156,
+      "sha256": "773692fd9101daddd3493a96abe352399f2d2c1953a91dbc3bd4e5e782c73ba2",
+      "mode": 420
+    },
+    {
+      "path": "rep_044/inputs/rep_044/data_simulation_summary.rds",
+      "bytes": 36800,
+      "sha256": "d5f8ec477999b2a39d0e5eb8c22b81f3a603e627af9337b165989921a2c63416",
+      "mode": 420
+    },
+    {
+      "path": "rep_044/inputs/rep_044/selftest_input_info.rds",
+      "bytes": 2508,
+      "sha256": "d89709a4fae0865beaf0d25dcb10dad1239f3a376df7a5bc466ba2a101c9c708",
+      "mode": 420
+    },
+    {
+      "path": "rep_044/inputs/rep_044/strict_tag_info.rds",
+      "bytes": 5748,
+      "sha256": "e7838b7dacc46b5b3071c1b031331f4a92aa7d96317a3d8bc97b30284351c40e",
+      "mode": 420
+    },
+    {
+      "path": "rep_044/inputs/rep_044/strict_tag_likelihood_summary.rds",
+      "bytes": 13568,
+      "sha256": "28e7a08390672016e9115bc0f14f8717fb8bf7a10424bf138c520ecdc79ba394",
+      "mode": 420
+    },
+    {
+      "path": "rep_044/refit/rep_044/model_info.rds",
+      "bytes": 1336,
+      "sha256": "e1e17b10ccc48ddbe0f002c25492624420f32dea7280648619ce821fc6e35360",
+      "mode": 420
+    },
+    {
+      "path": "rep_044/selftest_config.rds",
+      "bytes": 1040,
+      "sha256": "64ee05bb41f1dd3eee5432cd6ebaff18fc93c419d715074b9c7ac3f63bfea9d5",
+      "mode": 420
+    },
+    {
+      "path": "rep_044/selftest_runs.rds",
+      "bytes": 988,
+      "sha256": "b5e5d4273bee1fa4b6c1317cc528cbcdb17f20b40d8fe0e27b0a5f6ad4398540",
+      "mode": 420
+    },
+    {
+      "path": "rep_044/truth/model_info.rds",
+      "bytes": 6928,
+      "sha256": "67f8c1573f90e5212692fc444476edf910630042e0cd3c2382a01480770e1a7e",
+      "mode": 420
+    },
+    {
+      "path": "rep_044/truth_eval/rep_044/model_info.rds",
+      "bytes": 2152,
+      "sha256": "756af85220e31dc4ed675865a98b9c1f61078924f5ed1534922f4af8b16bf34c",
+      "mode": 420
+    },
+    {
+      "path": "rep_045/inputs/rep_045/data_simulation_summary.rds",
+      "bytes": 36444,
+      "sha256": "f3337dd5a79906ec3ddbf952a93e65d47fca935ea78339dffeacae260e81aec7",
+      "mode": 420
+    },
+    {
+      "path": "rep_045/inputs/rep_045/selftest_input_info.rds",
+      "bytes": 2504,
+      "sha256": "4a3147c59eda62f80f3bc9fb941c8b951ca0c6f891b1939ab19d1260302a3b99",
+      "mode": 420
+    },
+    {
+      "path": "rep_045/inputs/rep_045/strict_tag_info.rds",
+      "bytes": 5764,
+      "sha256": "1ab2b246196bdf2b20dfb1590780dce3f9be1148e4b861fa21c196bf45a0adbd",
+      "mode": 420
+    },
+    {
+      "path": "rep_045/inputs/rep_045/strict_tag_likelihood_summary.rds",
+      "bytes": 13520,
+      "sha256": "43b31c9e13a2b9f7866d5da3d868ca42cbc2401bc2ce40f3efc1f9bf6ac1be82",
+      "mode": 420
+    },
+    {
+      "path": "rep_045/refit/rep_045/model_info.rds",
+      "bytes": 1344,
+      "sha256": "6acd0b54edee92aaf2c4c055f1bc5b1cefdcd49c0724c90d39a6769db65056a5",
+      "mode": 420
+    },
+    {
+      "path": "rep_045/selftest_config.rds",
+      "bytes": 1040,
+      "sha256": "be810a6b5d04485515309cc55c96f72ccd8d519f6eedd08515c60884af80fca2",
+      "mode": 420
+    },
+    {
+      "path": "rep_045/selftest_runs.rds",
+      "bytes": 988,
+      "sha256": "2a1f50da84495061b53192ac61d6a6ab838b5f58fb220959b9d1f5504c3b883c",
+      "mode": 420
+    },
+    {
+      "path": "rep_045/truth/model_info.rds",
+      "bytes": 6924,
+      "sha256": "42973ebad89a6bcef9d3065afa5a51cda336b29434ee82933c8000c8fad8a8ef",
+      "mode": 420
+    },
+    {
+      "path": "rep_045/truth_eval/rep_045/model_info.rds",
+      "bytes": 2156,
+      "sha256": "fc7f39773c1662b4969654bcea751855fb033b9aa347b9fcc9ea26b7b0ce6a63",
+      "mode": 420
+    },
+    {
+      "path": "rep_046/inputs/rep_046/data_simulation_summary.rds",
+      "bytes": 36660,
+      "sha256": "4072888bdc3a6d3c0f79ed5eb68d1fb1242dc5d13d071b42d3aaf551f4f49357",
+      "mode": 420
+    },
+    {
+      "path": "rep_046/inputs/rep_046/selftest_input_info.rds",
+      "bytes": 2504,
+      "sha256": "ee040546a70d09fea87759ce416a7f2059c41bc26955503a357c7b00bcb50de5",
+      "mode": 420
+    },
+    {
+      "path": "rep_046/inputs/rep_046/strict_tag_info.rds",
+      "bytes": 5752,
+      "sha256": "486b3cee59c6bd97f2033059aac73f8294f162b8b10467354ed1ba33430fc189",
+      "mode": 420
+    },
+    {
+      "path": "rep_046/inputs/rep_046/strict_tag_likelihood_summary.rds",
+      "bytes": 13540,
+      "sha256": "53d97787514f6008b4710aaa8371da96b00f336cdf76e5b2a254a4f1e6ff2ec6",
+      "mode": 420
+    },
+    {
+      "path": "rep_046/refit/rep_046/model_info.rds",
+      "bytes": 1336,
+      "sha256": "2cd7fa8d7e63b55845e9c18106e3f40e1bd3f805558cd6215e4494aecccecf04",
+      "mode": 420
+    },
+    {
+      "path": "rep_046/selftest_config.rds",
+      "bytes": 1040,
+      "sha256": "f048224d06ff0acfd57c0d9949f4eeda8ef52fc7f09ae7627674a225aa24e022",
+      "mode": 420
+    },
+    {
+      "path": "rep_046/selftest_runs.rds",
+      "bytes": 988,
+      "sha256": "58f089122f3fb089bcf1006c54583bbeb180ce500fd82b0bd61cd80549d8a8eb",
+      "mode": 420
+    },
+    {
+      "path": "rep_046/truth/model_info.rds",
+      "bytes": 6832,
+      "sha256": "9f303731777504f2486f4a434227b48d6b78142f5c7e64a06669a89d8c3bed21",
+      "mode": 420
+    },
+    {
+      "path": "rep_046/truth_eval/rep_046/model_info.rds",
+      "bytes": 2148,
+      "sha256": "a031492867b7bad28a9faf92374231dda062f6524d382ef93bb2dc4450f0a681",
+      "mode": 420
+    },
+    {
+      "path": "rep_047/inputs/rep_047/data_simulation_summary.rds",
+      "bytes": 36516,
+      "sha256": "573dca12cc385929949f8001d21259bb1c19fe015af725fe24c1daae82afd4b0",
+      "mode": 420
+    },
+    {
+      "path": "rep_047/inputs/rep_047/selftest_input_info.rds",
+      "bytes": 2508,
+      "sha256": "b22bad3fd32dc597e67c9a5ddef1495bc6be41807e59273d19ff09391480a567",
+      "mode": 420
+    },
+    {
+      "path": "rep_047/inputs/rep_047/strict_tag_info.rds",
+      "bytes": 5760,
+      "sha256": "2c8f7bd2480249d75f22c76e90112a56ad98eb41bc75fac103c07ca737857c64",
+      "mode": 420
+    },
+    {
+      "path": "rep_047/inputs/rep_047/strict_tag_likelihood_summary.rds",
+      "bytes": 13540,
+      "sha256": "cc5622975d8c2013fbbcaac95b4714743cfc1cfe1eb9312cd14034252bf1c172",
+      "mode": 420
+    },
+    {
+      "path": "rep_047/refit/rep_047/model_info.rds",
+      "bytes": 1336,
+      "sha256": "1bdcb84a8357a42eebdb35a2677a30561c969d46642423b55d81ff68f30a1660",
+      "mode": 420
+    },
+    {
+      "path": "rep_047/selftest_config.rds",
+      "bytes": 1040,
+      "sha256": "14faaf71a1f4a5c4faaa329c8195b549d5c74e392f2f7e9e4fed32b0fb6a4160",
+      "mode": 420
+    },
+    {
+      "path": "rep_047/selftest_runs.rds",
+      "bytes": 988,
+      "sha256": "835d881a645f82ff8cfa82aa93f78530329d40025e87cd7b18c774bb7c15830f",
+      "mode": 420
+    },
+    {
+      "path": "rep_047/truth/model_info.rds",
+      "bytes": 6928,
+      "sha256": "035c4eb6e9e8c21f33b4228480519e555123e1ee691a6f8d28954470a45af22a",
+      "mode": 420
+    },
+    {
+      "path": "rep_047/truth_eval/rep_047/model_info.rds",
+      "bytes": 2152,
+      "sha256": "ca26c477c5688f7eeb1b2774fc2eab63fd19573c37bbe2d544e27e2a619a6d83",
+      "mode": 420
+    },
+    {
+      "path": "rep_048/inputs/rep_048/data_simulation_summary.rds",
+      "bytes": 36640,
+      "sha256": "83c3ac082133ae34a905e0b18cbdee497523a01c9d5a756ce909b103826714a5",
+      "mode": 420
+    },
+    {
+      "path": "rep_048/inputs/rep_048/selftest_input_info.rds",
+      "bytes": 2508,
+      "sha256": "fef869cb196e2aef25ce8765ab7358b78662858afdb78162c1e89c0221463124",
+      "mode": 420
+    },
+    {
+      "path": "rep_048/inputs/rep_048/strict_tag_info.rds",
+      "bytes": 5756,
+      "sha256": "f0a244821a45bdf2a8d5bfe2dbaf4155df125ce7160b4804c1d4e80b1f70e6a9",
+      "mode": 420
+    },
+    {
+      "path": "rep_048/inputs/rep_048/strict_tag_likelihood_summary.rds",
+      "bytes": 13580,
+      "sha256": "0ad628d0396940c3d8af82e672c909115e02a31693cf61e1cef44e61cc409df4",
+      "mode": 420
+    },
+    {
+      "path": "rep_048/refit/rep_048/model_info.rds",
+      "bytes": 1340,
+      "sha256": "ba8c3d7c979b93fb33602c6362cac35d48e8dd27be3e491f8bbd33c8aa46e007",
+      "mode": 420
+    },
+    {
+      "path": "rep_048/selftest_config.rds",
+      "bytes": 1040,
+      "sha256": "be0c2aebbf1919e3d80918d57537b093b1d3caf8d4b706689f8b1f4f4568057a",
+      "mode": 420
+    },
+    {
+      "path": "rep_048/selftest_runs.rds",
+      "bytes": 988,
+      "sha256": "0700f71ad024903cca7dfbc3baa357b9817bffd156e9d748c2123ab05fbd929c",
+      "mode": 420
+    },
+    {
+      "path": "rep_048/truth/model_info.rds",
+      "bytes": 6968,
+      "sha256": "3feadc757ed6ac29ed0bd58dfe402eaddb24836ba6d1782303bf17c93f833a26",
+      "mode": 420
+    },
+    {
+      "path": "rep_048/truth_eval/rep_048/model_info.rds",
+      "bytes": 2152,
+      "sha256": "f894e9486863c395c566c7a5cae2c4fd1a7f004a60277c917dc9e3718261f939",
+      "mode": 420
+    },
+    {
+      "path": "rep_049/inputs/rep_049/data_simulation_summary.rds",
+      "bytes": 36608,
+      "sha256": "03eb9fc533178419f2ecb8c283546b6a4cb21d18bcdc0d8645a69af3183ce435",
+      "mode": 420
+    },
+    {
+      "path": "rep_049/inputs/rep_049/selftest_input_info.rds",
+      "bytes": 2508,
+      "sha256": "2b761d5b94676451314312d1481b420fda3d6186c858ddc81d9fc962a59030f7",
+      "mode": 420
+    },
+    {
+      "path": "rep_049/inputs/rep_049/strict_tag_info.rds",
+      "bytes": 5784,
+      "sha256": "ff6076bc2ac4f9ef5012d1c496f965090ac608353ad16e16146c7a4459e8ec06",
+      "mode": 420
+    },
+    {
+      "path": "rep_049/inputs/rep_049/strict_tag_likelihood_summary.rds",
+      "bytes": 13552,
+      "sha256": "c01b4f6a6af7bbba60864339fa26fd4c1ebbc5c17e64986cb4d92a6d550bd0e2",
+      "mode": 420
+    },
+    {
+      "path": "rep_049/refit/rep_049/model_info.rds",
+      "bytes": 1336,
+      "sha256": "30cac6aa980d5ac87939bf3ed724613c0c298b33d88c9523c5ce2a0755d1524e",
+      "mode": 420
+    },
+    {
+      "path": "rep_049/selftest_config.rds",
+      "bytes": 1040,
+      "sha256": "7b3ad2a3b64064f1edcb82b07d4e482b44c9bb4db0cabd4288cefa590523a38d",
+      "mode": 420
+    },
+    {
+      "path": "rep_049/selftest_runs.rds",
+      "bytes": 988,
+      "sha256": "28f415bf9b8bd134f84eb9d0ff707aab86141d42021912d8cd3906f21e2ad33b",
+      "mode": 420
+    },
+    {
+      "path": "rep_049/truth/model_info.rds",
+      "bytes": 6924,
+      "sha256": "5c33909398748933c571b7ecae72ddc1f4418ba31f47abae023066e7729b22e4",
+      "mode": 420
+    },
+    {
+      "path": "rep_049/truth_eval/rep_049/model_info.rds",
+      "bytes": 2152,
+      "sha256": "20fcd498fd463d1ce70252c871057f4259b6f0bfaf2898a2731696dfad9504aa",
+      "mode": 420
+    },
+    {
+      "path": "rep_050/inputs/rep_050/data_simulation_summary.rds",
+      "bytes": 36592,
+      "sha256": "eaadd338c4e31425fc1651a1902e8bcd71b31fb067407b5d829b5411593b05d7",
+      "mode": 420
+    },
+    {
+      "path": "rep_050/inputs/rep_050/selftest_input_info.rds",
+      "bytes": 2508,
+      "sha256": "95182a9bec27a63e9b26ca6cd554997c0aa10d6aa6511f4a56798a1d17d1e703",
+      "mode": 420
+    },
+    {
+      "path": "rep_050/inputs/rep_050/strict_tag_info.rds",
+      "bytes": 5792,
+      "sha256": "49ecc750e87884908b421f4840963ba1ee8078d76261285db88f79a8fd231346",
+      "mode": 420
+    },
+    {
+      "path": "rep_050/inputs/rep_050/strict_tag_likelihood_summary.rds",
+      "bytes": 13596,
+      "sha256": "12fd9be747df48f7fde6b24662248c421fa154d4cfdc9a0bec66a07b663d8232",
+      "mode": 420
+    },
+    {
+      "path": "rep_050/refit/rep_050/model_info.rds",
+      "bytes": 1340,
+      "sha256": "f73dc708785c7f66fc6992208bf338f3f0c48add941a38613cce0a5db3027494",
+      "mode": 420
+    },
+    {
+      "path": "rep_050/selftest_config.rds",
+      "bytes": 1040,
+      "sha256": "cd044dd48ea554658f50a961228431f24e24e8a87b9bf44a19d941fc7e89930c",
+      "mode": 420
+    },
+    {
+      "path": "rep_050/selftest_runs.rds",
+      "bytes": 988,
+      "sha256": "d436061da0308174e68b39e4285f4e872d83150019e769c9043944841d52b731",
+      "mode": 420
+    },
+    {
+      "path": "rep_050/truth/model_info.rds",
+      "bytes": 6964,
+      "sha256": "965884bf661a27f96810ced14f64172d211149a5edd46482be542bea4e183d01",
+      "mode": 420
+    },
+    {
+      "path": "rep_050/truth_eval/rep_050/model_info.rds",
+      "bytes": 2148,
+      "sha256": "4baad9f85f04c91c0e714a9bcae9e8565e0fe21857f9af523bc1d5d59da258e3",
+      "mode": 420
+    }
+  ]
+}

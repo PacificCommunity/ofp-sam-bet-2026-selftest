@@ -174,5 +174,17 @@
       "expected_readme_sha256": "bcaea9cfb522ad8674c816ed060e78f65365e52683dad7a4b9222a29cb9c3ae2",
       "authorization": "Same task-scoped human CI badge request; actual CI37225398057 rejected stale README checksum."
     }
+  ],
+  "approved_additions": [
+    {
+      "path": "reproduce/saved-results.tar.gz",
+      "mode": "100644",
+      "sha256": "663bed93b10ad3244537c8d54743bc612ac0b44d9178b74ebb673de48fb199ba"
+    },
+    {
+      "path": "reproduce/saved-results.json",
+      "mode": "100644",
+      "sha256": "ce69294e937e2426a410b258bf72142d681c3c022d6094a42887718d63a2bc06"
+    }
   ]
 }

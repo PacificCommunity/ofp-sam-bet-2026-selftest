@@ -11,6 +11,7 @@ overdispersion fixed at τ=2.
 | [Run summary](../data/diagnostic/selftest-runs.csv) | Completion, convergence, objective and gradient by replicate |
 | [Audit](../results/selftest-audit.csv) | Settings and source checksums |
 | [R payload](../data/diagnostic/selftest-report-payload.rds) | Annual, parameter and assessment recovery; simulated-data checks |
+| [Detailed results](saved-results.tar.gz) (3.5 MB) | Original RDS for all 50 replicates: simulation, tag checks, settings and model summaries |
 
 From the repository root:
 
@@ -30,6 +31,11 @@ x$derived
 
 Other components include `runs`, `parameters`, `management` and `simulation`.
 `make help` lists the commands.
+
+For the detailed original RDS, extract `reproduce/saved-results.tar.gz` into an
+empty directory and use `readRDS()`. Replicate folders are `rep_001`–`rep_050`;
+[file checksums](saved-results.json) are checked by `make verify`. The archive
+contains summaries, not the missing simulated MFCL inputs or fitted PARs.
 
 ## Full refits with mfclkit
 
