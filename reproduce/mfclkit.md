@@ -32,10 +32,11 @@ x$derived
 Other components include `runs`, `parameters`, `management` and `simulation`.
 `make help` lists the commands.
 
-For the detailed original RDS, extract `reproduce/saved-results.tar.gz` into an
-empty directory and use `readRDS()`. Replicate folders are `rep_001`–`rep_050`;
-[file checksums](saved-results.json) are checked by `make verify`. The archive
-contains summaries, not the missing simulated MFCL inputs or fitted PARs.
+For the detailed original RDS, use `make extract OUT=/absolute/new-results`,
+then `readRDS()`. `make list` lists `rep_001`–`rep_050`. R verifies every
+[file checksum](saved-results.json) before extraction. These are summaries;
+the original simulated inputs and fitted PARs remain missing.
+Verification and extraction use base R and `sha256sum` (or `shasum`); no Python.
 
 ## Full refits with mfclkit
 
@@ -49,20 +50,19 @@ The wrapper checks each package's `RemoteSha`.
 | [FLR4MFCL](https://github.com/PacificCommunity/ofp-sam-flr4mfcl/commit/ff8367fcec19baff98333170c0f1bca3f9903029) | `ff8367fcec19baff98333170c0f1bca3f9903029` (1.7.2) |
 | [mfclshiny](https://github.com/PacificCommunity/mfclshiny/commit/c665f579a9e63f5252918fb9cab034f0c1e33d5b) | `c665f579a9e63f5252918fb9cab034f0c1e33d5b` |
 
-Prepare `INPUT` with `bet.frq`, `bet.tag`, `bet.age_length`, `bet.reg_scaling`,
-`mfcl.cfg` and the Selftest `doitall.sh` from the pinned
-[Jitter files](https://github.com/PacificCommunity/ofp-sam-bet-2026-jitter/tree/bb3f4016b2d145f42c7a76072ed2b10b49aff71f/data/diagnostic/mfcl).
-Add the generating `final.par` from the
-[fitted reference](https://github.com/PacificCommunity/ofp-sam-bet-2026-jitter/tree/bb3f4016b2d145f42c7a76072ed2b10b49aff71f/data/diagnostic/reproduction/fitted-reference)
-and `bet.ini` from the
-[original Diagnostic input](https://github.com/PacificCommunity/ofp-sam-bet-2026-diagnostic/blob/3abf0c64fb9b0c2d70b9c672dc7d9a655d3060d6/model/bet.ini).
-The later Jitter INI differs by one byte. Use Jitter's F5 `mfclo64` as `MFCL`;
-the wrapper checks every input and the engine against their pinned hashes.
+Prepare a new baseline from the checksum-pinned public files:
 
 ```sh
-make refit-plan INPUT=/absolute/baseline OUT=/absolute/new-selftest MFCL=/absolute/mfclo64
-make refit INPUT=/absolute/baseline OUT=/absolute/new-selftest MFCL=/absolute/mfclo64
+make prepare INPUT=/absolute/new-baseline
+make refit-plan INPUT=/absolute/new-baseline OUT=/absolute/new-selftest
+make refit INPUT=/absolute/new-baseline OUT=/absolute/new-selftest
 ```
+
+The downloader retains the generating `final.par`, original six inputs,
+Selftest `doitall.sh` and static F5 `mfclo64`. `make baseline-list` shows their
+exact sources and hashes. `MFCL` defaults to `INPUT/mfclo64`; preparation runs
+no model. The original Diagnostic INI is required—the later Jitter INI differs
+by one byte.
 
 `refit-plan` prints the recipe only. `refit` creates `OUT`; leave it absent,
 outside the checkout and `INPUT`, with an existing parent. Use absolute paths.

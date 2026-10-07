@@ -13,6 +13,8 @@ From the repository root:
 
 ```sh
 make verify
+make list
+make extract OUT=/tmp/bet-saved-results
 make results
 ```
 

@@ -19,14 +19,14 @@
     {
       "path": "Makefile",
       "mode": "100644",
-      "git_blob": "8cfb2a2f7fe2c32f1f47d79d5af80599c7c5edc5",
-      "sha256": "2c3d57fe25c669370604322623060675425e33f6214cbec7cb404cbdeae4df04"
+      "git_blob": "8acdd602b94962898db8595f1d887f7d1f9b1e6a",
+      "sha256": "773ffc9baf9d86bb56a495980694f90cc159de7f2630c815c0d216c5dd9521a7"
     },
     {
       "path": "README.md",
       "mode": "100644",
-      "git_blob": "7a18d20914f70ed092cbf53cfe3c4ceaa3b7959e",
-      "sha256": "85db6336acd551385d4a07d85b1c86f1b9325073c8a64a2377260b53101ee130"
+      "git_blob": "a4fdd3cf86ca9be02ac16a43057e020f2a30364a",
+      "sha256": "ec51a612e2472b5a5d8fb645c3b9592a8b41a7e2c8f8e0f65ce0667b944c2068"
     },
     {
       "path": "data/SHA256SUMS",
@@ -185,6 +185,16 @@
       "path": "reproduce/saved-results.json",
       "mode": "100644",
       "sha256": "ce69294e937e2426a410b258bf72142d681c3c022d6094a42887718d63a2bc06"
+    },
+    {
+      "path": "reproduce/verify.R",
+      "mode": "100644",
+      "sha256": "df5415c0c705799b5339e412c173a403075103a2fe27f905b6386dd34008a4e9"
+    },
+    {
+      "path": "reproduce/baseline.R",
+      "mode": "100644",
+      "sha256": "bd00b999cd4564470cafd290973f8c99b0c312e3062424a0270e76fb3e957621"
     }
   ]
 }

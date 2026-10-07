@@ -12,16 +12,28 @@ clean:
 # Saved results and new full refits are separate operations.
 INPUT ?=
 OUT ?=
-MFCL ?=
+MFCL ?= $(if $(strip $(INPUT)),$(INPUT)/mfclo64,)
 SELFTEST_REPS ?= 1:50
 
-.PHONY: help verify results rerun refit-plan refit
+.PHONY: help verify results list extract baseline-list prepare rerun refit-plan refit
 
 help:
-	@printf '%s\n' 'make verify       Check the preserved source and saved files.' 'make results      Rebuild the report from saved results.' 'make rerun        Explain the missing saved native closure.' 'make refit-plan   Show the pinned full-refit recipe without executing it.' 'make refit INPUT=/absolute/baseline OUT=/absolute/fresh MFCL=/absolute/mfclo64' 'See reproduce/mfclkit.md for prerequisites and SELFTEST_REPS selection.'
+	@printf '%s\n' 'make verify       Check the preserved source and saved files with R.' 'make results      Rebuild the report from saved results.' 'make list         List the 50 saved replicate folders.' 'make extract OUT=/absolute/new-results' 'make prepare INPUT=/absolute/new-baseline' 'make rerun        Explain the missing saved native closure.' 'make refit-plan   Show the pinned full-refit recipe without executing it.' 'make refit INPUT=/absolute/baseline OUT=/absolute/fresh' 'MFCL defaults to INPUT/mfclo64. See reproduce/mfclkit.md for packages and SELFTEST_REPS.'
 
 verify:
-	python3 ci/verify-preserved-files.py
+	Rscript --vanilla reproduce/verify.R --verify
+
+list:
+	Rscript --vanilla reproduce/verify.R --list
+
+extract:
+	Rscript --vanilla reproduce/verify.R --extract "$(OUT)"
+
+baseline-list:
+	Rscript --vanilla reproduce/baseline.R --list
+
+prepare:
+	Rscript --vanilla reproduce/baseline.R --prepare "$(INPUT)"
 
 results: all
 

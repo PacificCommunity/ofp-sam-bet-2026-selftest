@@ -22,6 +22,12 @@ jobs:
         run: python3 ci/check-make-entrypoints.py
       - name: Verify preserved assessment files
         run: python3 ci/verify-preserved-files.py
+      - name: Check R readers without refitting models
+        shell: bash
+        run: |
+          make verify
+          make extract OUT="$RUNNER_TEMP/bet-saved-results"
+          make prepare INPUT="$RUNNER_TEMP/bet-refit-baseline"
       - name: Check preserved inputs and results
         shell: bash
         run: |
