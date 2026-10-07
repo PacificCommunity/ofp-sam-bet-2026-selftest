@@ -7,8 +7,8 @@
     {
       "path": ".github/workflows/render-report.yml",
       "mode": "100644",
-      "git_blob": "2f3bfcdd63dfaa5dac3ae5d231d3dd550dccc224",
-      "sha256": "306c8961a739088b7c50d51d08ca5b9da80f7d122f2af60ef0fae0e190b4aec0"
+      "git_blob": "3b61b139d1c6c895ba86763249cc19253a77a2e3",
+      "sha256": "5d9b0da70430a71b4653f3a6dc5f51d425a328965cba683201c3606fa47249c9"
     },
     {
       "path": ".gitignore",
@@ -31,8 +31,8 @@
     {
       "path": "data/SHA256SUMS",
       "mode": "100644",
-      "git_blob": "e9dda0d75689f04ebe64d99add0f4796d2812374",
-      "sha256": "24365dd29f22caf6b21328bcac4523c425a8b62279281197023edba5f875a8e8"
+      "git_blob": "262b0055f60e8159b46106d4305bf4aa52672e0a",
+      "sha256": "b5260237aa100b947eeda0e8b339964504af571dda9c7e742cf7c34ec2c8de23"
     },
     {
       "path": "data/diagnostic/selftest-report-payload.rds",

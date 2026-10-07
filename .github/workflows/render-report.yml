@@ -6,9 +6,9 @@ on:
     tags: ["v*"]
     paths:
       - "data/**"
+      - "!data/SHA256SUMS"
       - "report/**"
       - "run-report"
-      - ".github/workflows/render-report.yml"
   workflow_dispatch:
 
 permissions:
