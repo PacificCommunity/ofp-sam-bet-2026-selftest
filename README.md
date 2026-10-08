@@ -21,8 +21,6 @@ make results
 The runner checks `data/SHA256SUMS` and writes the self-contained HTML report,
 PNG/PDF figures and copy-ready captions to `results/`. It rebuilds the report
 from the saved payload without running MFCL.
-Verification and extraction use Make, base R and SHA-256 tools; report
-rebuilding needs the plotting packages listed in the [reader guide](reproduce/mfclkit.md).
 
 The 50 original native final PARs and matching simulated input sets were not recovered here,
 so a saved-PAR native rerun is unavailable. For new full simulation refits,

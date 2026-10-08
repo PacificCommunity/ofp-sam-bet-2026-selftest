@@ -15,6 +15,9 @@ overdispersion fixed at τ=2.
 
 From the repository root:
 
+Reader commands use Make and R; verification and extraction need only base R
+and a SHA-256 utility. Report rebuilding uses the packages listed below.
+
 ```sh
 make verify
 make results

@@ -25,8 +25,8 @@
     {
       "path": "README.md",
       "mode": "100644",
-      "git_blob": "3aa7ffbdc7a2afee42445a8dba84950abc271e13",
-      "sha256": "be7f4de62b39e2dd73d9be428179ecf8c8a4a8c16f3459e42093af3b52bddb2c"
+      "git_blob": "a4fdd3cf86ca9be02ac16a43057e020f2a30364a",
+      "sha256": "ec51a612e2472b5a5d8fb645c3b9592a8b41a7e2c8f8e0f65ce0667b944c2068"
     },
     {
       "path": "data/SHA256SUMS",
@@ -181,6 +181,13 @@
       "previous_git_blob": "a4fdd3cf86ca9be02ac16a43057e020f2a30364a",
       "expected_sha256": "be7f4de62b39e2dd73d9be428179ecf8c8a4a8c16f3459e42093af3b52bddb2c",
       "expected_git_blob": "3aa7ffbdc7a2afee42445a8dba84950abc271e13"
+    },
+    {
+      "path": "README.md",
+      "reason": "Restore the checksum-pinned report README and keep tool guidance in the existing reproduction guide; preserve the report data checksum file and publication selectors.",
+      "previous_sha256": "be7f4de62b39e2dd73d9be428179ecf8c8a4a8c16f3459e42093af3b52bddb2c",
+      "expected_sha256": "ec51a612e2472b5a5d8fb645c3b9592a8b41a7e2c8f8e0f65ce0667b944c2068",
+      "expected_git_blob": "a4fdd3cf86ca9be02ac16a43057e020f2a30364a"
     }
   ],
   "approved_additions": [
