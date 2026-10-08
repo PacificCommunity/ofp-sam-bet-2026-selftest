@@ -25,8 +25,8 @@
     {
       "path": "README.md",
       "mode": "100644",
-      "git_blob": "a4fdd3cf86ca9be02ac16a43057e020f2a30364a",
-      "sha256": "ec51a612e2472b5a5d8fb645c3b9592a8b41a7e2c8f8e0f65ce0667b944c2068"
+      "git_blob": "3aa7ffbdc7a2afee42445a8dba84950abc271e13",
+      "sha256": "be7f4de62b39e2dd73d9be428179ecf8c8a4a8c16f3459e42093af3b52bddb2c"
     },
     {
       "path": "data/SHA256SUMS",
@@ -173,6 +173,14 @@
       "previous_readme_sha256": "5016532a9ec919a79ade3f77f5d28ced9610b30f59b9c29805a1f5406080b33a",
       "expected_readme_sha256": "bcaea9cfb522ad8674c816ed060e78f65365e52683dad7a4b9222a29cb9c3ae2",
       "authorization": "Same task-scoped human CI badge request; actual CI37225398057 rejected stale README checksum."
+    },
+    {
+      "path": "README.md",
+      "reason": "Clarify existing reader commands, runtime requirements and full-fit scope; retain scientific content, result links and heading anchors.",
+      "previous_sha256": "ec51a612e2472b5a5d8fb645c3b9592a8b41a7e2c8f8e0f65ce0667b944c2068",
+      "previous_git_blob": "a4fdd3cf86ca9be02ac16a43057e020f2a30364a",
+      "expected_sha256": "be7f4de62b39e2dd73d9be428179ecf8c8a4a8c16f3459e42093af3b52bddb2c",
+      "expected_git_blob": "3aa7ffbdc7a2afee42445a8dba84950abc271e13"
     }
   ],
   "approved_additions": [
